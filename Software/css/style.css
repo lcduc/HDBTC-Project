@@ -1,0 +1,21 @@
+.pagination {
+  /* style for the whole pagination  */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.pagination a {
+  /* style for the anchor */
+  color: black;
+  border: 1px solid #ddd;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.currentPage a {
+  /* style to indicate the current page  */
+  background-color: lightblue;
+}
