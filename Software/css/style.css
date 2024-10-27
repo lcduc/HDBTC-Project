@@ -19,3 +19,7 @@
   /* style to indicate the current page  */
   background-color: lightblue;
 }
+
+h1 {
+  font-weight: bold;
+}
