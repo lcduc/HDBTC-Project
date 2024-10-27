@@ -1,20 +1,18 @@
 const Thresholds = {
     data() {
         return {
-
-        }
-    },
-    
-    mounted() {
-
+            successMessage: '',
+        };
     },
 
     methods: {
+        updateProfile() {
+            this.successMessage = 'Set new thresholds successfully';
 
-    },
-
-    computed: {
-
+            setTimeout(() => {
+                this.$router.push('/dashboard');
+            }, 3000);
+        },
     },
 
     template: `
@@ -39,7 +37,9 @@ const Thresholds = {
 
             <!-- Back button -->
             <div class="mb-6">
-                <button class="btn btn-light" onclick="window.history.back()" style="color: #8A8A8A;"><img src="/Software/img/arrow-left.png" alt="arrow_left_icon">&nbsp; Back</button>
+                <button class="btn btn-light" onclick="window.history.back()" style="color: #8A8A8A;">
+                    <img src="/Software/img/arrow-left.png" alt="arrow_left_icon">&nbsp; Back
+                </button>
             </div>
 
             <!-- Threshold settings form -->
@@ -49,20 +49,16 @@ const Thresholds = {
                     <label for="temperature" class="form-label mb-0">
                         <h5 class="mb-0" style="color: #7E00AC; font-weight: bold">Temperature:</h5>
                     </label>
-
                     <div class="form-text mt-0 mb-3" style="color: #8A8A8A; font-style: italic">
                         Current threshold: <b>29&deg;C ± 3&deg;C</b>
                     </div>
-
                     <div class="row align-items-center">
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="temperature" aria-describedby="basic-addon3 basic-addon4" placeholder="New threshold">
+                            <input type="text" class="form-control" id="temperature" placeholder="New threshold">
                         </div>
-                        <div class="col-md-1 text-center">
-                            ±
-                        </div>
+                        <div class="col-md-1 text-center">±</div>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="temperature" aria-describedby="basic-addon3 basic-addon4" placeholder="New uncertainty">
+                            <input type="text" class="form-control" id="temperature" placeholder="New uncertainty">
                         </div>
                     </div>
                 </div>   
@@ -72,20 +68,16 @@ const Thresholds = {
                     <label for="humidity" class="form-label mb-0">
                         <h5 class="mb-0" style="color: #4785E8; font-weight: bold">Humidity:</h5>
                     </label>
-
                     <div class="form-text mt-0 mb-3" style="color: #8A8A8A; font-style: italic">
                         Current threshold: <b>8.5 g/m3 ± 0.3 g/m3</b>
                     </div>
-                    
                     <div class="row align-items-center">
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="humidity" aria-describedby="basic-addon3 basic-addon4" placeholder="New threshold">
+                            <input type="text" class="form-control" id="humidity" placeholder="New threshold">
                         </div>
-                        <div class="col-md-1 text-center">
-                            ±
-                        </div>
+                        <div class="col-md-1 text-center">±</div>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="humidity" aria-describedby="basic-addon3 basic-addon4" placeholder="New uncertainty">
+                            <input type="text" class="form-control" id="humidity" placeholder="New uncertainty">
                         </div>
                     </div>
                 </div>        
@@ -95,20 +87,16 @@ const Thresholds = {
                     <label for="lightintensity" class="form-label mb-0">
                         <h5 class="mb-0" style="color: #B2995A; font-weight: bold">Light Intensity:</h5>
                     </label>
-
                     <div class="form-text mt-0 mb-3" style="color: #8A8A8A; font-style: italic">
                         Current threshold: <b>98% ± 2%</b>
                     </div>
-                    
                     <div class="row align-items-center">
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="lightintensity" aria-describedby="basic-addon3 basic-addon4" placeholder="New threshold">
+                            <input type="text" class="form-control" id="lightintensity" placeholder="New threshold">
                         </div>
-                        <div class="col-md-1 text-center">
-                            ±
-                        </div>
+                        <div class="col-md-1 text-center">±</div>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="lightintensity" aria-describedby="basic-addon3 basic-addon4" placeholder="New uncertainty">
+                            <input type="text" class="form-control" id="lightintensity" placeholder="New uncertainty">
                         </div>
                     </div>
                 </div>        
@@ -118,20 +106,16 @@ const Thresholds = {
                     <label for="co2level" class="form-label mb-0">
                         <h5 class="mb-0" style="color: #7A7A7A; font-weight: bold">CO2 Level:</h5>
                     </label>
-
                     <div class="form-text mt-0 mb-3" style="color: #8A8A8A; font-style: italic">
                         Current threshold: <b>482ppm ± 5ppm</b>
                     </div>
-
                     <div class="row align-items-center">
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="co2level" aria-describedby="basic-addon3 basic-addon4" placeholder="New threshold">
+                            <input type="text" class="form-control" id="co2level" placeholder="New threshold">
                         </div>
-                        <div class="col-md-1 text-center">
-                            ±
-                        </div>
+                        <div class="col-md-1 text-center">±</div>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="co2level" aria-describedby="basic-addon3 basic-addon4" placeholder="New uncertainty">
+                            <input type="text" class="form-control" id="co2level" placeholder="New uncertainty">
                         </div>
                     </div>
                 </div>
@@ -139,7 +123,12 @@ const Thresholds = {
                 <!-- Submit button -->
                 <button type="submit" class="btn" style="background-color: #88C47A; color: #FFFFFF; font-weight: bold;">
                     SET NEW THRESHOLDS
-                </button>        
+                </button> 
+
+                <!-- Success message -->
+                <div v-if="successMessage" style="color: green; margin-top: 10px;">
+                    {{ successMessage }}
+                </div>     
             </form>
         </div>
     `
