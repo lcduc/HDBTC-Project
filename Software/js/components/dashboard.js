@@ -31,6 +31,13 @@ const Dashboard = {
                 </div>            
             </div>
 
+            <!-- Back button -->
+            <div class="mb-6">
+                <button class="btn btn-light" onclick="window.history.back()" style="color: #8A8A8A;">
+                    <img src="/Software/img/arrow-left.png" alt="arrow_left_icon">&nbsp; Back
+                </button>
+            </div>
+
             <!-- Thresholds display -->
             <div class="d-flex align-items-center">
                 <div class="p-2">
