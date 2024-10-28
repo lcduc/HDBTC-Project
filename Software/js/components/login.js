@@ -14,7 +14,6 @@ const Login = {
             this.emailError = ''; 
             this.passwordError = ''; 
 
-            // Validate email
             if (!this.email) {
                 this.emailError = 'Please enter your email address.';
                 isValid = false;
@@ -26,7 +25,6 @@ const Login = {
                 }
             }
 
-            // Validate password
             if (!this.password) {
                 this.passwordError = 'Please enter your password.';
                 isValid = false;

@@ -22,14 +22,14 @@ const Thresholds = {
                 <div class="d-flex justify-content-between align-items-center" style="margin-top: 20px;">
                     <div class="p-2">
                         <h1>
-                            <img src="/Software/img/leaf-icon.png" alt="leaf_icon" />
+                            <img src="/img/leaf-icon.png" alt="leaf_icon" />
                             Thresholds settings
                         </h1>
                     </div>
                     <div class="p-2">
                         <button @click="logout" class="btn btn-link ms-3 pr-1" style="color: #8A8A8A; font-style: italic">
                             <span class="d-none d-sm-inline">Log out </span>
-                            <img src="/Software/img/logout-icon.png" alt="logout_icon" />
+                            <img src="/img/logout-icon.png" alt="logout_icon" />
                         </button>
                     </div>
                 </div>            
