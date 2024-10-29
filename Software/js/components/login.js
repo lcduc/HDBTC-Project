@@ -37,7 +37,7 @@ const Login = {
 
         login() {
             if (this.validateForm()) {
-                this.$router.push('/dashboard'); 
+                this.$router.push('/home'); 
             }
         },
     },

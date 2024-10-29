@@ -1,7 +1,56 @@
 const Dashboard = {
     data() {
         return {
-
+            from: '',
+            to: '',
+            alerts: [
+                {
+                    time: new Date('2024-10-24T23:37:00'), 
+                    notifications: [
+                        {
+                            title: 'Temperature',
+                            message: 'The temperature will soon exceed the optimal condition by 5 degrees in the next 30 minutes.',
+                            icon: 'img/temperature-icon.png', 
+                            color: '#7E00AC' 
+                        },
+                        {
+                            title: 'Humidity',
+                            message: 'Humidity levels are currently above optimal levels.',
+                            icon: 'img/humidity-icon.png',
+                            color: '#4785E8' 
+                        },
+                        {
+                            title: 'Light intensity',
+                            message: 'Light intensity is dropping below the optimal level.',
+                            icon: 'img/light-icon.png',
+                            color: '#B2995A'
+                        },
+                        {
+                            title: 'CO2 Level',
+                            message: 'The CO2 levels are rising above the optimal level.',
+                            icon: 'img/co2-icon.png',
+                            color: '#8A8A8A'
+                        }
+                    ]
+                },
+                {
+                    time: new Date('2024-10-24T23:45:00'), 
+                    notifications: [
+                        {
+                            title: 'Light intensity',
+                            message: 'Light intensity is dropping below the optimal level.',
+                            icon: 'img/light-icon.png',
+                            color: '#B2995A'
+                        },
+                        {
+                            title: 'CO2 Level',
+                            message: 'The CO2 levels are rising above the optimal level.',
+                            icon: 'img/co2-icon.png',
+                            color: '#8A8A8A'
+                        }
+                    ]
+                }
+            ]
         };
     },
 
@@ -9,6 +58,22 @@ const Dashboard = {
         logout() {
             this.$router.push('/'); 
         },
+        apply() {
+            // Implement your apply logic here
+        },
+        viewAll() {
+            // Implement your view all logic here
+        },
+        formatTime(time) {
+            return new Date(time).toLocaleString('en-GB', { 
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            });
+        }
     },
 
     template: `
@@ -267,8 +332,46 @@ const Dashboard = {
                 </div>
 
                 <!-- Alert -->
+                
                 <div class="col-lg-4 shadow-sm rounded">
-                    <h3 class="mt-2" style="font-weight: bold">Alerts</h3>
+                    <div class="card">
+                        <h3 class="mt-2" style="font-weight: bold">Alerts & Notifications</h3>
+                        <div class="card-body">
+                            <div class="row alert-filter">
+                                <div class="col-md-4 d-flex align-items-center">
+                                    <label for="from" class="form-label me-2" style="margin-bottom: 0;">From</label>
+                                    <input type="text" class="form-control form-control-sm" id="from" v-model="from">
+                                </div>
+                                <div class="col-md-4 d-flex align-items-center">
+                                    <label for="to" class="form-label me-2" style="margin-bottom: 0;">To</label>
+                                    <input type="text" class="form-control form-control-sm" id="to" v-model="to">
+                                </div>
+                                <div class="col-md-2 d-flex align-items-center">
+                                    <button type="button" class="btn btn-sm w-100" @click="apply">Apply</button>
+                                </div>
+                                <div class="col-md-2 d-flex align-items-center">
+                                    <button type="button" class="btn btn-sm w-100" @click="viewAll">View all</button>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="row alert-content">
+                                <div class="alert-container"> <!-- Container for scrollable alerts -->
+                                    <div v-for="(alert, index) in alerts" :key="index">
+                                        <div class="timestamp">{{ formatTime(alert.time) }}</div>
+                                        <div v-for="(noti, notiIndex) in alert.notifications" :key="notiIndex"
+                                            class="alert alert-danger"> 
+                                            <div class="d-flex align-items-center">
+                                                <img :src="noti.icon" alt="alert_icon" style="width: 30px; margin-right: 10px;">
+                                                <h4 class="alert-heading" :style="{ color: noti.color }">{{ noti.title }} <span style="color: #AC0000;">Warning:</span></h4> 
+                                            </div>
+                                            <p style="color: #333;">{{ noti.message }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
