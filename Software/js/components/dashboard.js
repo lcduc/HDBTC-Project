@@ -340,11 +340,11 @@ const Dashboard = {
                             <div class="row alert-filter">
                                 <div class="col-md-4 d-flex align-items-center">
                                     <label for="from" class="form-label me-2" style="margin-bottom: 0;">From</label>
-                                    <input type="text" class="form-control form-control-sm" id="from" v-model="from">
+                                    <input type="date" class="form-control form-control-sm" id="from" v-model="from">
                                 </div>
                                 <div class="col-md-4 d-flex align-items-center">
                                     <label for="to" class="form-label me-2" style="margin-bottom: 0;">To</label>
-                                    <input type="text" class="form-control form-control-sm" id="to" v-model="to">
+                                    <input type="date" class="form-control form-control-sm" id="to" v-model="to">
                                 </div>
                                 <div class="col-md-2 d-flex align-items-center">
                                     <button type="button" class="btn btn-sm w-100" @click="apply">Apply</button>
