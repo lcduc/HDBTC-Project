@@ -1,30 +1,43 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/LogIn.vue'
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
-  </div>
+  </div> -->
   <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style>
+.pagination {
+  /* style for the whole pagination  */
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.pagination a {
+  /* style for the anchor */
+  color: black;
+  border: 1px solid #ddd;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.currentPage a {
+  /* style to indicate the current page  */
+  background-color: lightblue;
+}
+
+h1 {
+  font-weight: bold;
 }
 </style>
