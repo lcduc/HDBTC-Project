@@ -1,79 +1,194 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+.pagination {
+  /* style for the whole pagination  */
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  justify-content: center;
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.pagination a {
+  /* style for the anchor */
+  color: black;
+  border: 1px solid #ddd;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+.currentPage a {
+  /* style to indicate the current page  */
+  background-color: lightblue;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+/* Style for Login Page*/
+.row{
+  border-radius: 25px;
+}
+
+.box-area {
+  width: 930px;
+}
+
+.left-box h1{
+  font-weight: 400;
+  font-size: 2rem;
+  color: #04360F;
+}
+
+.left-box p {
+  font-size: 10px;
+  color: #AEAEAE;
+  font-style: italic;
+  letter-spacing: .5px;
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 10px; 
+  color: #AEAEAE; 
+  font-size: 1.5rem;
+}
+
+.form-control::placeholder {
+  color: #AEAEAE;
+  font-size: .9rem;
+  margin-left: 20px;
+  letter-spacing: .5px;
+}
+
+
+.form-control {
+  height: 50px;
+  padding-left: 50px; 
+  border-radius: 5px !important;
+  box-sizing: border-box; 
+}
+
+.login-button {
+  background-color: #88C47A;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px !important;
+  color: #fff !important;
+  padding: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #61995a; 
+  opacity: 0.9; 
+}
+
+.arrow-icon {
+  margin-left: 5px; 
+  font-size: 1rem;
+  color: #fff;
+}
+
+
+.logo_image {
+  display: block; 
+  margin: 3rem auto 1rem auto; 
+  width: 40px;
+}
+
+.right-box {
+  padding: 0; 
+  margin: 0; 
+}
+
+.right-box .featured-image img {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+  display: block; 
+  border-radius: 25px;
+}
+
+/* Style for Dashboard Page */
+.card {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.alert-filter h2 {
+  margin-top: 0; 
+  margin-bottom: 1rem;
+}
+
+
+.dashboard-title {
+  font-size: 2rem !important; 
+}
+
+.alert-filter .form-control {
+  height: 10px;  
+  padding: 0 10px; 
+  font-size: .6rem; 
+  border-radius: 5px;  
+  margin: 0;  
+}
+
+.alert-filter .form-label,
+.btn {
+  font-size: .7rem;  
+  margin: 0;  
+  font-weight: 700;
+}
+
+.alert-filter .btn {
+  background-color: #C1C1C1;
+  border: #C1C1C1;
+  color: #808080;
+}
+
+.alert-filter .col-md-4, .col-md-2 {
+  padding: 2px !important;  
+}
+
+.timestamp {
+  font-size: 0.9em; 
+  color: #888; 
+  margin-top: 0.5em; 
+  font-style: italic;
+}
+
+.alert {
+  margin-bottom: 1em; 
+}
+
+.alert-container {
+  max-height: 400px;
+  overflow-y: auto; 
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px; 
+}
+
+.alert-container::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.alert-container::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.alert-container::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px; 
+}
+
+
