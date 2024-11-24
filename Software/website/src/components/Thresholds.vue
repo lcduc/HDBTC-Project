@@ -14,7 +14,7 @@
             </h1>
           </div>
           <div class="p-2">
-            <button @click="" class="btn btn-link ms-3 pr-1" style="color: #8A8A8A; font-style: italic">
+            <button @click="logout" class="btn btn-link ms-3 pr-1" style="color: #8A8A8A; font-style: italic">
               <span class="d-none d-sm-inline">Log out </span>
               <img src="../assets/img/logout-icon.png" alt="logout_icon" />
             </button>
@@ -57,7 +57,7 @@
             <h5 class="mb-0" style="color: #4785E8; font-weight: bold">Humidity:</h5>
           </label>
           <div class="form-text mt-0 mb-3" style="color: #8A8A8A; font-style: italic">
-            Current threshold: <b>{{ currentThresholds.humidity.threshold }} g/m<sup>3</sup> ± {{ currentThresholds.humidity.uncertainty }} g/m<sup>3</sup></b>
+            Current threshold: <b>{{ currentThresholds.humidity.threshold }} % ± {{ currentThresholds.humidity.uncertainty }} %</b>
           </div>
           <div class="row align-items-center">
             <div class="col-md-3">
@@ -77,7 +77,7 @@
             <h5 class="mb-0" style="color: #B2995A; font-weight: bold">Light Intensity:</h5>
           </label>
           <div class="form-text mt-0 mb-3" style="color: #8A8A8A; font-style: italic">
-            Current threshold: <b>{{ currentThresholds.lightIntensity.threshold }}% ± {{ currentThresholds.lightIntensity.uncertainty }}%</b>
+            Current threshold: <b>{{ currentThresholds.lightIntensity.threshold }} μmol/m²s ± {{ currentThresholds.lightIntensity.uncertainty }} μmol/m²s</b>
           </div>
           <div class="row align-items-center">
             <div class="col-md-3">
@@ -153,6 +153,12 @@ export default {
   },
 
   methods: {
+
+    logout() {
+      localStorage.removeItem('user');
+      this.$router.push('/');
+    },
+
     async fetchThresholdData() {
       try {
         this.isLoading = true;
