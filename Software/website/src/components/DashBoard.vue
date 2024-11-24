@@ -31,16 +31,16 @@
                 <p style="font-weight: bold;">Thresholds:</p>
             </div>
             <div class="p-2">
-                <p style="font-weight: bold; color: #7E00AC">Temperature: 29&deg;C ± 3&deg</p>
+                <p style="font-weight: bold; color: #7E00AC">Temperature: {{ currentThresholds.temperature.threshold }} &degC ± {{ currentThresholds.temperature.uncertainty }}&degC</p>
             </div>
             <div class="p-2">
-                <p style="font-weight: bold; color: #4785E8">Humidity: 8.5 g/m<sup>3</sup> ± 0.3 g/m<sup>3</sup></p>
+                <p style="font-weight: bold; color: #4785E8">Humidity: {{ currentThresholds.humidity.threshold }} % ± {{ currentThresholds.humidity.uncertainty }} %</p>
             </div>
             <div class="p-2">
-                <p style="font-weight: bold; color: #B2995A">Light intensity: 98% ± 2%</p>
+                <p style="font-weight: bold; color: #B2995A">Light intensity: {{ currentThresholds.lightIntensity.threshold }} μmol/m²s ± {{ currentThresholds.lightIntensity.uncertainty }} μmol/m²s</p>
             </div>
             <div class="p-2">
-                <p style="font-weight: bold; color: #8A8A8A">CO2 level: 482ppm ± 5ppm</p>
+                <p style="font-weight: bold; color: #8A8A8A">CO2 level: {{ currentThresholds.co2.threshold }} ppm ± {{ currentThresholds.co2.uncertainty }} ppm</p>
             </div>
             <div class="p-2">
                 <router-link to="/thresholds" class="btn btn-light" style="color: #8A8A8A;">Edit
@@ -69,7 +69,7 @@
                                             <h5 class="mb-0" style="color: #7E00AC; font-weight: bold;">Temperature</h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #9476A0; font-style: italic; font-size: 68%">Threshold:
-                                                29&deg;C ± 3&deg;C</p>
+                                              {{ currentThresholds.temperature.threshold }} &deg;C ± {{ currentThresholds.temperature.uncertainty }} &deg;C</p>
                                         </div>
                                     </div>
                                     <div>
@@ -92,13 +92,13 @@
                                             <h5 class="mb-0" style="color: #4785E8; font-weight: bold;">Humidity</h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #98A5BB; font-style: italic; font-size: 68%">
-                                                Threshold: 8.5 g/m<sup>3</sup> ± 0.3 g/m<sup>3</sup></p>
+                                                Threshold: {{ currentThresholds.humidity.threshold }} % ± {{ currentThresholds.humidity.uncertainty }} %</p>
                                         </div>
                                     </div>
                                     <div>
                                         <p class="mb-0" style="color: #4785E8; font-size: 200%; font-weight: bold;">
                                             {{ current_data[0]?.humidity || 'N/A' }}<sup
-                                                style="font-size: 50%; top: -1rem">g/m<sup>3</sup></sup>
+                                                style="font-size: 50%; top: -1rem">%</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -117,13 +117,13 @@
                                             </h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #C8C1AD; font-style: italic; font-size: 68%">
-                                                Threshold: 98% ± 2%</p>
+                                                Threshold: {{ currentThresholds.lightIntensity.threshold }} μmol/m²s ± {{ currentThresholds.lightIntensity.uncertainty }} μmol/m²s</p>
                                         </div>
                                     </div>
                                     <div>
                                         <p class="mb-0" style="color: #B2995A; font-size: 200%; font-weight: bold;">
                                             {{ current_data[0]?.lightIntensity || 'N/A' }}<sup
-                                                style="font-size: 50%; top: -1rem">%</sup>
+                                                style="font-size: 50%; top: -1rem"> μmol/m²s</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@
                                             <h5 class="mb-0" style="color: #8A8A8A; font-weight: bold;">CO2 level</h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #B5B5B5; font-style: italic; font-size: 68%">
-                                                Threshold: 482ppm ± 5ppm</p>
+                                                Threshold: {{ currentThresholds.co2.threshold }} ppm ± {{ currentThresholds.co2.uncertainty }} ppm</p>
                                         </div>
                                     </div>
                                     <div>
@@ -177,7 +177,7 @@
                                             </h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #9476A0; font-style: italic; font-size: 68%">
-                                                Threshold: 29&deg;C ± 3&deg;C</p>
+                                                Threshold: {{ currentThresholds.temperature.threshold }} &deg;C ± {{ currentThresholds.temperature.uncertainty }} &deg;C</p>
                                         </div>
                                     </div>
                                     <div>
@@ -201,14 +201,13 @@
                                             </h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #98A5BB; font-style: italic; font-size: 68%">
-                                                Threshold:
-                                                8.5 g/m<sup>3</sup> ± 0.3 g/m<sup>3</sup></p>
+                                                Threshold: {{ currentThresholds.humidity.threshold }} % ± {{ currentThresholds.humidity.uncertainty }} %</p>
                                         </div>
                                     </div>
                                     <div>
                                         <p class="mb-0" style="color: #4785E8; font-size: 200%; font-weight: bold;">
                                             {{ predicted_data[0]?.humidity || 'N/A' }}<sup
-                                                style="font-size: 50%; top: -1rem">g/m<sup>3</sup></sup>
+                                                style="font-size: 50%; top: -1rem"> %</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -227,14 +226,13 @@
                                                 intensity</h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #C8C1AD; font-style: italic; font-size: 68%">
-                                                Threshold:
-                                                98% ± 2%</p>
+                                                Threshold: {{ currentThresholds.lightIntensity.threshold }} μmol/m²s ± {{ currentThresholds.lightIntensity.uncertainty }} μmol/m²s</p>
                                         </div>
                                     </div>
                                     <div>
                                         <p class="mb-0" style="color: #B2995A; font-size: 200%; font-weight: bold;">
                                             {{ predicted_data[0]?.lightIntensity || 'N/A' }}<sup
-                                                style="font-size: 50%; top: -1rem">%</sup>
+                                                style="font-size: 50%; top: -1rem"> μmol/m²s</sup>
                                         </p>
                                     </div>
                                 </div>
@@ -252,8 +250,7 @@
                                             </h5>
                                             <p class="mt-0 mb-0"
                                                 style="color: #B5B5B5; font-style: italic; font-size: 68%">
-                                                Threshold:
-                                                482ppm ± 5ppm</p>
+                                                Threshold: {{ currentThresholds.co2.threshold }} ppm ± {{ currentThresholds.co2.uncertainty }} ppm</p>
                                         </div>
                                     </div>
                                     <div>
@@ -276,9 +273,8 @@
                     <div class="col-12 mb-4 shadow-sm rounded">
                         <h3 class="mt-2" style="color: #7E00AC;font-weight: bold">Temperature <span
                                 style="color: #8A8A8A;">overtime</span></h3>
-                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">Threshold:
-                            29&deg;C
-                            ± 3&deg;C</p>
+                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">
+                          Threshold: {{ currentThresholds.temperature.threshold }} &deg;C ± {{ currentThresholds.temperature.uncertainty }} &deg;C</p>
 
                         <div class="chart-container mb-2">
 
@@ -288,9 +284,8 @@
                     <div class="col-12 mb-4 shadow-sm rounded">
                         <h3 class="mt-2" style="color: #4785E8;font-weight: bold">Humidity <span
                                 style="color: #8A8A8A;">overtime</span></h3>
-                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">Threshold:
-                            8.5
-                            g/m<sup>3</sup> ± 0.3 g/m<sup>3</sup></p>
+                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">
+                          Threshold: {{ currentThresholds.humidity.threshold }} % ± {{ currentThresholds.humidity.uncertainty }} %</p>
 
                         <div class="chart-container mb-2">
 
@@ -300,10 +295,8 @@
                     <div class="col-12 mb-4 shadow-sm rounded">
                         <h3 class="mt-2 mb-0" style="color: #B2995A;font-weight: bold">Light intensity <span
                                 style="color: #8A8A8A;">overtime</span></h3>
-                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">Threshold:
-                            98% ±
-                            2%
-                        </p>
+                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">
+                          Threshold: {{ currentThresholds.lightIntensity.threshold }} μmol/m²s ± {{ currentThresholds.lightIntensity.uncertainty }} μmol/m²s</p>
 
                         <div class="chart-container mb-2">
 
@@ -313,9 +306,8 @@
                     <div class="col-12 mb-4 shadow-sm rounded">
                         <h3 class="mt-2" style="color: #8A8A8A;font-weight: bold">CO2 level <span
                                 style="color: #8A8A8A;">overtime</span></h3>
-                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">Threshold:
-                            482ppm ±
-                            5ppm</p>
+                        <p class="mt-0 mb-0" style="color: #8A8A8A; font-style: italic; font-size: 80%">
+                          Threshold: {{ currentThresholds.co2.threshold }} ppm ± {{ currentThresholds.co2.uncertainty }} ppm</p>
 
                         <div class="chart-container mb-2">
 
@@ -325,189 +317,271 @@
             </div>
 
 
-            <!-- Alert -->
-
-            <div class="col-lg-4 shadow-sm rounded">
-                <div class="card">
-                    <h3 class="mt-2" style="font-weight: bold">Alerts & Notifications</h3>
-                    <div class="card-body">
-                        <div class="row alert-filter">
-                            <div class="col-md-4 d-flex align-items-center">
-                                <label for="from" class="form-label me-2" style="margin-bottom: 0;">From</label>
-                                <input type="date" class="form-control form-control-sm" id="from" v-model="from">
-                            </div>
-                            <div class="col-md-4 d-flex align-items-center">
-                                <label for="to" class="form-label me-2" style="margin-bottom: 0;">To</label>
-                                <input type="date" class="form-control form-control-sm" id="to" v-model="to">
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <button type="button" class="btn btn-sm w-100" @click="apply">Apply</button>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-center">
-                                <button type="button" class="btn btn-sm w-100" @click="viewAll">View all</button>
-                            </div>
-                        </div>
-
-                        <br>
-                        <div class="row alert-content">
-                            <div class="alert-container"> <!-- Container for scrollable alerts -->
-                                <div v-for="(alert, index) in alerts" :key="index">
-                                    <div class="timestamp">{{ formatTime(alert.time) }}</div>
-                                    <div v-for="(noti, notiIndex) in alert.notifications" :key="notiIndex"
-                                        class="alert alert-danger">
-                                        <div class="d-flex align-items-center">
-                                            <img :src="noti.icon" alt="alert_icon"
-                                                style="width: 30px; margin-right: 10px;">
-                                            <h4 class="alert-heading" :style="{ color: noti.color }">{{ noti.title
-                                                }}
-                                                <span style="color: #AC0000;">Warning:</span>
-                                            </h4>
-                                        </div>
-                                        <p style="color: #333;">{{ noti.message }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <!-- Alert -->
+          <div class="col-lg-4 shadow-sm rounded">
+            <div class="card">
+              <h3 class="mt-2" style="font-weight: bold">Alerts & Notifications</h3>
+              <div class="card-body">
+                <div class="row alert-filter">
+                  <div class="col-md-4 d-flex align-items-center">
+                    <label for="from" class="form-label me-2" style="margin-bottom: 0;">From</label>
+                    <input type="date" class="form-control form-control-sm" id="from" v-model="from">
+                  </div>
+                  <div class="col-md-4 d-flex align-items-center">
+                    <label for="to" class="form-label me-2" style="margin-bottom: 0;">To</label>
+                    <input type="date" class="form-control form-control-sm" id="to" v-model="to">
+                  </div>
+                  <div class="col-md-2 d-flex align-items-center">
+                    <button type="button" class="btn btn-sm w-100" @click="apply">Apply</button>
+                  </div>
+                  <div class="col-md-2 d-flex align-items-center">
+                    <button type="button" class="btn btn-sm w-100" @click="viewAll">View all</button>
+                  </div>
                 </div>
+
+                <br>
+
+                <div class="row alert-content">
+                  <div class="alert-container">
+                    <!-- Alerts & Notifications Section -->
+                    <div v-if="groupedAlerts.length" class="mb-4">
+                      <div v-for="(alertGroup, index) in groupedAlerts" :key="index">
+                        <!-- Display Date for Alert Group -->
+                        <div class="alert-date" style="font-weight: bold; margin-bottom: 10px;">
+                          {{ alertGroup.date }}
+                        </div>
+
+                        <!-- Display Alerts for the Current Group -->
+                        <div v-for="alert in alertGroup.alerts" :key="alert.alertID" class="alert" :class="alert.type"
+                             style="background-color: #f8d7da; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+                          <div class="d-flex align-items-center">
+                            <h4 class="alert-heading" :style="{ fontWeight: 'bold', color: getAlertParameterDetails(alert.parameter).color }">
+                              {{ getAlertParameterDetails(alert.parameter).name }} <span style="color: darkred">Warning</span>
+                            </h4>
+                          </div>
+                          <p>
+                            The
+                            <span style="font-weight: bold; color: getAlertParameterDetails(alert.parameter).color;">
+                    {{ getAlertParameterDetails(alert.parameter).name }}
+                  </span>
+                            will soon
+                            <span style="font-weight: bold;">
+                    {{ alert.changeType }}
+                  </span>
+                            the optimal condition by
+                            <span style="font-weight: bold;">
+                    {{ alert.difference }}
+                  </span>
+                            in the next 30 minutes.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Message if no alerts -->
+                    <div v-else>
+                      <p>No alerts to display.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
         </div>
     </div>
 </template>
+
 <script>
-import temperatureIcon from '../assets/img/temperature-icon.png'
-import humidityIcon from '../assets/img/humidity-icon.png'
-import lightIcon from '../assets/img/light-icon.png'
-import co2Icon from '../assets/img/co2-icon.png'
+import temperatureIcon from '../assets/img/temperature-icon.png';
+import humidityIcon from '../assets/img/humidity-icon.png';
+import lightIcon from '../assets/img/light-icon.png';
+import co2Icon from '../assets/img/co2-icon.png';
 
 export default {
-    data() {
-        return {
-            from: '',
-            to: '',
-            predicted_data: [],
-            current_data: [],
-            msg: '',
-            isLoading: true,
-            alerts: [
-                {
-                    time: new Date('2024-10-24T23:37:00'),
-                    notifications: [
-                        {
-                            title: 'Temperature',
-                            message: 'The temperature will soon exceed the optimal condition by 5 degrees in the next 30 minutes.',
-                            icon: temperatureIcon,
-                            color: '#7E00AC'
-                        },
-                        {
-                            title: 'Humidity',
-                            message: 'Humidity levels are currently above optimal levels.',
-                            icon: humidityIcon,
-                            color: '#4785E8'
-                        },
-                        {
-                            title: 'Light intensity',
-                            message: 'Light intensity is dropping below the optimal level.',
-                            icon: lightIcon,
-                            color: '#B2995A'
-                        },
-                        {
-                            title: 'CO2 Level',
-                            message: 'The CO2 levels are rising above the optimal level.',
-                            icon: co2Icon,
-                            color: '#8A8A8A'
-                        }
-                    ]
-                },
-                {
-                    time: new Date('2024-10-24T23:45:00'),
-                    notifications: [
-                        {
-                            title: 'Light intensity',
-                            message: 'Light intensity is dropping below the optimal level.',
-                            icon: lightIcon,
-                            color: '#B2995A'
-                        },
-                        {
-                            title: 'CO2 Level',
-                            message: 'The CO2 levels are rising above the optimal level.',
-                            icon: co2Icon,
-                            color: '#8A8A8A'
-                        }
-                    ]
-                }
-            ]
-        };
-    },
+  data() {
+    return {
+      from: '',
+      to: '',
+      predicted_data: [],
+      current_data: [],
+      currentThresholds: {
+        temperature: { threshold: 0, uncertainty: 0 },
+        humidity: { threshold: 0, uncertainty: 0 },
+        lightIntensity: { threshold: 0, uncertainty: 0 },
+        co2: { threshold: 0, uncertainty: 0 },
+      },
+      alerts: [],
+      isLoading: true,
+      msg: '',
+    };
+  },
 
-    async mounted() {
-        const greenhouseID = localStorage.getItem('selectedGreenhouseID');
-        if (greenhouseID) {
-            try {
-                // Fetch predicted data
-                const predictedResponse = await fetch(`https://slmc2nab67.execute-api.us-east-1.amazonaws.com/predicteddata?greenhouseID=${greenhouseID}`);
-                const predictedData = await predictedResponse.json();
-                this.predicted_data = predictedData || [];
+  async mounted() {
+    const greenhouseID = localStorage.getItem('selectedGreenhouseID');
 
-                // Fetch current data
-                const currentResponse = await fetch(`https://ck28id9727.execute-api.us-east-1.amazonaws.com/Allhistoricaldata?greenhouseID=${greenhouseID}`);
-                const currentData = await currentResponse.json();
-                this.current_data = currentData || [];
-            } catch (error) {
-                this.msg = 'Failed to load data. Please try again later.';
-                console.error(error);
-            } finally {
-                this.isLoading = false;
-            }
+    if (greenhouseID) {
+      try {
+        // Fetch predicted data
+        const predictedResponse = await fetch(`https://slmc2nab67.execute-api.us-east-1.amazonaws.com/predicteddata?greenhouseID=1`);
+        const predictedData = await predictedResponse.json();
+        this.predicted_data = predictedData || [];
+
+        // Fetch current data
+        const currentResponse = await fetch(`https://ck28id9727.execute-api.us-east-1.amazonaws.com/Allhistoricaldata?greenhouseID=1`);
+        const currentData = await currentResponse.json();
+        this.current_data = currentData || [];
+
+        // Fetch threshold data
+        await this.fetchThresholdData(greenhouseID);
+
+        // Fetch alert data
+        await this.fetchAlertData(greenhouseID);
+      } catch (error) {
+        this.msg = 'Failed to load data. Please try again later.';
+        console.error(error);
+      } finally {
+        this.isLoading = false;
+      }
+    } else {
+      this.msg = 'No greenhouse selected. Please select a greenhouse first.';
+      this.isLoading = false;
+    }
+
+    await this.fetchAlertData(greenhouseID);
+  },
+
+  computed: {
+    // Grouping and sorting the alerts by date and time
+    groupedAlerts() {
+      // Sort alerts by date and time (descending order)
+      const sortedAlerts = this.alerts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      // Group by date (ignoring time for the grouping)
+      const grouped = [];
+      sortedAlerts.forEach(alert => {
+        const existingGroup = grouped.find(group => group.date === alert.date.split('T')[0]); // Grouping by date (ignoring time)
+        if (existingGroup) {
+          existingGroup.alerts.push(alert);
         } else {
-            this.msg = 'No greenhouse selected. Please select a greenhouse first.';
-            this.isLoading = false;
+          grouped.push({ date: alert.date.split('T')[0], alerts: [alert] });
         }
+      });
+      return grouped;
+    }
+  },
+
+  methods: {
+
+    logout() {
+      localStorage.removeItem('user');
+      this.$router.push('/');
     },
 
-    methods: {
-        fillNulls(dataObject) {
-            return Object.fromEntries(
-                Object.entries(dataObject).map(([key, value]) => [key, value ?? 'N/A'])
-            );
-        },
-        logout() {
-            this.$router.push('/');
-        },
-        apply() {
-            // Implement your apply logic here
-        },
-        viewAll() {
-            // Implement your view all logic here
-        },
-        formatTime(time) {
-            return new Date(time).toLocaleString('en-GB', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false
-            });
-        },
-        async fetchPredictedData() {
-            const greenhouseID = localStorage.getItem('selectedGreenhouseID');
-            if (greenhouseID) {
-                try {
-                    const predictedResponse = await fetch(`https://slmc2nab67.execute-api.us-east-1.amazonaws.com/predicteddata?greenhouseID=${greenhouseID}`); //Change the link here
-                    const predictedData = await predictedResponse.json();
-                    this.predicted_data = predictedData || [];
-                } catch (error) {
-                    console.error('Failed to fetch predicted data:', error);
-                }
-            } else {
-                console.error('No greenhouse selected. Please select a greenhouse first.');
-            }
+    // Fetch threshold data and update current thresholds
+    async fetchThresholdData() {
+      try {
+        this.isLoading = true;
+        const response = await fetch(
+            "https://bq79xbfalb.execute-api.us-east-1.amazonaws.com/GETthresholds?greenhouseID=1"
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
+        const data = await response.json();
+        console.log("Threshold data fetched successfully!");
+        console.log(data);
+
+        // Reset current thresholds before updating
+        this.currentThresholds = {
+          temperature: { threshold: 0, uncertainty: 0 },
+          humidity: { threshold: 0, uncertainty: 0 },
+          lightIntensity: { threshold: 0, uncertainty: 0 },
+          co2: { threshold: 0, uncertainty: 0 },
+        };
+
+        // Map the data to our currentThresholds object
+        data.forEach((item) => {
+          const parameterKey = this.mapParameterKey(item.parameter);
+          if (parameterKey && this.currentThresholds[parameterKey]) {
+            this.currentThresholds[parameterKey].threshold = parseFloat(item.threshold);
+            this.currentThresholds[parameterKey].uncertainty = parseFloat(item.uncertainty);
+          }
+        });
+      } catch (error) {
+        console.error("Error fetching threshold data:", error);
+        this.errorMessage = `Error: ${error.message}`;
+      } finally {
+        this.isLoading = false;
+      }
     },
+
+    mapParameterKey(parameter) {
+      const mapping = {
+        temperature: "temperature",
+        humidity: "humidity",
+        lightIntensity: "lightIntensity",
+        co2: "co2",
+      };
+      return mapping[parameter] || null;
+    },
+
+    getAlertParameterDetails(parameter) {
+      const parameterMap = {
+        temperature: { name: 'Temperature', color: '#7E00AC' },
+        humidity: { name: 'Humidity', color: '#4785E8' },
+        lightIntensity: { name: 'Light Intensity', color: '#B2995A' },
+        co2: { name: 'CO2 Level', color: '#8A8A8A' }
+      };
+
+      return parameterMap[parameter] || { name: parameter, color: '#000000' };  // Default to black if no match
+    },
+
+    async fetchAlertData(greenhouseID) {
+      try {
+        const response = await fetch(`https://g8r6riw729.execute-api.us-east-1.amazonaws.com/alertdetails?greenhouseID=1}`);
+        const data = await response.json();
+
+        if (data && Array.isArray(data)) {
+          this.alerts = data; // Update the alerts array with fetched data
+        } else {
+          console.error("Unexpected alert data format", data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch alerts:', error);
+      }
+    },
+
+    // Apply filters based on date range (from-to)
+    apply() {
+      if (this.from && this.to) {
+        const fromDate = new Date(this.from);
+        const toDate = new Date(this.to);
+
+        // Filter alerts that fall within the date range
+        this.alerts = this.alerts.filter(alert => {
+          const alertDate = new Date(alert.date);
+          return alertDate >= fromDate && alertDate <= toDate;
+        });
+      } else {
+        // If no dates are selected, reset the alerts or re-fetch the data
+        this.viewAll();
+      }
+    },
+
+    // View all alerts without filtering
+    viewAll() {
+      this.fetchAlertData(1); // Example greenhouseID, replace with dynamic value if needed
+    }
+  },
+
+  created() {
+    this.fetchThresholdData();
+  },
 
 };
 </script>
+
 <style scoped>
 .card {
     padding: 10px;
