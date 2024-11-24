@@ -34,6 +34,7 @@
         </div>
       </div>
 
+
       <div
         class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column right-box order-1 order-md-2">
         <div class="featured-image">
@@ -43,6 +44,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -85,41 +87,35 @@ export default {
     async login() {
       if (this.validateForm()) {
         try {
-          const response = await fetch(
-            'https://2pptumq4rh.execute-api.us-east-1.amazonaws.com/login',
-            {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                email: this.email,
-                password: this.password,
-              }),
+          const response = await fetch('https://2pptumq4rh.execute-api.us-east-1.amazonaws.com/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: this.email,
+              password: this.password
+            }),
+          });
+
+          if (!response.ok) {
+            if (response.status === 401) {
+              this.loginError = 'Invalid email or password.';
             }
-          );
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
 
           const data = await response.json();
-          console.log('API Response:', data);
 
-          if (response.ok && data.message === 'Login successful') {
-            localStorage.setItem(
-              'user-info',
-              JSON.stringify({
-                accountID: data.accountID,
-                greenhouseIDs: data.greenhouseIDs,
-              })
-            );
-
+          if (data.message === 'Login successful') {
+            // Store user data including accountID
+            localStorage.setItem('user', JSON.stringify(data));
             this.$router.push('/homepage');
-            this.email = '';
-            this.password = '';
           } else {
             this.loginError = 'Invalid email or password.';
           }
         } catch (error) {
           console.error('Login error:', error);
-          this.loginError = 'An error occurred during login. Please try again.';
         }
       }
     }
@@ -169,7 +165,6 @@ export default {
   letter-spacing: .5px;
 }
 
-
 .form-control {
   height: 50px;
   padding-left: 50px;
@@ -198,7 +193,6 @@ export default {
   font-size: 1rem;
   color: #fff;
 }
-
 
 .logo_image {
   display: block;

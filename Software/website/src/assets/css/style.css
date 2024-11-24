@@ -191,4 +191,40 @@ h1 {
   border-radius: 10px; 
 }
 
+/* HunHun */
+.header-with-filter {
+  display: flex!important;
+  align-items: center; /* Aligns items vertically in the center */
+  gap: 10px; /* Adds space between the heading and the dropdown */
+}
 
+.select-wrapper {
+  margin-left: auto;
+  width: 20%;
+}
+
+.parameter-title {
+  margin: 0;
+}
+
+.chart-position {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+#temperature-chart {
+  max-width: 100%;
+}
+
+#tooltip-temp, #tooltip-humid, #tooltip-light, #tooltip-co2 {
+  position:absolute;
+  display: none;
+  background-color: white;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+}
