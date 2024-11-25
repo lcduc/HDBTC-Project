@@ -210,25 +210,25 @@ export default {
       try {
         const thresholdsData = [
           {
-            greenhouseID: 2,
+            greenhouseID: 1,
             parameter: "temperature",
             threshold: this.updatedThresholds.temperature.threshold || this.currentThresholds.temperature.threshold,
             uncertainty: this.updatedThresholds.temperature.uncertainty || this.currentThresholds.temperature.uncertainty
           },
           {
-            greenhouseID: 2,
+            greenhouseID: 1,
             parameter: "humidity",
             threshold: this.updatedThresholds.humidity.threshold || this.currentThresholds.humidity.threshold,
             uncertainty: this.updatedThresholds.humidity.uncertainty || this.currentThresholds.humidity.uncertainty
           },
           {
-            greenhouseID: 2,
+            greenhouseID: 1,
             parameter: "lightIntensity",
             threshold: this.updatedThresholds.lightIntensity.threshold || this.currentThresholds.lightIntensity.threshold,
             uncertainty: this.updatedThresholds.lightIntensity.uncertainty || this.currentThresholds.lightIntensity.uncertainty
           },
           {
-            greenhouseID: 2,
+            greenhouseID: 1,
             parameter: "co2",
             threshold: this.updatedThresholds.co2.threshold || this.currentThresholds.co2.threshold,
             uncertainty: this.updatedThresholds.co2.uncertainty || this.currentThresholds.co2.uncertainty
