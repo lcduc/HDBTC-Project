@@ -469,11 +469,17 @@ export default {
   },
 
   async mounted() {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      this.$router.push('/'); // Redirect to login
+      return;
+    }
+
     renderTempChart();
     renderHumidChart();
     renderLightChart();
     renderCo2Chart();
-    
+
     const greenhouseID = localStorage.getItem('selectedGreenhouseID');
 
     if (greenhouseID) {
