@@ -19,6 +19,7 @@ const routes = [
         path: "/dashboard",
         name: "dashboard",
         component: DashBoard,
+        meta: { requiresAuth: true },
     },
     {
         path: "/thresholds",
@@ -32,4 +33,15 @@ const router = createRouter({
     routes,
   });
 
+  router.beforeEach((to, from, next) => {
+    const isAuthenticated = !!localStorage.getItem('user'); // Check if user data exists in localStorage
+  
+    if (to.meta.requiresAuth && !isAuthenticated) {
+      // Redirect to login page if not authenticated
+      next('/');
+    } else {
+      // Proceed to the requested route
+      next();
+    }
+  });
 export default router;
