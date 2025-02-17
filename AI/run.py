@@ -18,10 +18,11 @@ def run_script(script_path):
 def insert_db(predictions_df):
     """Insert predictions into database."""
     db_config = {
-        "host": "your_host",
-        "user": "your_user",
-        "password": "your_password",
-        "database": "greenhouse_data",
+        "host": "14.225.205.88",
+        "port": "3306",
+        "user": "admin",
+        "password": "Binhlol707",
+        "database": "Greenhouse",
     }
 
     # Connect to the MySQL database
@@ -30,7 +31,7 @@ def insert_db(predictions_df):
 
     # Insert data into the table for each row in the predictions DataFrame
     insert_query = """
-        INSERT INTO environmental_conditions (Tair, Rhair, Tot_PAR, CO2air)
+        INSERT INTO environmental_conditions (temperature, humidity, lightIntensity, co2)
         VALUES (%s, %s, %s, %s)
     """
 
@@ -38,10 +39,10 @@ def insert_db(predictions_df):
         cursor.execute(
             insert_query,
             (
-                row["Tair"],
-                row["Rhair"],
-                row["Tot_PAR"],
-                row["CO2air"],
+                row["temperature"],
+                row["humidity"],
+                row["lightIntensity"],
+                row["co2"],
             ),
         )
 
