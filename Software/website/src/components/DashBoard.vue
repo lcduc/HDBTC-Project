@@ -272,7 +272,7 @@
                     currentThresholds.temperature.uncertainty }} &deg;C</p>
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-temp" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-temp" v-model="filterOptionTemp">
                   <option value="monthly-temp">Monthly</option>
                   <option value="weekly-temp">Weekly</option>
                 </select>
@@ -298,7 +298,7 @@
                 </p>
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-humid" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-humid" v-model="filterOptionHumid">
                   <option value="monthly-humid" selected>Monthly</option>
                   <option value="weekly-humid">Weekly</option>
                 </select>
@@ -323,7 +323,7 @@
                     currentThresholds.lightIntensity.uncertainty }} μmol/m²s</p>
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-light" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-light" v-model="filterOptionLight">
                   <option value="monthly-light">Monthly</option>
                   <option value="weekly-light">Weekly</option>
                 </select>
@@ -348,7 +348,7 @@
 
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-co2" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-co2" v-model="filterOptionCo2">
                   <option value="monthly-co2">Monthly</option>
                   <option value="weekly-co2">Weekly</option>
                 </select>
@@ -465,6 +465,12 @@ export default {
       alerts: [],
       isLoading: true,
       msg: '',
+      sensorData: {temperature: 0, humidity: 0, lightIntensity: 0, co2: 0},
+      client: null,
+      filterOptionTemp: 'monthly-temp',
+      filterOptionHumid: 'monthly-humid',
+      filterOptionLight: 'monthly-light',
+      filterOptionCo2: 'monthly-co2',
     };
   },
 
