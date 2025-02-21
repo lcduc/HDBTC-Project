@@ -152,6 +152,14 @@ export default {
     }
   },
 
+  mounted() {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      this.$router.push('/'); // Redirect to login
+      return;
+    }
+  },
+
   methods: {
 
     logout() {
@@ -163,14 +171,16 @@ export default {
       try {
         this.isLoading = true;
         const response = await fetch(
-            "https://bq79xbfalb.execute-api.us-east-1.amazonaws.com/GETthresholds?greenhouseID=1"
+          "https://bq79xbfalb.execute-api.us-east-1.amazonaws.com/GETthresholds?greenhouseID=1"
         );
+
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
         const data = await response.json();
-        console.log("Threshold data fetched successfully!");
-        console.log(data);
+        console.log("Threshold data fetched successfully!", data);
+        console.log("Data type:", typeof data, "Data:", data);
 
         // Reset current thresholds before updating
         this.currentThresholds = {
@@ -180,14 +190,13 @@ export default {
           co2: { threshold: 0, uncertainty: 0 },
         };
 
-        // Map the data to our currentThresholds object
-        data.forEach((item) => {
-          const parameterKey = this.mapParameterKey(item.parameter);
-          if (parameterKey && this.currentThresholds[parameterKey]) {
-            this.currentThresholds[parameterKey].threshold = parseFloat(item.threshold);
-            this.currentThresholds[parameterKey].uncertainty = parseFloat(item.uncertainty);
+        // 🔹 Loop through object keys instead of using forEach
+        for (const key in data) {
+          if (this.currentThresholds[key]) {
+            this.currentThresholds[key].threshold = parseFloat(data[key].threshold);
+            this.currentThresholds[key].uncertainty = parseFloat(data[key].uncertainty);
           }
-        });
+        }
       } catch (error) {
         console.error("Error fetching threshold data:", error);
         this.errorMessage = `Error: ${error.message}`;
