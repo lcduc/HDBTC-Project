@@ -1,3 +1,6 @@
+body {
+  margin: 1em;
+}
 .pagination {
   /* style for the whole pagination  */
   display: flex;

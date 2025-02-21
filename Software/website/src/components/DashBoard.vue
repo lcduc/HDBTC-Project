@@ -77,7 +77,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #7E00AC; font-size: 200%; font-weight: bold;">
-                      {{ current_data[0]?.temperature || 'N/A' }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
+                      {{ sensorData.temperature || 'N/A' }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
                     </p>
                   </div>
                 </div>
@@ -98,7 +98,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #4785E8; font-size: 200%; font-weight: bold;">
-                      {{ current_data[0]?.humidity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">%</sup>
+                      {{ sensorData.humidity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">%</sup>
                     </p>
                   </div>
                 </div>
@@ -121,7 +121,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #B2995A; font-size: 200%; font-weight: bold;">
-                      {{ current_data[0]?.lightIntensity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">
+                      {{ sensorData.lightIntensity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">
                         μmol/m²s</sup>
                     </p>
                   </div>
@@ -144,7 +144,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #8A8A8A; font-size: 200%; font-weight: bold;">
-                      {{ current_data[0]?.co2 || 'N/A' }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
+                      {{ sensorData.co2 || 'N/A' }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
                     </p>
                   </div>
                 </div>
@@ -158,10 +158,8 @@
           <div class="col-lg-6 col-sm-12 mb-4 shadow-sm rounded">
             <header class="d-flex justify-content-between align-items-center">
               <h3 class="mt-2" style="font-weight: bold">Predicted statistics</h3>
-              <button class="btn btn-primary" @click="fetchPredictedData"> New Prediction
-              </button>
             </header>
-            <div class="row-col-12" v-if="predicted_data.length">
+            <div class="row-col-12">
               <!-- Temperature Card -->
               <div class="ml-1 mr-1 mb-3 p-3 shadow-sm rounded" style="background-color: #F2E5F7">
                 <div class="d-flex flex-row align-items-center justify-content-between">
@@ -179,7 +177,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #7E00AC; font-size: 200%; font-weight: bold;">
-                      {{ predicted_data[0]?.temperature || 'N/A' }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
+                      {{ predicted_data.temperature || 'N/A' }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
                     </p>
                   </div>
                 </div>
@@ -201,7 +199,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #4785E8; font-size: 200%; font-weight: bold;">
-                      {{ predicted_data[0]?.humidity || 'N/A' }}<sup style="font-size: 50%; top: -1rem"> %</sup>
+                      {{ predicted_data.humidity || 'N/A' }}<sup style="font-size: 50%; top: -1rem"> %</sup>
                     </p>
                   </div>
                 </div>
@@ -224,7 +222,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #B2995A; font-size: 200%; font-weight: bold;">
-                      {{ predicted_data[0]?.lightIntensity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">
+                      {{ predicted_data.lightIntensity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">
                         μmol/m²s</sup>
                     </p>
                   </div>
@@ -248,7 +246,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #8A8A8A; font-size: 200%; font-weight: bold;">
-                      {{ predicted_data[0]?.co2 || 'N/A' }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
+                      {{ predicted_data.co2 || 'N/A' }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
                     </p>
                   </div>
                 </div>
@@ -272,7 +270,7 @@
                     currentThresholds.temperature.uncertainty }} &deg;C</p>
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-temp" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-temp" v-model="filterOptionTemp">
                   <option value="monthly-temp">Monthly</option>
                   <option value="weekly-temp">Weekly</option>
                 </select>
@@ -298,7 +296,7 @@
                 </p>
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-humid" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-humid" v-model="filterOptionHumid">
                   <option value="monthly-humid" selected>Monthly</option>
                   <option value="weekly-humid">Weekly</option>
                 </select>
@@ -323,7 +321,7 @@
                     currentThresholds.lightIntensity.uncertainty }} μmol/m²s</p>
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-light" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-light" v-model="filterOptionLight">
                   <option value="monthly-light">Monthly</option>
                   <option value="weekly-light">Weekly</option>
                 </select>
@@ -348,7 +346,7 @@
 
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-co2" v-model="filterOption">
+                <select class="form-select form-select-sm" id="filter-option-co2" v-model="filterOptionCo2">
                   <option value="monthly-co2">Monthly</option>
                   <option value="weekly-co2">Weekly</option>
                 </select>
@@ -449,12 +447,15 @@ import { renderTempChart } from './charts/temp.js';
 import { renderHumidChart } from './charts/humid.js';
 import { renderLightChart } from './charts/light.js';
 import { renderCo2Chart } from './charts/co2.js';
+
+import mqtt from 'mqtt';
+
 export default {
   data() {
     return {
       from: '',
       to: '',
-      predicted_data: [],
+      predicted_data: {},
       current_data: [],
       currentThresholds: {
         temperature: { threshold: 0, uncertainty: 0 },
@@ -465,6 +466,17 @@ export default {
       alerts: [],
       isLoading: true,
       msg: '',
+      client: null,
+      sensorData: {
+        temperature: 0,
+        humidity: 0,
+        lightIntensity: 0,
+        co2: 0,
+      },
+      filterOptionTemp: 'monthly-temp',
+      filterOptionHumid: 'monthly-humid',
+      filterOptionLight: 'monthly-light',
+      filterOptionCo2: 'monthly-co2'
     };
   },
 
@@ -487,7 +499,7 @@ export default {
         // Fetch predicted data
         const predictedResponse = await fetch(`https://slmc2nab67.execute-api.us-east-1.amazonaws.com/predicteddata?greenhouseID=1`);
         const predictedData = await predictedResponse.json();
-        this.predicted_data = predictedData || [];
+        this.predicted_data = predictedData;
 
         // Fetch current data
         const currentResponse = await fetch(`https://ck28id9727.execute-api.us-east-1.amazonaws.com/Allhistoricaldata?greenhouseID=1`);
@@ -510,7 +522,7 @@ export default {
       this.isLoading = false;
     }
 
-    await this.fetchAlertData(greenhouseID);
+    this.connectMQTT();
   },
 
   computed: {
@@ -540,6 +552,29 @@ export default {
       this.$router.push('/');
     },
 
+    connectMQTT() {
+      this.client = mqtt.connect('ws://14.225.205.88:9001');
+
+      this.client.on('connect', () => {
+        console.log('Connected to MQTT broker');
+        this.client.subscribe('greenhouse/1/sensor');
+      });
+      
+      this.client.on('message', (topic, message) => {
+        try {
+          const parsedData = JSON.parse(message.toString());
+          this.sensorData = {
+            temperature: parsedData.sensors.temperature_humidity.Tair,
+            humidity: parsedData.sensors.temperature_humidity.Rhair,
+            lightIntensity: parsedData.sensors.light.Tot_PAR,
+            co2: parsedData.sensors.co2.co2air,
+          };
+        } catch (error) {
+          console.error('Error parsing MQTT message:', error);
+        }
+      });
+    },
+
     // Fetch threshold data and update current thresholds
     async fetchThresholdData() {
       try {
@@ -547,12 +582,14 @@ export default {
         const response = await fetch(
           "https://bq79xbfalb.execute-api.us-east-1.amazonaws.com/GETthresholds?greenhouseID=1"
         );
+
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
         const data = await response.json();
-        console.log("Threshold data fetched successfully!");
-        console.log(data);
+        console.log("Threshold data fetched successfully!", data);
+        console.log("Data type:", typeof data, "Data:", data);
 
         // Reset current thresholds before updating
         this.currentThresholds = {
@@ -562,14 +599,13 @@ export default {
           co2: { threshold: 0, uncertainty: 0 },
         };
 
-        // Map the data to our currentThresholds object
-        data.forEach((item) => {
-          const parameterKey = this.mapParameterKey(item.parameter);
-          if (parameterKey && this.currentThresholds[parameterKey]) {
-            this.currentThresholds[parameterKey].threshold = parseFloat(item.threshold);
-            this.currentThresholds[parameterKey].uncertainty = parseFloat(item.uncertainty);
+        // Loop through object keys instead of using forEach
+        for (const key in data) {
+          if (this.currentThresholds[key]) {
+            this.currentThresholds[key].threshold = parseFloat(data[key].threshold);
+            this.currentThresholds[key].uncertainty = parseFloat(data[key].uncertainty);
           }
-        });
+        }
       } catch (error) {
         console.error("Error fetching threshold data:", error);
         this.errorMessage = `Error: ${error.message}`;
