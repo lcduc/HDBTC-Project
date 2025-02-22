@@ -60,6 +60,8 @@
           <!-- Current data section -->
           <div class="col-lg-6 col-sm-12 mb-4 shadow-sm rounded">
             <h3 class="mt-2" style="font-weight: bold">Current statistics</h3>
+            <router-link to="/managedevices" class="btn btn-primary" @click="fetchPredictedData"> Manage Devices
+                </router-link>
             <div class="row-col-12">
               <!-- Temperature Card -->
               <div class="ml-1 mr-1 mb-3 p-3 shadow-sm rounded" style="background-color: #F2E5F7">
