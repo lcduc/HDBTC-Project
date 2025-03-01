@@ -1,0 +1,104 @@
+{
+    "historical": [
+        {
+            "date": "22/02",
+            "avg_temperature": 28.77,
+            "avg_humidity": 75.78,
+            "avg_light": 102.7,
+            "avg_co2": 309.95
+        },
+        {
+            "date": "23/02",
+            "avg_temperature": 23.46,
+            "avg_humidity": 58.34,
+            "avg_light": 619.11,
+            "avg_co2": 533.07
+        },
+        {
+            "date": "24/02",
+            "avg_temperature": 29.09,
+            "avg_humidity": 62.39,
+            "avg_light": 243.7,
+            "avg_co2": 323.78
+        },
+        {
+            "date": "25/02",
+            "avg_temperature": 21.03,
+            "avg_humidity": 47.81,
+            "avg_light": 224.48,
+            "avg_co2": 346.88
+        },
+        {
+            "date": "26/02",
+            "avg_temperature": 33.41,
+            "avg_humidity": 55.71,
+            "avg_light": 787.08,
+            "avg_co2": 541.02
+        },
+        {
+            "date": "27/02",
+            "avg_temperature": 21.98,
+            "avg_humidity": 54.88,
+            "avg_light": 563.72,
+            "avg_co2": 491.0
+        },
+        {
+            "date": "28/02",
+            "avg_temperature": 29.76,
+            "avg_humidity": 78.57,
+            "avg_light": 304.55,
+            "avg_co2": 431.99
+        }
+    ],
+    "predicted": [
+        {
+            "date": "22/02",
+            "avg_temperature": 30.71,
+            "avg_humidity": 53.92,
+            "avg_light": 156.36,
+            "avg_co2": 552.2
+        },
+        {
+            "date": "23/02",
+            "avg_temperature": 22.06,
+            "avg_humidity": 74.72,
+            "avg_light": 630.76,
+            "avg_co2": 379.46
+        },
+        {
+            "date": "24/02",
+            "avg_temperature": 32.59,
+            "avg_humidity": 69.87,
+            "avg_light": 639.26,
+            "avg_co2": 547.25
+        },
+        {
+            "date": "25/02",
+            "avg_temperature": 25.82,
+            "avg_humidity": 60.94,
+            "avg_light": 110.3,
+            "avg_co2": 401.88
+        },
+        {
+            "date": "26/02",
+            "avg_temperature": 25.54,
+            "avg_humidity": 47.5,
+            "avg_light": 221.35,
+            "avg_co2": 565.14
+        },
+        {
+            "date": "27/02",
+            "avg_temperature": 33.25,
+            "avg_humidity": 74.92,
+            "avg_light": 424.38,
+            "avg_co2": 455.54
+        },
+        {
+            "date": "28/02",
+            "avg_temperature": 28.8,
+            "avg_humidity": 75.54,
+            "avg_light": 266.69,
+            "avg_co2": 433.85
+        }
+    ]
+}

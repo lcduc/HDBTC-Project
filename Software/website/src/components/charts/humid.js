@@ -1,211 +1,173 @@
 export function renderHumidChart() {
+    // Check if the chart and tooltip elements exist on the page
     if (document.getElementById("humidity-chart") && document.getElementById("tooltip-humid")) {
-        // Define the dimensions and margins of the chart
+        // Set the margins and dimensions of the chart
         const margin = { top: 20, right: 30, bottom: 40, left: 40 };
         const width = 500 - margin.left - margin.right;
         const height = 200 - margin.top - margin.bottom;
 
-        // Select the tooltip div
+        // Select tooltip and create SVG for the chart
         const tooltip = d3.select("#tooltip-humid");
-
-        // Select the SVG container and set up the chart dimensions
         const svg = d3.select("#humidity-chart")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .attr("transform", `translate(${margin.left},${margin.top})`);
 
-        // Set up the scales for x and y axes
+        // Create scales for the x and y axes
         const x = d3.scaleTime().range([0, width]);
         const y = d3.scaleLinear().range([height, 0]);
 
-        // Set up the axes groups
-        const xAxis = svg.append("g")
-            .attr("transform", "translate(0," + height + ")");
+        // Create the axes groups
+        const xAxis = svg.append("g").attr("transform", `translate(0,${height})`);
         const yAxis = svg.append("g");
 
-        // Define the line generator function
-        const line = d3.line()
+        // Define the line generator function for the line chart
+        const line = d3.line().x(d => x(d.date)).y(d => y(d.avg));
+
+        // Define the area generator function for the area chart
+        const area = d3.area()
             .x(d => x(d.date))
-            .y(d => y(d.avg))
-            .defined(d => d.avg !== undefined && !isNaN(d.avg)); // Only include defined values
+            .y0(height)
+            .y1(d => y(d.avg));
 
-        // Use API instead of CSV
-        d3.json("http://14.225.205.88:8000/calculate_monthly_averages/1").then(apiResponse => {
-            // Use the historical_data (you can also use predicted_data if needed)
-            const monthlyData = apiResponse.historical_data;
-
-            // Transform each record into an object with a Date object and the average humidity value.
-            // Assuming the date is the first day of the month.
-            const processedData = monthlyData.map(d => ({
-                date: new Date(d.year, d.month - 1, 1),  // month is 0-indexed in JS Date
-                avg: d.avg_humidity,  // Map humidity value
-                error: 0            // Set error to 0 (adjust if you have error data)
-            }));
-
-            // Sort the data by date
-            processedData.sort((a, b) => a.date - b.date);
-
-            // Add event listener for the filter option (if applicable)
-            d3.select("#filter-option-humid").on("change", () => {
-                const filterOption = d3.select("#filter-option-humid").property("value");
-                applyFilter(filterOption, processedData);
-            });
-
-            // Initial chart rendering with default filter ("monthly-humid")
-            applyFilter("monthly-humid", processedData);
+        // Attach a listener to the filter option select element
+        d3.select("#filter-option-humid").on("change", function () {
+            loadData(this.value);  // Reload data based on the selected filter
         });
 
-        function applyFilter(filterOption, data) {
-            let filteredData;
-            if (filterOption === "monthly-humid") {
-                // For monthly data, use all data
-                filteredData = data;
-            } else if (filterOption === "weekly-humid") {
-                // Weekly filtering is not supported with monthly aggregated data
-                console.log("Weekly filter not supported with monthly aggregated data. Showing monthly data.");
-                filteredData = data;
-            }
-
-            if (filteredData.length > 0) {
-                updateChart(filteredData);
-            } else {
-                console.log("No data available for the selected filter option.");
-            }
+        // Parse the date from the format 'dd/mm'
+        function parseDate(d) {
+            const parts = d.split("/");  // Split the date string by '/'
+            const currentYear = new Date().getFullYear();  // Use the current year
+            return new Date(currentYear, parseInt(parts[1]) - 1, parseInt(parts[0]));  // Return a new Date object
         }
 
-        function updateChart(data) {
-            // Remove old elements (paths, dots, error bars, etc.)
-            svg.selectAll(".dot-humid").remove();
-            svg.selectAll(".error-bar-humid").remove();
-            svg.selectAll(".hover-area-humid").remove();
-            svg.selectAll("defs").remove();
-            svg.selectAll("path").remove();
+        // Load the data from the API based on the selected filter option
+        function loadData(filterOption) {
+            // Define the API URL based on the filter option
+            const apiUrl = filterOption === "monthly-humid"
+                ? "http://14.225.205.88:8000/calculate_monthly_averages/1"
+                : "http://14.225.205.88:8000/calculate_weekly_averages/1";
 
-            // Update the scales
-            x.domain(d3.extent(data, d => d.date));
-            const yMax = d3.max(data, d => d.avg + (d.error || 0)) || 0;
-            const yMin = d3.min(data, d => d.avg - (d.error || 0)) || 0;
-            y.domain([yMin - 1.5, yMax + 1.5]);
+            // Fetch data from the API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(jsonData => {
+                    if (!jsonData || !jsonData.historical_data || !jsonData.predicted_data) {
+                        console.error("Invalid API response:", jsonData);
+                        return;
+                    }
 
-            // Determine the tick format based on the time range
-            const timeRange = x.domain()[1] - x.domain()[0];
-            let xTicks, xTickFormat;
-            if (timeRange > 8 * 24 * 60 * 60 * 1000) {
-                xTicks = d3.timeMonth.every(1);
-                xTickFormat = d3.timeFormat("%b"); // Format: Jan, Feb, etc.
-            } else {
-                xTicks = d3.timeDay.every(1);
-                xTickFormat = d3.timeFormat("%d"); // Format: day of month
-            }
+                    // Filter out zero values for avg_humidity and format the data
+                    const historicalData = jsonData.historical_data.filter(d => d.avg_humidity > 0).map(d => ({
+                        date: filterOption === "monthly-humid"
+                            ? new Date(d.year, d.month - 1)  // Use the year and month for monthly data
+                            : parseDate(d.date),  // Use parsed date for weekly data
+                        avg: d.avg_humidity
+                    }));
 
-            // Update the axes
-            xAxis.transition().duration(500)
-                .call(d3.axisBottom(x).ticks(xTicks).tickFormat(xTickFormat));
-            yAxis.transition().duration(500)
-                .call(d3.axisLeft(y))
-                .attr("transform", "translate(-10,0)");
+                    const predictedData = jsonData.predicted_data.filter(d => d.avg_humidity > 0).map(d => ({
+                        date: filterOption === "monthly-humid"
+                            ? new Date(d.year, d.month - 1)
+                            : parseDate(d.date),
+                        avg: d.avg_humidity
+                    }));
 
-            // Append a gradient for the area fill
-            const gradient = svg.append("defs")
-                .append("linearGradient")
-                .attr("id", "line-gradient-humid")
-                .attr("x1", "0%")
-                .attr("y1", "0%")
-                .attr("x2", "0%")
-                .attr("y2", "100%");
+                    updateChart(historicalData, predictedData, filterOption);  // Update the chart with the new data
+                })
+                .catch(error => console.error("Error fetching API:", error));  // Handle errors
+        }
 
-            gradient.append("stop")
-                .attr("offset", "0%")
-                .attr("stop-color", "#4785E8")
-                .attr("stop-opacity", 0.4);
-            gradient.append("stop")
-                .attr("offset", "25%")
-                .attr("stop-color", "#ffffff")
-                .attr("stop-opacity", 0);
+        // Update the chart with new data
+        function updateChart(historicalData, predictedData, filterOption) {
+            // Remove previous chart elements
+            svg.selectAll(".line-humid, .dot-humid, .area-humid").remove();
 
-            // Define the area generator for the area under the line
-            const area = d3.area()
-                .x(d => x(d.date))
-                .y0(y(0))
-                .y1(d => y(d.avg))
-                .defined(d => d.avg !== undefined && !isNaN(d.avg));
+            // Update the domains of the axes based on the data
+            x.domain(d3.extent([...historicalData, ...predictedData], d => d.date));
+            y.domain([0, d3.max([...historicalData, ...predictedData], d => d.avg)]);
 
-            // Append the area with the gradient fill
+            // Format ticks based on the filter option
+            const tickFormat = filterOption === "monthly-humid" ? d3.timeFormat("%b") : d3.timeFormat("%d/%m");
+            const tickValues = filterOption === "weekly-humid" ? historicalData.map(d => d.date) : null;
+
+            // Update the x and y axes
+            xAxis.transition().duration(800).call(d3.axisBottom(x).tickFormat(tickFormat).tickValues(tickValues));
+            yAxis.transition().duration(800).call(d3.axisLeft(y));
+
+            // Append the area chart for historical data
             svg.append("path")
-                .datum(data)
+                .datum(historicalData)
                 .attr("class", "area-humid")
-                .attr("d", area)
-                .style("fill", "url(#line-gradient-humid)");
+                .attr("fill", "rgba(71, 133, 232, 0.3)")
+                .attr("d", area);
 
-            // Check if data is valid for the line
-            if (data.every(d => !isNaN(d.avg))) {
-                svg.append("path")
-                    .datum(data)
-                    .attr("fill", "none")
-                    .attr("stroke", "#4785E8")
-                    .attr("stroke-width", 1.5)
-                    .attr("d", line);
-            } else {
-                console.log("Invalid data for line path-humid");
-            }
+            // Append the historical data line chart with animation
+            const historicalLine = svg.append("path")
+                .datum(historicalData)
+                .attr("class", "line-humid")
+                .attr("fill", "none")
+                .attr("stroke", "#4785E8")
+                .attr("stroke-width", 1.5)
+                .attr("d", line);
 
-            // Add data points (dots)
-            svg.selectAll(".dot")
-                .data(data)
-                .enter()
-                .append("circle")
+            // Append the predicted data line chart with animation
+            const predictedLine = svg.append("path")
+                .datum(predictedData)
+                .attr("class", "line-humid")
+                .attr("fill", "none")
+                .attr("stroke", "#88C47A")
+                .attr("stroke-width", 1.5)
+                .attr("d", line);
+
+            // Animation for the line to appear progressively (right to left)
+            const totalLengthHistorical = historicalLine.node().getTotalLength();
+            historicalLine
+                .attr("stroke-dasharray", totalLengthHistorical)
+                .attr("stroke-dashoffset", totalLengthHistorical)
+                .transition()
+                .duration(800)
+                .ease(d3.easeLinear)
+                .attr("stroke-dashoffset", 0);
+
+            const totalLengthPredicted = predictedLine.node().getTotalLength();
+            predictedLine
+                .attr("stroke-dasharray", totalLengthPredicted)
+                .attr("stroke-dashoffset", totalLengthPredicted)
+                .transition()
+                .duration(800)
+                .ease(d3.easeLinear)
+                .attr("stroke-dashoffset", 0);
+
+            // Create dots for each data point
+            const dots = svg.selectAll(".dot-humid")
+                .data([...historicalData, ...predictedData])
+                .enter().append("circle")
                 .attr("class", "dot-humid")
                 .attr("cx", d => x(d.date))
                 .attr("cy", d => y(d.avg))
-                .attr("r", 4)
-                .style("fill", "#4785E8")
-                .attr("opacity", d => isNaN(d.avg) ? 0 : 1)
-                .style("cursor", "pointer")
+                .attr("r", 3)
+                .style("fill", d => historicalData.includes(d) ? "#4785E8" : "#88C47A")
+                .style("opacity", 0)  // Start with opacity 0 (invisible)
                 .on("mouseover", (event, d) => {
+                    // Show tooltip on mouseover
+                    const label = historicalData.includes(d) ? "Historical CO₂" : "Predicted CO₂";
                     tooltip.style("display", "block")
                         .style("left", (event.pageX + 10) + "px")
                         .style("top", (event.pageY - 20) + "px")
-                        .html(`Date: ${d3.timeFormat("%Y-%m-%d")(d.date)}<br>Humidity: ${d.avg.toFixed(2)}%<br>Error: ±${d.error ? d.error.toFixed(2) : 0}`);
+                        .html(`<strong>${label}</strong><br>${d.avg.toFixed(2)} ppm`);
                 })
-                .on("mouseout", () => {
-                    tooltip.style("display", "none");
-                });
+                .on("mouseout", () => tooltip.style("display", "none"));  // Hide tooltip on mouseout
 
-            // Increase the hoverable area
-            svg.selectAll(".hover-area")
-                .data(data)
-                .enter()
-                .append("circle")
-                .attr("class", "hover-area-humid")
-                .attr("cx", d => x(d.date))
-                .attr("cy", d => y(d.avg))
-                .attr("r", 10)
-                .style("fill", "transparent")
-                .style("cursor", "pointer")
-                .on("mouseover", (event, d) => {
-                    tooltip.style("display", "block")
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 20) + "px")
-                        .html(`Date: ${d3.timeFormat("%Y-%m-%d")(d.date)}<br>Humidity: ${d.avg.toFixed(2)}%<br>Error: ±${d.error ? d.error.toFixed(2) : 0}`);
-                })
-                .on("mouseout", () => {
-                    tooltip.style("display", "none");
-                });
-
-            // Add error bars (if needed; currently error is 0)
-            svg.selectAll(".error-bar")
-                .data(data)
-                .enter()
-                .append("line")
-                .attr("class", "error-bar-humid")
-                .attr("x1", d => x(d.date))
-                .attr("x2", d => x(d.date))
-                .attr("y1", d => y(d.avg + d.error))
-                .attr("y2", d => y(d.avg - d.error))
-                .attr("stroke", "#4785E8")
-                .attr("stroke-width", 1)
-                .attr("opacity", d => isNaN(d.avg) ? 0 : 1);
+            // Animate the appearance of dots (sequentially)
+            dots.transition()
+                .duration(800)
+                .delay((d, i) => i * 100)  // Delay each dot's appearance
+                .style("opacity", 1);  // Fade in the dots
         }
+
+        // Initial data load (monthly humid data)
+        loadData("monthly-humid");
     }
 }

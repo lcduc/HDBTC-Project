@@ -258,7 +258,6 @@
         </div>
 
 
-        <!-- -------------------- HÙN HÙN -------------------- -->
         <!-- Historical data -->
         <div class="row">
           <!-- Temperature -->
@@ -272,7 +271,7 @@
                     currentThresholds.temperature.uncertainty }} &deg;C</p>
               </div>
               <div class="select-wrapper">
-                <select class="form-select form-select-sm" id="filter-option-temp" v-model="filterOptionTempTemp">
+                <select class="form-select form-select-sm" id="filter-option-temp" v-model="filterOptionTemp">
                   <option value="monthly-temp">Monthly</option>
                   <option value="weekly-temp">Weekly</option>
                 </select>
