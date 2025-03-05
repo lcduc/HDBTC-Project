@@ -3,6 +3,7 @@ import LogIn from "../components/LogIn.vue";
 import HomePage from "../components/HomePage.vue";
 import DashBoard from "../components/Dashboard.vue";
 import Thresholds from "../components/Thresholds.vue";
+import ManageDevices from "../components/ManageDevices.vue";
 
 const routes = [
     {
@@ -25,6 +26,12 @@ const routes = [
         path: "/thresholds",
         name: "thresholds",
         component: Thresholds,
+    },
+    {
+      path: "/managedevices",
+      name: "managedevices",
+      component: ManageDevices,
+
     }
 ]
 
