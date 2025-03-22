@@ -59,9 +59,13 @@
         <div class="row">
           <!-- Current data section -->
           <div class="col-lg-6 col-sm-12 mb-4 shadow-sm rounded">
-            <h3 class="mt-2" style="font-weight: bold">Current statistics</h3>
-            <router-link to="/managedevices" class="btn btn-primary" @click="fetchPredictedData"> Manage Devices
-                </router-link>
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="mt-2" style="font-weight: bold">Current statistics</h3>
+              <router-link to="/managedevices" class="btn btn-primary" >
+                Manage Devices
+              </router-link>
+            </div>
+
             <div class="row-col-12">
               <!-- Temperature Card -->
               <div class="ml-1 mr-1 mb-3 p-3 shadow-sm rounded" style="background-color: #F2E5F7">
@@ -79,7 +83,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #7E00AC; font-size: 200%; font-weight: bold;">
-                      {{ sensorData.temperature || 'N/A' }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
+                      {{ current_data.temperature || "N/A" }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
                     </p>
                   </div>
                 </div>
@@ -100,7 +104,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #4785E8; font-size: 200%; font-weight: bold;">
-                      {{ sensorData.humidity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">%</sup>
+                      {{ current_data.humidity || "N/A" }}<sup style="font-size: 50%; top: -1rem">%</sup>
                     </p>
                   </div>
                 </div>
@@ -123,7 +127,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #B2995A; font-size: 200%; font-weight: bold;">
-                      {{ sensorData.lightIntensity || 'N/A' }}<sup style="font-size: 50%; top: -1rem">
+                      {{ current_data.lightIntensity || "N/A" }}<sup style="font-size: 50%; top: -1rem">
                         μmol/m²s</sup>
                     </p>
                   </div>
@@ -146,7 +150,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #8A8A8A; font-size: 200%; font-weight: bold;">
-                      {{ sensorData.co2 || 'N/A' }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
+                      {{ current_data.co2 || "N/A" }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
                     </p>
                   </div>
                 </div>
@@ -497,20 +501,25 @@ export default {
 
     if (greenhouseID) {
       try {
-        // Fetch predicted data
-        const predictedResponse = await fetch(`https://slmc2nab67.execute-api.us-east-1.amazonaws.com/predicteddata?greenhouseID=1`);
+        const predictedResponse = await fetch(`http://14.225.205.88:8000/predicted_data?greenhouseID=${greenhouseID}`);
         const predictedData = await predictedResponse.json();
         this.predicted_data = predictedData;
 
-        // Fetch current data
-        const currentResponse = await fetch(`https://ck28id9727.execute-api.us-east-1.amazonaws.com/Allhistoricaldata?greenhouseID=1`);
-        const currentData = await currentResponse.json();
-        this.current_data = currentData || [];
+        const currentResponse = await fetch(
+        `http://14.225.205.88:8000/currentData?greenhouseID=${greenhouseID}`
+      );
+      const currentData = await currentResponse.json();
 
-        // Fetch threshold data
+      this.current_data = {
+        temperature: JSON.parse(currentData.temperature_humidity).Tair,
+        humidity: JSON.parse(currentData.temperature_humidity).Rhair,
+        lightIntensity: JSON.parse(currentData.light).Tot_PAR,
+        co2: JSON.parse(currentData.co2).co2air,
+      };
+
+      console.log("Parsed Data:", this.current_data);
         await this.fetchThresholdData(greenhouseID);
 
-        // Fetch alert data
         await this.fetchAlertData(greenhouseID);
       } catch (error) {
         this.msg = 'Failed to load data. Please try again later.';

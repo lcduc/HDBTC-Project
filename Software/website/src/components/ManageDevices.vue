@@ -31,10 +31,9 @@
         <h2>Greenhouse Device Control</h2>
         <form @submit.prevent="submitDevices">
           <div v-for="device in devices" :key="device.id" class="device-item">
-            <!-- Device Name (Left side) -->
+            
             <span class="device-name">{{ device.name }}</span>
 
-            <!-- ON/OFF Buttons (Right side, vertically aligned) -->
             <div class="button-group">
               <button :class="device.status ? 'on' : ''" @click.prevent="updateStatus(device, true)">
                 ON
@@ -54,7 +53,7 @@
       <div v-if="errorMessage" class="alert alert-danger" role="alert">
         {{ errorMessage }}
       </div>
-      <div v-if="successMessage" class="alert alert-success" role="alert">
+      <div v-if="successMessage" ref="successMessage" class="alert alert-success" role="alert">
         {{ successMessage }}
       </div>
     </div>
@@ -87,7 +86,7 @@ export default {
         this.devices = data.map((device) => ({
           id: device.device_id,
           name: device.device_name,
-          status: device.status === "1", // Convert to boolean (true for ON, false for OFF)
+          status: device.status === "1", 
         }));
       } catch (error) {
         console.error("Error fetching devices:", error);
@@ -105,11 +104,11 @@ export default {
       try {
         const payload = this.devices.map((device) => ({
           greenhouseID: 1,
-          deviceID: device.id,         // Use "deviceID" instead of "device_id"
-          device_status: device.status ? 1 : 0, // Use "device_status" as a number
+          deviceID: device.id,
+          device_status: device.status ? 1 : 0,
         }));
 
-        console.log("Sending payload:", JSON.stringify(payload)); // Debugging output
+        console.log("Sending payload:", JSON.stringify(payload));
 
         const response = await fetch("http://14.225.205.88:8000/update_device_status", {
           method: "POST",
@@ -124,6 +123,15 @@ export default {
         }
 
         this.successMessage = "Device statuses updated successfully!";
+        this.errorMessage = "";
+
+        this.$nextTick(() => {
+          const successAlert = this.$refs.successMessage;
+          if (successAlert) {
+            successAlert.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+
       } catch (error) {
         console.error("Error submitting devices:", error);
         this.errorMessage = "Failed to update device status. Please try again.";
