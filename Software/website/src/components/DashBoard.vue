@@ -463,10 +463,10 @@ export default {
       predicted_data: {},
       current_data: [],
       currentThresholds: {
-        temperature: { threshold: 0, uncertainty: 0 },
-        humidity: { threshold: 0, uncertainty: 0 },
-        lightIntensity: { threshold: 0, uncertainty: 0 },
-        co2: { threshold: 0, uncertainty: 0 },
+        temperature: { threshold: null, uncertainty: null },
+        humidity: { threshold: null, uncertainty: null },
+        lightIntensity: { threshold: null, uncertainty: null },
+        co2: { threshold: null, uncertainty: null }
       },
       alerts: [],
       isLoading: true,
@@ -488,7 +488,7 @@ export default {
   async mounted() {
     const user = localStorage.getItem('user');
     if (!user) {
-      this.$router.push('/'); // Redirect to login
+      this.$router.push('/');
       return;
     }
 
@@ -504,18 +504,6 @@ export default {
         const predictedResponse = await fetch(`http://14.225.205.88:8000/predicted_data?greenhouseID=${greenhouseID}`);
         const predictedData = await predictedResponse.json();
         this.predicted_data = predictedData;
-
-        const currentResponse = await fetch(
-        `http://14.225.205.88:8000/currentData?greenhouseID=${greenhouseID}`
-      );
-      const currentData = await currentResponse.json();
-
-      this.current_data = {
-        temperature: JSON.parse(currentData.temperature_humidity).Tair,
-        humidity: JSON.parse(currentData.temperature_humidity).Rhair,
-        lightIntensity: JSON.parse(currentData.light).Tot_PAR,
-        co2: JSON.parse(currentData.co2).co2air,
-      };
 
       console.log("Parsed Data:", this.current_data);
         await this.fetchThresholdData(greenhouseID);
@@ -589,8 +577,16 @@ export default {
     async fetchThresholdData() {
       try {
         this.isLoading = true;
+
+        // Retrieve greenhouseID from localStorage
+        const greenhouseID = localStorage.getItem('selectedGreenhouseID');
+        if (!greenhouseID) {
+          console.error("No greenhouse ID found in localStorage.");
+          return;
+        }
+
         const response = await fetch(
-          "https://bq79xbfalb.execute-api.us-east-1.amazonaws.com/GETthresholds?greenhouseID=1"
+          `http://14.225.205.88:8000/getthreshold?greenhouseID=${greenhouseID}`
         );
 
         if (!response.ok) {
@@ -642,12 +638,12 @@ export default {
         co2: { name: 'CO2 Level', color: '#8A8A8A' }
       };
 
-      return parameterMap[parameter] || { name: parameter, color: '#000000' };  // Default to black if no match
+      return parameterMap[parameter] || { name: parameter, color: '#000000' };
     },
 
     async fetchAlertData(greenhouseID) {
       try {
-        const response = await fetch(`https://g8r6riw729.execute-api.us-east-1.amazonaws.com/alertdetails?greenhouseID=1}`);
+        const response = await fetch(`http://14.225.205.88:8000/alert_details?greenhouseID=${greenhouseID}`);
         const data = await response.json();
 
         if (data && Array.isArray(data)) {
@@ -679,13 +675,20 @@ export default {
 
     // View all alerts without filtering
     viewAll() {
-      this.fetchAlertData(1); // Example greenhouseID, replace with dynamic value if needed
+      // Retrieve greenhouseID from localStorage
+      const greenhouseID = localStorage.getItem('selectedGreenhouseID');
+        if (!greenhouseID) {
+          console.error("No greenhouse ID found in localStorage.");
+          return;
+        }
+      this.fetchAlertData(greenhouseID);
     },
+
     async fetchPredictedData() {
       const greenhouseID = localStorage.getItem('selectedGreenhouseID');
       if (greenhouseID) {
         try {
-          const predictedResponse = await fetch(`https://slmc2nab67.execute-api.us-east-1.amazonaws.com/predicteddata?greenhouseID=${greenhouseID}`); //Change the link here
+          const predictedResponse = await fetch(`http://14.225.205.88:8000/predicted_data?greenhouseID=${greenhouseID}`);
           const predictedData = await predictedResponse.json();
           this.predicted_data = predictedData || [];
         } catch (error) {

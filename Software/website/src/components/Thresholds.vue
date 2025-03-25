@@ -170,8 +170,19 @@ export default {
     async fetchThresholdData() {
       try {
         this.isLoading = true;
+
+        // Retrieve greenhouseID from localStorage
+        const greenhouseID = localStorage.getItem('selectedGreenhouseID');
+
+        if (!greenhouseID) {
+          console.error('No greenhouse selected. Please select a greenhouse first.');
+          this.errorMessage = 'No greenhouse selected. Please select a greenhouse first.';
+          this.isLoading = false;
+          return;
+        }
+          
         const response = await fetch(
-          "https://bq79xbfalb.execute-api.us-east-1.amazonaws.com/GETthresholds?greenhouseID=1"
+          `http://14.225.205.88:8000/getthreshold?greenhouseID=${greenhouseID}`
         );
 
         if (!response.ok) {
@@ -217,72 +228,94 @@ export default {
 
     async updateThresholds() {
       try {
-        const thresholdsData = [
-          {
-            greenhouseID: 1,
-            parameter: "temperature",
-            threshold: this.updatedThresholds.temperature.threshold || this.currentThresholds.temperature.threshold,
-            uncertainty: this.updatedThresholds.temperature.uncertainty || this.currentThresholds.temperature.uncertainty
-          },
-          {
-            greenhouseID: 1,
-            parameter: "humidity",
-            threshold: this.updatedThresholds.humidity.threshold || this.currentThresholds.humidity.threshold,
-            uncertainty: this.updatedThresholds.humidity.uncertainty || this.currentThresholds.humidity.uncertainty
-          },
-          {
-            greenhouseID: 1,
-            parameter: "lightIntensity",
-            threshold: this.updatedThresholds.lightIntensity.threshold || this.currentThresholds.lightIntensity.threshold,
-            uncertainty: this.updatedThresholds.lightIntensity.uncertainty || this.currentThresholds.lightIntensity.uncertainty
-          },
-          {
-            greenhouseID: 1,
-            parameter: "co2",
-            threshold: this.updatedThresholds.co2.threshold || this.currentThresholds.co2.threshold,
-            uncertainty: this.updatedThresholds.co2.uncertainty || this.currentThresholds.co2.uncertainty
-          }
-        ];
+        this.errorMessage = "";
+        this.successMessage = "";
 
-        const response = await fetch(
-            "https://4oglatpybd.execute-api.us-east-1.amazonaws.com/POSTthresholds",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(thresholdsData),
-            }
-        );
+        const greenhouseID = localStorage.getItem("selectedGreenhouseID");
 
-        const rawResponse = await response.text();
-        console.log("Response:", rawResponse);
-
-        if (!response.ok) {
-          const errorData = JSON.parse(rawResponse);
-          throw new Error(`Error: ${errorData.message || 'No message provided'}`);
+        if (!greenhouseID) {
+          this.errorMessage = "No greenhouse selected. Please select a greenhouse first.";
+          return;
         }
 
-        Object.keys(this.updatedThresholds).forEach(key => {
-          if (this.updatedThresholds[key].threshold != null) {
-            this.currentThresholds[key].threshold = this.updatedThresholds[key].threshold;
+        let hasValidInput = false;
+        let invalidFields = [];
+
+        // Create the request payload
+        const thresholdsData = [];
+
+        for (const key in this.updatedThresholds) {
+          const threshold = this.updatedThresholds[key].threshold;
+          const uncertainty = this.updatedThresholds[key].uncertainty;
+
+          // Check if at least one field has been filled
+          if (threshold !== null || uncertainty !== null) {
+            hasValidInput = true;
+
+            // Validate input values
+            if (
+              (threshold !== null && isNaN(threshold)) ||
+              (uncertainty !== null && isNaN(uncertainty)) ||
+              (threshold !== null && threshold < 0) ||
+              (uncertainty !== null && uncertainty < 0)
+            ) {
+              invalidFields.push(key);
+            }
+
+            // Push valid data to the request payload
+            thresholdsData.push({
+              greenhouseID: greenhouseID,
+              parameter: key,
+              threshold: threshold !== null ? threshold : this.currentThresholds[key].threshold,
+              uncertainty: uncertainty !== null ? uncertainty : this.currentThresholds[key].uncertainty
+            });
           }
-          if (this.updatedThresholds[key].uncertainty != null) {
-            this.currentThresholds[key].uncertainty = this.updatedThresholds[key].uncertainty;
-          }
+        }
+
+        // If no valid input, show error
+        if (!hasValidInput) {
+          this.errorMessage = "Please enter at least one new threshold value before submitting.";
+          return;
+        }
+
+        // Send API request
+        const response = await fetch("http://14.225.205.88:8000/POSTthresholds", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(thresholdsData),
         });
 
-        this.successMessage = "All thresholds updated successfully!";
+        const responseText = await response.text();
+        console.log("API Response:", responseText);
 
+        if (!response.ok) {
+          throw new Error(`Error: ${responseText}`);
+        }
+
+        // Update the current thresholds with new values
+        thresholdsData.forEach((item) => {
+          this.currentThresholds[item.parameter].threshold = item.threshold;
+          this.currentThresholds[item.parameter].uncertainty = item.uncertainty;
+        });
+
+        this.successMessage = "Thresholds updated successfully!";
+
+        // Reset input fields
         this.updatedThresholds = {
           temperature: { threshold: null, uncertainty: null },
           humidity: { threshold: null, uncertainty: null },
           lightIntensity: { threshold: null, uncertainty: null },
           co2: { threshold: null, uncertainty: null },
         };
+
+        // Refresh the threshold data from the server
+        await this.fetchThresholdData();
+
       } catch (error) {
         console.error("Error updating thresholds:", error);
-        this.errorMessage = (`Error: ${error.message}`);
+        this.errorMessage = `Error: ${error.message}`;
       }
     },
   },
