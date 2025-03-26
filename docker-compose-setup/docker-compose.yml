@@ -1,0 +1,102 @@
+version: '3.9'
+
+services:
+  mysql-container:
+    image: mysql:8.0.39
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Binhlol707
+      MYSQL_DATABASE: Greenhouse
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: Binhlol707
+    ports:
+      - "3306:3306"
+    volumes:
+      - /root/Binh/mysql:/var/lib/mysql
+    networks:
+      - greenhouse-net
+
+  mqtt-broker:
+    image: eclipse-mosquitto
+    container_name: mqtt-broker
+    restart: always
+    ports:
+      - "1884:1883"   # Host port 1884 ? Container port 1883
+      - "9002:9001"   # WebSocket
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    networks:
+      - greenhouse-net
+
+  mqtt-listener:
+    build:
+      context: ./mess_listener
+    container_name: mqtt-listener
+    depends_on:
+      - mysql-container
+      - mqtt-broker
+    restart: always
+    environment:
+      DB_HOST: mysql-container
+      DB_PORT: 3306
+      DB_USER: admin
+      DB_PASSWORD: Binhlol707
+      DB_NAME: Greenhouse
+      MQTT_BROKER: mqtt-broker
+      MQTT_PORT: 1883
+      MQTT_TOPIC: greenhouse/+/sensor
+    networks:
+      - greenhouse-net
+
+  fastapi-server:
+    build:
+      context: ./fastapi
+    container_name: fastapi-server
+    depends_on:
+      - mysql-container
+    restart: always
+    environment:
+      DB_HOST: mysql-container
+      DB_PORT: 3306
+      DB_USER: admin
+      DB_PASSWORD: Binhlol707
+      DB_NAME: Greenhouse
+    ports:
+      - "8000:8000"
+    networks:
+      - greenhouse-net
+
+  deploy-containers:
+    container_name: deploy-containers
+    build:
+      context: ./deploy_containers
+    depends_on:
+      - mysql-container
+    environment:
+      DB_HOST: mysql-container
+      DB_PORT: 3306
+      DB_USER: admin
+      DB_PASSWORD: Binhlol707
+      DB_NAME: Greenhouse
+      DOCKER_IMAGE: greenhouse-predictor:latest
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - greenhouse-net
+
+  projectb-container:
+    image: lickmya707/projectb:latest
+    container_name: projectb-container
+    restart: always
+    ports:
+      - "8080:80"
+    networks:
+      - greenhouse-net
+
+networks:
+  greenhouse-net:
+    driver: bridge
