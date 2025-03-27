@@ -83,7 +83,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #7E00AC; font-size: 200%; font-weight: bold;">
-                      {{ current_data.temperature || "N/A" }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
+                      {{ sensorData.temperature || "N/A" }}<sup style="font-size: 50%; top: -1rem">&deg;C</sup>
                     </p>
                   </div>
                 </div>
@@ -104,7 +104,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #4785E8; font-size: 200%; font-weight: bold;">
-                      {{ current_data.humidity || "N/A" }}<sup style="font-size: 50%; top: -1rem">%</sup>
+                      {{ sensorData.humidity || "N/A" }}<sup style="font-size: 50%; top: -1rem">%</sup>
                     </p>
                   </div>
                 </div>
@@ -127,7 +127,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #B2995A; font-size: 200%; font-weight: bold;">
-                      {{ current_data.lightIntensity || "N/A" }}<sup style="font-size: 50%; top: -1rem">
+                      {{ sensorData.lightIntensity || "N/A" }}<sup style="font-size: 50%; top: -1rem">
                         μmol/m²s</sup>
                     </p>
                   </div>
@@ -150,7 +150,7 @@
                   </div>
                   <div>
                     <p class="mb-0" style="color: #8A8A8A; font-size: 200%; font-weight: bold;">
-                      {{ current_data.co2 || "N/A" }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
+                      {{ sensorData.co2 || "N/A" }}<sup style="font-size: 50%; top: -1rem">ppm</sup>
                     </p>
                   </div>
                 </div>
@@ -461,7 +461,6 @@ export default {
       from: '',
       to: '',
       predicted_data: {},
-      current_data: [],
       currentThresholds: {
         temperature: { threshold: null, uncertainty: null },
         humidity: { threshold: null, uncertainty: null },
@@ -551,14 +550,23 @@ export default {
     },
 
     connectMQTT() {
+
+      const greenhouseID = localStorage.getItem('selectedGreenhouseID');
+        if (!greenhouseID) {
+          console.error("No greenhouse ID found in localStorage.");
+          return;
+        }
+
       this.client = mqtt.connect('ws://sol1.swin.edu.vn:8018');
 
       this.client.on('connect', () => {
         console.log('Connected to MQTT broker');
-        this.client.subscribe('greenhouse/1/sensor');
+        this.client.subscribe(`greenhouse/${greenhouseID}/sensor`);
       });
       
       this.client.on('message', (topic, message) => {
+        console.log(`Received MQTT message on topic ${topic}:`, message.toString());
+
         try {
           const parsedData = JSON.parse(message.toString());
           this.sensorData = {
@@ -569,6 +577,7 @@ export default {
           };
         } catch (error) {
           console.error('Error parsing MQTT message:', error);
+          console.error('Raw MQTT message:', message.toString());
         }
       });
     },
