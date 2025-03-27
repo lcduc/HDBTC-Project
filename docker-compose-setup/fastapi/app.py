@@ -23,7 +23,7 @@ app.add_middleware(
 # MYSQL_PASSWORD = "Binhlol707"
 # MYSQL_DATABASE = "Greenhouse"
 
-MYSQL_HOST = os.getenv("DB_HOST", "localhost")
+MYSQL_HOST = os.getenv("DB_HOST", "mysql-container")
 MYSQL_PORT = int(os.getenv("DB_PORT", 3306))
 MYSQL_USER = os.getenv("DB_USER", "admin")
 MYSQL_PASSWORD = os.getenv("DB_PASSWORD", "Binhlol707")

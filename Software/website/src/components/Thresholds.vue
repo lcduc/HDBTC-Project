@@ -182,7 +182,7 @@ export default {
         }
           
         const response = await fetch(
-          `http://14.225.205.88:8000/getthreshold?greenhouseID=${greenhouseID}`
+          `http://sol1.swin.edu.vn:8016/getthreshold?greenhouseID=${greenhouseID}`
         );
 
         if (!response.ok) {
@@ -279,7 +279,7 @@ export default {
         }
 
         // Send API request
-        const response = await fetch("http://14.225.205.88:8000/POSTthresholds", {
+        const response = await fetch("http://sol1.swin.edu.vn:8016/POSTthresholds", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -8,7 +8,7 @@ import pymysql
 from datetime import datetime
 
 # API Base URL
-API_URL = os.getenv("API_URL", "http://14.225.205.88:8000/currentData?greenhouseID=")
+API_URL = os.getenv("API_URL", "http://fastapi-server:8000/currentData?greenhouseID=")
 
 # Database connection details
 DB_HOST = os.getenv("DB_HOST", "mysql-container")

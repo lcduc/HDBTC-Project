@@ -76,7 +76,7 @@ export default {
 
     if (accountID) {
       try {
-        const response = await fetch(`http://14.225.205.88:8000/greenhouse_details?accountID=${accountID}`);
+        const response = await fetch(`http://sol1.swin.edu.vn:8016/greenhouse_details?accountID=${accountID}`);
         const data = await response.json();
         this.greenhouses = data;
       } catch (error) {

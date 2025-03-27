@@ -91,7 +91,7 @@ export default {
     async login() {
       if (this.validateForm()) {
         try {
-          const response = await fetch('http://14.225.205.88:8000/login', {
+          const response = await fetch('http://sol1.swin.edu.vn:8016/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

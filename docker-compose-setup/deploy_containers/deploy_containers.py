@@ -90,7 +90,7 @@ def deploy_containers(total_greenhouses, greenhouse_ids, config):
             cmd = [
                 "docker", "run", "-d",
                 "--name", container_name,
-                "--network", "docker-compose-setup_greenhouse-net",  # Add this line
+                "--network", "docker-compose-setup_greenhouse-net",  
                 "-e", f"GREENHOUSE_IDS={greenhouse_ids_str}",
                 "-e", f"DB_HOST={config['DB_HOST']}",
                 "-e", f"DB_PORT={config['DB_PORT']}",

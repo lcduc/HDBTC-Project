@@ -550,3 +550,1407 @@
 1742886936: mosquitto version 2.0.21 running
 1742886936: New connection from 172.18.0.7:46783 on port 1883.
 1742886936: New client connected from 172.18.0.7:46783 as auto-E9981FA1-67F7-477E-E6AE-E2932CA2CDBD (p2, c1, k60).
+1743005097: mosquitto version 2.0.21 starting
+1743005097: Config loaded from /mosquitto/config/mosquitto.conf.
+1743005097: Opening ipv4 listen socket on port 1883.
+1743005097: Opening ipv6 listen socket on port 1883.
+1743005097: Opening websockets listen socket on port 9001.
+1743005097: mosquitto version 2.0.21 running
+1743005097: New connection from 172.31.0.7:52003 on port 1883.
+1743005097: New client connected from 172.31.0.7:52003 as auto-47ADF3A6-4A41-9280-5AA8-6B47F5AE962B (p2, c1, k60).
+1743005502: Client auto-47ADF3A6-4A41-9280-5AA8-6B47F5AE962B closed its connection.
+1743005502: mosquitto version 2.0.21 terminating
+1743005502: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743005579: mosquitto version 2.0.21 starting
+1743005579: Config loaded from /mosquitto/config/mosquitto.conf.
+1743005579: Opening ipv4 listen socket on port 1883.
+1743005579: Opening ipv6 listen socket on port 1883.
+1743005579: Opening websockets listen socket on port 9001.
+1743005579: mosquitto version 2.0.21 running
+1743005580: New connection from 172.31.0.6:47959 on port 1883.
+1743005580: New client connected from 172.31.0.6:47959 as auto-9242A266-7DFB-7429-1E82-D7C962BF5709 (p2, c1, k60).
+1743006569: Client auto-9242A266-7DFB-7429-1E82-D7C962BF5709 closed its connection.
+1743006570: mosquitto version 2.0.21 terminating
+1743006570: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743006598: mosquitto version 2.0.21 starting
+1743006598: Config loaded from /mosquitto/config/mosquitto.conf.
+1743006598: Opening ipv4 listen socket on port 1883.
+1743006598: Opening ipv6 listen socket on port 1883.
+1743006598: Opening websockets listen socket on port 9001.
+1743006598: mosquitto version 2.0.21 running
+1743006599: New connection from 172.31.0.5:46091 on port 1883.
+1743006599: New client connected from 172.31.0.5:46091 as auto-8B86C546-BC32-CBF3-5D91-D838705BD3D9 (p2, c1, k60).
+1743006885: Client auto-8B86C546-BC32-CBF3-5D91-D838705BD3D9 closed its connection.
+1743006885: mosquitto version 2.0.21 terminating
+1743006885: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743006927: mosquitto version 2.0.21 starting
+1743006927: Config loaded from /mosquitto/config/mosquitto.conf.
+1743006927: Opening ipv4 listen socket on port 1883.
+1743006927: Opening ipv6 listen socket on port 1883.
+1743006927: Opening websockets listen socket on port 9001.
+1743006927: mosquitto version 2.0.21 running
+1743006927: New connection from 172.31.0.7:40803 on port 1883.
+1743006927: New client connected from 172.31.0.7:40803 as auto-D0D40EDB-8184-06D7-E775-E969C500152D (p2, c1, k60).
+1743008429: New connection from 172.31.0.1:50754 on port 1883.
+1743008429: New client connected from 172.31.0.1:50754 as auto-E35F5730-B4ED-5C80-34D8-300812DB12CF (p2, c1, k60).
+1743008429: Client auto-E35F5730-B4ED-5C80-34D8-300812DB12CF disconnected.
+1743008477: New connection from 172.31.0.1:44344 on port 1883.
+1743008477: New client connected from 172.31.0.1:44344 as auto-9F0F8194-91AE-2DE7-E9F5-3469488790D6 (p2, c1, k60).
+1743008477: Client auto-9F0F8194-91AE-2DE7-E9F5-3469488790D6 disconnected.
+1743008542: New connection from 172.31.0.1:35022 on port 1883.
+1743008542: New client connected from 172.31.0.1:35022 as auto-2FFA3BD8-1497-6754-E8DE-4C3E89305D09 (p2, c1, k60).
+1743008542: Client auto-2FFA3BD8-1497-6754-E8DE-4C3E89305D09 disconnected.
+1743008728: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743008922: New connection from 172.31.0.1:45956 on port 1883.
+1743008922: New client connected from 172.31.0.1:45956 as auto-728636C3-89E4-3151-13E8-867BD63E846F (p2, c1, k60).
+1743008922: Client auto-728636C3-89E4-3151-13E8-867BD63E846F disconnected.
+1743008936: New connection from 172.31.0.1:54730 on port 1883.
+1743008936: New client connected from 172.31.0.1:54730 as auto-9DADD486-70B4-3B9D-AC38-F255D89B63EB (p2, c1, k60).
+1743008936: Client auto-9DADD486-70B4-3B9D-AC38-F255D89B63EB disconnected.
+1743010529: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743012330: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743014131: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743015932: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743017733: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743019534: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743021335: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743023136: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743024937: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743026738: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743028539: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743030340: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743032141: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743033942: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743035743: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743037544: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743039345: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743041146: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743042947: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743044748: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743044982: Client auto-D0D40EDB-8184-06D7-E775-E969C500152D closed its connection.
+1743044983: mosquitto version 2.0.21 terminating
+1743044983: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743045087: mosquitto version 2.0.21 starting
+1743045087: Config loaded from /mosquitto/config/mosquitto.conf.
+1743045087: Opening ipv4 listen socket on port 1883.
+1743045087: Opening ipv6 listen socket on port 1883.
+1743045087: Opening websockets listen socket on port 9001.
+1743045087: mosquitto version 2.0.21 running
+1743045088: New connection from 172.31.0.7:43511 on port 1883.
+1743045088: New client connected from 172.31.0.7:43511 as auto-0EE3EAB6-3FA6-E02A-CAA6-C4E7C3962699 (p2, c1, k60).
+1743045648: Client auto-0EE3EAB6-3FA6-E02A-CAA6-C4E7C3962699 closed its connection.
+1743045648: mosquitto version 2.0.21 terminating
+1743045648: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743049899: mosquitto version 2.0.21 starting
+1743049899: Config loaded from /mosquitto/config/mosquitto.conf.
+1743049899: Opening ipv4 listen socket on port 1883.
+1743049899: Opening ipv6 listen socket on port 1883.
+1743049899: Opening websockets listen socket on port 9001.
+1743049899: mosquitto version 2.0.21 running
+1743049900: New connection from 172.31.0.7:50751 on port 1883.
+1743049900: New client connected from 172.31.0.7:50751 as auto-EF2F41D9-0BC3-7BD9-5E8C-44C7D2262F43 (p2, c1, k60).
+1743051700: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743052733: Client auto-EF2F41D9-0BC3-7BD9-5E8C-44C7D2262F43 closed its connection.
+1743052733: mosquitto version 2.0.21 terminating
+1743052733: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743052961: mosquitto version 2.0.21 starting
+1743052961: Config loaded from /mosquitto/config/mosquitto.conf.
+1743052961: Opening ipv4 listen socket on port 1883.
+1743052961: Opening ipv6 listen socket on port 1883.
+1743052961: Opening websockets listen socket on port 9001.
+1743052961: mosquitto version 2.0.21 running
+1743052961: New connection from 172.31.0.7:51187 on port 1883.
+1743052961: New client connected from 172.31.0.7:51187 as auto-E5F3DAD1-C5AF-8ECC-F472-9CE089020DB2 (p2, c1, k60).
+1743053483: Client auto-E5F3DAD1-C5AF-8ECC-F472-9CE089020DB2 closed its connection.
+1743053483: mosquitto version 2.0.21 terminating
+1743053483: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743053654: mosquitto version 2.0.21 starting
+1743053654: Config loaded from /mosquitto/config/mosquitto.conf.
+1743053654: Opening ipv4 listen socket on port 1883.
+1743053654: Opening ipv6 listen socket on port 1883.
+1743053654: Opening websockets listen socket on port 9001.
+1743053654: mosquitto version 2.0.21 running
+1743053654: New connection from 172.31.0.7:45787 on port 1883.
+1743053654: New client connected from 172.31.0.7:45787 as auto-81D7E418-B22A-34B0-AC09-1EA39B75C93D (p2, c1, k60).
+1743054347: New connection from 172.31.0.1:49534 on port 1883.
+1743054347: New client connected from 172.31.0.1:49534 as auto-30C63BB1-0F3D-6FA8-664D-408DDFEEE788 (p2, c1, k60).
+1743054347: Client auto-30C63BB1-0F3D-6FA8-664D-408DDFEEE788 disconnected.
+1743055117: New connection from 172.31.0.2:46982 on port 1883.
+1743055117: New client connected from 172.31.0.2:46982 as auto-8DAE508F-8994-6F73-1C66-F423166B261A (p2, c1, k60).
+1743055117: Client auto-8DAE508F-8994-6F73-1C66-F423166B261A disconnected.
+1743055206: New connection from 172.31.0.2:36866 on port 1883.
+1743055206: New client connected from 172.31.0.2:36866 as auto-E21A5D68-74A5-9C89-6202-FAD3AC20AD21 (p2, c1, k60).
+1743055206: Client auto-E21A5D68-74A5-9C89-6202-FAD3AC20AD21 disconnected.
+1743055455: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743057164: Client auto-81D7E418-B22A-34B0-AC09-1EA39B75C93D closed its connection.
+1743057164: mosquitto version 2.0.21 terminating
+1743057164: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743070752: mosquitto version 2.0.21 starting
+1743070752: Config loaded from /mosquitto/config/mosquitto.conf.
+1743070752: Opening ipv4 listen socket on port 1883.
+1743070752: Opening ipv6 listen socket on port 1883.
+1743070752: Opening websockets listen socket on port 9001.
+1743070752: mosquitto version 2.0.21 running
+1743070752: New connection from 172.31.0.7:41513 on port 1883.
+1743070752: New client connected from 172.31.0.7:41513 as auto-45ACA37C-3ECB-AA01-17E8-4D25131B1E02 (p2, c1, k60).
+1743070752: No will message specified.
+1743070752: Sending CONNACK to auto-45ACA37C-3ECB-AA01-17E8-4D25131B1E02 (0, 0)
+1743070752: Received SUBSCRIBE from auto-45ACA37C-3ECB-AA01-17E8-4D25131B1E02
+1743070752: 	greenhouse/+/sensor (QoS 0)
+1743070752: auto-45ACA37C-3ECB-AA01-17E8-4D25131B1E02 0 greenhouse/+/sensor
+1743070752: Sending SUBACK to auto-45ACA37C-3ECB-AA01-17E8-4D25131B1E02
+1743070753: New client connected from ::ffff:58.187.66.92:7550 as mqttjs_c5eafc70 (p2, c1, k60).
+1743070753: No will message specified.
+1743070753: Sending CONNACK to mqttjs_c5eafc70 (0, 0)
+1743070753: Received SUBSCRIBE from mqttjs_c5eafc70
+1743070753: 	greenhouse/1/sensor (QoS 0)
+1743070753: mqttjs_c5eafc70 0 greenhouse/1/sensor
+1743070753: Sending SUBACK to mqttjs_c5eafc70
+1743070784: Client auto-45ACA37C-3ECB-AA01-17E8-4D25131B1E02 closed its connection.
+1743070784: mosquitto version 2.0.21 terminating
+1743070784: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743070784: Client mqttjs_c5eafc70 closed its connection.
+1743070822: mosquitto version 2.0.21 starting
+1743070822: Config loaded from /mosquitto/config/mosquitto.conf.
+1743070822: Opening ipv4 listen socket on port 1883.
+1743070822: Opening ipv6 listen socket on port 1883.
+1743070822: Opening websockets listen socket on port 9001.
+1743070822: mosquitto version 2.0.21 running
+1743070822: New connection from 172.31.0.5:38367 on port 1883.
+1743070822: New client connected from 172.31.0.5:38367 as auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7 (p2, c1, k60).
+1743070822: No will message specified.
+1743070822: Sending CONNACK to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7 (0, 0)
+1743070822: Received SUBSCRIBE from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743070822: 	greenhouse/+/sensor (QoS 0)
+1743070822: auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7 0 greenhouse/+/sensor
+1743070822: Sending SUBACK to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743070823: New client connected from ::ffff:58.187.66.92:31623 as mqttjs_c5eafc70 (p2, c1, k60).
+1743070823: No will message specified.
+1743070823: Sending CONNACK to mqttjs_c5eafc70 (0, 0)
+1743070823: Received SUBSCRIBE from mqttjs_c5eafc70
+1743070823: 	greenhouse/1/sensor (QoS 0)
+1743070823: mqttjs_c5eafc70 0 greenhouse/1/sensor
+1743070823: Sending SUBACK to mqttjs_c5eafc70
+1743070839: Client mqttjs_c5eafc70 closed its connection.
+1743070839: New client connected from ::ffff:58.187.66.92:16938 as mqttjs_fb26d3e8 (p2, c1, k60).
+1743070839: No will message specified.
+1743070839: Sending CONNACK to mqttjs_fb26d3e8 (0, 0)
+1743070839: Received SUBSCRIBE from mqttjs_fb26d3e8
+1743070839: 	greenhouse/1/sensor (QoS 0)
+1743070839: mqttjs_fb26d3e8 0 greenhouse/1/sensor
+1743070839: Sending SUBACK to mqttjs_fb26d3e8
+1743070846: Client mqttjs_fb26d3e8 closed its connection.
+1743070847: New client connected from ::ffff:58.187.66.92:64999 as mqttjs_ea097c9a (p2, c1, k60).
+1743070847: No will message specified.
+1743070847: Sending CONNACK to mqttjs_ea097c9a (0, 0)
+1743070847: Received SUBSCRIBE from mqttjs_ea097c9a
+1743070847: 	greenhouse/1/sensor (QoS 0)
+1743070847: mqttjs_ea097c9a 0 greenhouse/1/sensor
+1743070847: Sending SUBACK to mqttjs_ea097c9a
+1743070851: Client mqttjs_ea097c9a closed its connection.
+1743070852: New client connected from ::ffff:58.187.66.92:13700 as mqttjs_b016cb1b (p2, c1, k60).
+1743070852: No will message specified.
+1743070852: Sending CONNACK to mqttjs_b016cb1b (0, 0)
+1743070852: Received SUBSCRIBE from mqttjs_b016cb1b
+1743070852: 	greenhouse/1/sensor (QoS 0)
+1743070852: mqttjs_b016cb1b 0 greenhouse/1/sensor
+1743070852: Sending SUBACK to mqttjs_b016cb1b
+1743070870: New connection from 172.31.0.1:51496 on port 1883.
+1743070870: New client connected from 172.31.0.1:51496 as auto-9AA3675C-E0F7-D54F-4E77-DFB875BD1579 (p2, c1, k60).
+1743070870: No will message specified.
+1743070870: Sending CONNACK to auto-9AA3675C-E0F7-D54F-4E77-DFB875BD1579 (0, 0)
+1743070870: Received PUBLISH from auto-9AA3675C-E0F7-D54F-4E77-DFB875BD1579 (d0, q0, r0, m0, 'greenhouse/1/sensor', ... (115 bytes))
+1743070870: Sending PUBLISH to mqttjs_b016cb1b (d0, q0, r0, m0, 'greenhouse/1/sensor', ... (115 bytes))
+1743070870: Sending PUBLISH to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7 (d0, q0, r0, m0, 'greenhouse/1/sensor', ... (115 bytes))
+1743070870: Received DISCONNECT from auto-9AA3675C-E0F7-D54F-4E77-DFB875BD1579
+1743070870: Client auto-9AA3675C-E0F7-D54F-4E77-DFB875BD1579 disconnected.
+1743070883: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743070883: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743070911: Client mqttjs_b016cb1b closed its connection.
+1743070911: New client connected from ::ffff:58.187.66.92:9832 as mqttjs_f4007936 (p2, c1, k60).
+1743070911: No will message specified.
+1743070911: Sending CONNACK to mqttjs_f4007936 (0, 0)
+1743070911: Received SUBSCRIBE from mqttjs_f4007936
+1743070911: 	greenhouse/1/sensor (QoS 0)
+1743070911: mqttjs_f4007936 0 greenhouse/1/sensor
+1743070911: Sending SUBACK to mqttjs_f4007936
+1743070927: New client connected from ::ffff:58.187.66.92:9193 as mqttjs_5bd5e6be (p2, c1, k60).
+1743070927: No will message specified.
+1743070927: Sending CONNACK to mqttjs_5bd5e6be (0, 0)
+1743070927: Received SUBSCRIBE from mqttjs_5bd5e6be
+1743070927: 	greenhouse/1/sensor (QoS 0)
+1743070927: mqttjs_5bd5e6be 0 greenhouse/1/sensor
+1743070927: Sending SUBACK to mqttjs_5bd5e6be
+1743070943: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743070943: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743070946: New connection from 172.31.0.1:43812 on port 1883.
+1743070946: New client connected from 172.31.0.1:43812 as auto-4ABDB766-814E-6DBD-6421-65D81A9E26C1 (p2, c1, k60).
+1743070946: No will message specified.
+1743070946: Sending CONNACK to auto-4ABDB766-814E-6DBD-6421-65D81A9E26C1 (0, 0)
+1743070946: Received PUBLISH from auto-4ABDB766-814E-6DBD-6421-65D81A9E26C1 (d0, q0, r0, m0, 'greenhouse/1/sensor', ... (115 bytes))
+1743070946: Sending PUBLISH to mqttjs_f4007936 (d0, q0, r0, m0, 'greenhouse/1/sensor', ... (115 bytes))
+1743070946: Sending PUBLISH to mqttjs_5bd5e6be (d0, q0, r0, m0, 'greenhouse/1/sensor', ... (115 bytes))
+1743070946: Sending PUBLISH to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7 (d0, q0, r0, m0, 'greenhouse/1/sensor', ... (115 bytes))
+1743070946: Received DISCONNECT from auto-4ABDB766-814E-6DBD-6421-65D81A9E26C1
+1743070946: Client auto-4ABDB766-814E-6DBD-6421-65D81A9E26C1 disconnected.
+1743070971: Received PINGREQ from mqttjs_f4007936
+1743070971: Sending PINGRESP to mqttjs_f4007936
+1743070987: Received PINGREQ from mqttjs_5bd5e6be
+1743070987: Sending PINGRESP to mqttjs_5bd5e6be
+1743071004: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071004: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071031: Received PINGREQ from mqttjs_f4007936
+1743071031: Sending PINGRESP to mqttjs_f4007936
+1743071047: Received PINGREQ from mqttjs_5bd5e6be
+1743071047: Sending PINGRESP to mqttjs_5bd5e6be
+1743071064: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071064: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071091: Received PINGREQ from mqttjs_f4007936
+1743071091: Sending PINGRESP to mqttjs_f4007936
+1743071107: Received PINGREQ from mqttjs_5bd5e6be
+1743071107: Sending PINGRESP to mqttjs_5bd5e6be
+1743071124: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071124: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071151: Received PINGREQ from mqttjs_f4007936
+1743071151: Sending PINGRESP to mqttjs_f4007936
+1743071167: Received PINGREQ from mqttjs_5bd5e6be
+1743071167: Sending PINGRESP to mqttjs_5bd5e6be
+1743071184: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071184: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071211: Received PINGREQ from mqttjs_f4007936
+1743071211: Sending PINGRESP to mqttjs_f4007936
+1743071227: Received PINGREQ from mqttjs_5bd5e6be
+1743071227: Sending PINGRESP to mqttjs_5bd5e6be
+1743071244: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071244: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071271: Received PINGREQ from mqttjs_f4007936
+1743071271: Sending PINGRESP to mqttjs_f4007936
+1743071287: Received PINGREQ from mqttjs_5bd5e6be
+1743071287: Sending PINGRESP to mqttjs_5bd5e6be
+1743071304: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071304: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071331: Received PINGREQ from mqttjs_f4007936
+1743071331: Sending PINGRESP to mqttjs_f4007936
+1743071347: Received PINGREQ from mqttjs_5bd5e6be
+1743071347: Sending PINGRESP to mqttjs_5bd5e6be
+1743071365: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071365: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071391: Received PINGREQ from mqttjs_f4007936
+1743071391: Sending PINGRESP to mqttjs_f4007936
+1743071407: Received PINGREQ from mqttjs_5bd5e6be
+1743071407: Sending PINGRESP to mqttjs_5bd5e6be
+1743071425: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071425: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071451: Received PINGREQ from mqttjs_f4007936
+1743071451: Sending PINGRESP to mqttjs_f4007936
+1743071467: Received PINGREQ from mqttjs_5bd5e6be
+1743071467: Sending PINGRESP to mqttjs_5bd5e6be
+1743071485: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071485: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071511: Received PINGREQ from mqttjs_f4007936
+1743071511: Sending PINGRESP to mqttjs_f4007936
+1743071527: Received PINGREQ from mqttjs_5bd5e6be
+1743071527: Sending PINGRESP to mqttjs_5bd5e6be
+1743071545: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071545: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071571: Received PINGREQ from mqttjs_f4007936
+1743071571: Sending PINGRESP to mqttjs_f4007936
+1743071587: Received PINGREQ from mqttjs_5bd5e6be
+1743071587: Sending PINGRESP to mqttjs_5bd5e6be
+1743071605: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071605: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071631: Received PINGREQ from mqttjs_f4007936
+1743071631: Sending PINGRESP to mqttjs_f4007936
+1743071647: Received PINGREQ from mqttjs_5bd5e6be
+1743071647: Sending PINGRESP to mqttjs_5bd5e6be
+1743071665: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071665: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071691: Received PINGREQ from mqttjs_f4007936
+1743071691: Sending PINGRESP to mqttjs_f4007936
+1743071707: Received PINGREQ from mqttjs_5bd5e6be
+1743071707: Sending PINGRESP to mqttjs_5bd5e6be
+1743071725: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071725: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071752: Received PINGREQ from mqttjs_f4007936
+1743071752: Sending PINGRESP to mqttjs_f4007936
+1743071768: Received PINGREQ from mqttjs_5bd5e6be
+1743071768: Sending PINGRESP to mqttjs_5bd5e6be
+1743071785: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071785: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071812: Received PINGREQ from mqttjs_f4007936
+1743071812: Sending PINGRESP to mqttjs_f4007936
+1743071828: Received PINGREQ from mqttjs_5bd5e6be
+1743071828: Sending PINGRESP to mqttjs_5bd5e6be
+1743071845: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071845: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071872: Received PINGREQ from mqttjs_f4007936
+1743071872: Sending PINGRESP to mqttjs_f4007936
+1743071888: Received PINGREQ from mqttjs_5bd5e6be
+1743071888: Sending PINGRESP to mqttjs_5bd5e6be
+1743071905: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071905: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071932: Received PINGREQ from mqttjs_f4007936
+1743071932: Sending PINGRESP to mqttjs_f4007936
+1743071948: Received PINGREQ from mqttjs_5bd5e6be
+1743071948: Sending PINGRESP to mqttjs_5bd5e6be
+1743071965: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071965: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743071992: Received PINGREQ from mqttjs_f4007936
+1743071992: Sending PINGRESP to mqttjs_f4007936
+1743072008: Received PINGREQ from mqttjs_5bd5e6be
+1743072008: Sending PINGRESP to mqttjs_5bd5e6be
+1743072025: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072025: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072052: Received PINGREQ from mqttjs_f4007936
+1743072052: Sending PINGRESP to mqttjs_f4007936
+1743072068: Received PINGREQ from mqttjs_5bd5e6be
+1743072068: Sending PINGRESP to mqttjs_5bd5e6be
+1743072085: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072085: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072112: Received PINGREQ from mqttjs_f4007936
+1743072112: Sending PINGRESP to mqttjs_f4007936
+1743072128: Received PINGREQ from mqttjs_5bd5e6be
+1743072128: Sending PINGRESP to mqttjs_5bd5e6be
+1743072145: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072145: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072172: Received PINGREQ from mqttjs_f4007936
+1743072172: Sending PINGRESP to mqttjs_f4007936
+1743072188: Received PINGREQ from mqttjs_5bd5e6be
+1743072188: Sending PINGRESP to mqttjs_5bd5e6be
+1743072205: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072205: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072232: Received PINGREQ from mqttjs_f4007936
+1743072232: Sending PINGRESP to mqttjs_f4007936
+1743072248: Received PINGREQ from mqttjs_5bd5e6be
+1743072248: Sending PINGRESP to mqttjs_5bd5e6be
+1743072266: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072266: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072292: Received PINGREQ from mqttjs_f4007936
+1743072292: Sending PINGRESP to mqttjs_f4007936
+1743072308: Received PINGREQ from mqttjs_5bd5e6be
+1743072308: Sending PINGRESP to mqttjs_5bd5e6be
+1743072326: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072326: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072352: Received PINGREQ from mqttjs_f4007936
+1743072352: Sending PINGRESP to mqttjs_f4007936
+1743072368: Received PINGREQ from mqttjs_5bd5e6be
+1743072368: Sending PINGRESP to mqttjs_5bd5e6be
+1743072386: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072386: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072412: Received PINGREQ from mqttjs_f4007936
+1743072412: Sending PINGRESP to mqttjs_f4007936
+1743072428: Received PINGREQ from mqttjs_5bd5e6be
+1743072428: Sending PINGRESP to mqttjs_5bd5e6be
+1743072446: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072446: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072472: Received PINGREQ from mqttjs_f4007936
+1743072472: Sending PINGRESP to mqttjs_f4007936
+1743072488: Received PINGREQ from mqttjs_5bd5e6be
+1743072488: Sending PINGRESP to mqttjs_5bd5e6be
+1743072506: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072506: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072532: Received PINGREQ from mqttjs_f4007936
+1743072532: Sending PINGRESP to mqttjs_f4007936
+1743072548: Received PINGREQ from mqttjs_5bd5e6be
+1743072548: Sending PINGRESP to mqttjs_5bd5e6be
+1743072566: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072566: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072592: Received PINGREQ from mqttjs_f4007936
+1743072592: Sending PINGRESP to mqttjs_f4007936
+1743072608: Received PINGREQ from mqttjs_5bd5e6be
+1743072608: Sending PINGRESP to mqttjs_5bd5e6be
+1743072623: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743072626: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072626: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072653: Received PINGREQ from mqttjs_f4007936
+1743072653: Sending PINGRESP to mqttjs_f4007936
+1743072668: Received PINGREQ from mqttjs_5bd5e6be
+1743072668: Sending PINGRESP to mqttjs_5bd5e6be
+1743072686: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072686: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072713: Received PINGREQ from mqttjs_f4007936
+1743072713: Sending PINGRESP to mqttjs_f4007936
+1743072728: Received PINGREQ from mqttjs_5bd5e6be
+1743072728: Sending PINGRESP to mqttjs_5bd5e6be
+1743072746: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072746: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072773: Received PINGREQ from mqttjs_f4007936
+1743072773: Sending PINGRESP to mqttjs_f4007936
+1743072788: Received PINGREQ from mqttjs_5bd5e6be
+1743072788: Sending PINGRESP to mqttjs_5bd5e6be
+1743072806: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072806: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072833: Received PINGREQ from mqttjs_f4007936
+1743072833: Sending PINGRESP to mqttjs_f4007936
+1743072848: Received PINGREQ from mqttjs_5bd5e6be
+1743072848: Sending PINGRESP to mqttjs_5bd5e6be
+1743072866: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072866: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072893: Received PINGREQ from mqttjs_f4007936
+1743072893: Sending PINGRESP to mqttjs_f4007936
+1743072908: Received PINGREQ from mqttjs_5bd5e6be
+1743072908: Sending PINGRESP to mqttjs_5bd5e6be
+1743072926: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072926: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072953: Received PINGREQ from mqttjs_f4007936
+1743072953: Sending PINGRESP to mqttjs_f4007936
+1743072968: Received PINGREQ from mqttjs_5bd5e6be
+1743072968: Sending PINGRESP to mqttjs_5bd5e6be
+1743072986: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743072986: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073013: Received PINGREQ from mqttjs_f4007936
+1743073013: Sending PINGRESP to mqttjs_f4007936
+1743073028: Received PINGREQ from mqttjs_5bd5e6be
+1743073028: Sending PINGRESP to mqttjs_5bd5e6be
+1743073046: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073046: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073073: Received PINGREQ from mqttjs_f4007936
+1743073073: Sending PINGRESP to mqttjs_f4007936
+1743073088: Received PINGREQ from mqttjs_5bd5e6be
+1743073088: Sending PINGRESP to mqttjs_5bd5e6be
+1743073107: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073107: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073133: Received PINGREQ from mqttjs_f4007936
+1743073133: Sending PINGRESP to mqttjs_f4007936
+1743073148: Received PINGREQ from mqttjs_5bd5e6be
+1743073148: Sending PINGRESP to mqttjs_5bd5e6be
+1743073167: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073167: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073193: Received PINGREQ from mqttjs_f4007936
+1743073193: Sending PINGRESP to mqttjs_f4007936
+1743073208: Received PINGREQ from mqttjs_5bd5e6be
+1743073208: Sending PINGRESP to mqttjs_5bd5e6be
+1743073227: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073227: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073253: Received PINGREQ from mqttjs_f4007936
+1743073253: Sending PINGRESP to mqttjs_f4007936
+1743073268: Received PINGREQ from mqttjs_5bd5e6be
+1743073268: Sending PINGRESP to mqttjs_5bd5e6be
+1743073287: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073287: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073313: Received PINGREQ from mqttjs_f4007936
+1743073313: Sending PINGRESP to mqttjs_f4007936
+1743073328: Received PINGREQ from mqttjs_5bd5e6be
+1743073328: Sending PINGRESP to mqttjs_5bd5e6be
+1743073347: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073347: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073373: Received PINGREQ from mqttjs_f4007936
+1743073373: Sending PINGRESP to mqttjs_f4007936
+1743073388: Received PINGREQ from mqttjs_5bd5e6be
+1743073388: Sending PINGRESP to mqttjs_5bd5e6be
+1743073407: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073407: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073433: Received PINGREQ from mqttjs_f4007936
+1743073433: Sending PINGRESP to mqttjs_f4007936
+1743073448: Received PINGREQ from mqttjs_5bd5e6be
+1743073448: Sending PINGRESP to mqttjs_5bd5e6be
+1743073467: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073467: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073493: Received PINGREQ from mqttjs_f4007936
+1743073493: Sending PINGRESP to mqttjs_f4007936
+1743073508: Received PINGREQ from mqttjs_5bd5e6be
+1743073508: Sending PINGRESP to mqttjs_5bd5e6be
+1743073527: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073527: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073553: Received PINGREQ from mqttjs_f4007936
+1743073553: Sending PINGRESP to mqttjs_f4007936
+1743073569: Received PINGREQ from mqttjs_5bd5e6be
+1743073569: Sending PINGRESP to mqttjs_5bd5e6be
+1743073587: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073587: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073613: Received PINGREQ from mqttjs_f4007936
+1743073613: Sending PINGRESP to mqttjs_f4007936
+1743073629: Received PINGREQ from mqttjs_5bd5e6be
+1743073629: Sending PINGRESP to mqttjs_5bd5e6be
+1743073647: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073647: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073673: Received PINGREQ from mqttjs_f4007936
+1743073673: Sending PINGRESP to mqttjs_f4007936
+1743073689: Received PINGREQ from mqttjs_5bd5e6be
+1743073689: Sending PINGRESP to mqttjs_5bd5e6be
+1743073707: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073707: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073733: Received PINGREQ from mqttjs_f4007936
+1743073733: Sending PINGRESP to mqttjs_f4007936
+1743073749: Received PINGREQ from mqttjs_5bd5e6be
+1743073749: Sending PINGRESP to mqttjs_5bd5e6be
+1743073767: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073767: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073793: Received PINGREQ from mqttjs_f4007936
+1743073793: Sending PINGRESP to mqttjs_f4007936
+1743073809: Received PINGREQ from mqttjs_5bd5e6be
+1743073809: Sending PINGRESP to mqttjs_5bd5e6be
+1743073827: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073827: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073853: Received PINGREQ from mqttjs_f4007936
+1743073853: Sending PINGRESP to mqttjs_f4007936
+1743073869: Received PINGREQ from mqttjs_5bd5e6be
+1743073869: Sending PINGRESP to mqttjs_5bd5e6be
+1743073887: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073887: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073913: Received PINGREQ from mqttjs_f4007936
+1743073913: Sending PINGRESP to mqttjs_f4007936
+1743073929: Received PINGREQ from mqttjs_5bd5e6be
+1743073929: Sending PINGRESP to mqttjs_5bd5e6be
+1743073947: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073947: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743073973: Received PINGREQ from mqttjs_f4007936
+1743073973: Sending PINGRESP to mqttjs_f4007936
+1743073989: Received PINGREQ from mqttjs_5bd5e6be
+1743073989: Sending PINGRESP to mqttjs_5bd5e6be
+1743074008: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074008: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074033: Received PINGREQ from mqttjs_f4007936
+1743074033: Sending PINGRESP to mqttjs_f4007936
+1743074049: Received PINGREQ from mqttjs_5bd5e6be
+1743074049: Sending PINGRESP to mqttjs_5bd5e6be
+1743074068: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074068: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074093: Received PINGREQ from mqttjs_f4007936
+1743074093: Sending PINGRESP to mqttjs_f4007936
+1743074109: Received PINGREQ from mqttjs_5bd5e6be
+1743074109: Sending PINGRESP to mqttjs_5bd5e6be
+1743074128: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074128: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074153: Received PINGREQ from mqttjs_f4007936
+1743074153: Sending PINGRESP to mqttjs_f4007936
+1743074169: Received PINGREQ from mqttjs_5bd5e6be
+1743074169: Sending PINGRESP to mqttjs_5bd5e6be
+1743074188: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074188: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074213: Received PINGREQ from mqttjs_f4007936
+1743074213: Sending PINGRESP to mqttjs_f4007936
+1743074229: Received PINGREQ from mqttjs_5bd5e6be
+1743074229: Sending PINGRESP to mqttjs_5bd5e6be
+1743074248: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074248: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074273: Received PINGREQ from mqttjs_f4007936
+1743074273: Sending PINGRESP to mqttjs_f4007936
+1743074289: Received PINGREQ from mqttjs_5bd5e6be
+1743074289: Sending PINGRESP to mqttjs_5bd5e6be
+1743074308: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074308: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074333: Received PINGREQ from mqttjs_f4007936
+1743074333: Sending PINGRESP to mqttjs_f4007936
+1743074349: Received PINGREQ from mqttjs_5bd5e6be
+1743074349: Sending PINGRESP to mqttjs_5bd5e6be
+1743074368: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074368: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074393: Received PINGREQ from mqttjs_f4007936
+1743074393: Sending PINGRESP to mqttjs_f4007936
+1743074409: Received PINGREQ from mqttjs_5bd5e6be
+1743074409: Sending PINGRESP to mqttjs_5bd5e6be
+1743074424: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743074428: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074428: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074453: Received PINGREQ from mqttjs_f4007936
+1743074453: Sending PINGRESP to mqttjs_f4007936
+1743074469: Received PINGREQ from mqttjs_5bd5e6be
+1743074469: Sending PINGRESP to mqttjs_5bd5e6be
+1743074488: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074488: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074513: Received PINGREQ from mqttjs_f4007936
+1743074513: Sending PINGRESP to mqttjs_f4007936
+1743074529: Received PINGREQ from mqttjs_5bd5e6be
+1743074529: Sending PINGRESP to mqttjs_5bd5e6be
+1743074548: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074548: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074573: Received PINGREQ from mqttjs_f4007936
+1743074573: Sending PINGRESP to mqttjs_f4007936
+1743074589: Received PINGREQ from mqttjs_5bd5e6be
+1743074589: Sending PINGRESP to mqttjs_5bd5e6be
+1743074608: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074608: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074633: Received PINGREQ from mqttjs_f4007936
+1743074633: Sending PINGRESP to mqttjs_f4007936
+1743074649: Received PINGREQ from mqttjs_5bd5e6be
+1743074649: Sending PINGRESP to mqttjs_5bd5e6be
+1743074668: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074668: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074693: Received PINGREQ from mqttjs_f4007936
+1743074693: Sending PINGRESP to mqttjs_f4007936
+1743074709: Received PINGREQ from mqttjs_5bd5e6be
+1743074709: Sending PINGRESP to mqttjs_5bd5e6be
+1743074728: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074728: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074753: Received PINGREQ from mqttjs_f4007936
+1743074753: Sending PINGRESP to mqttjs_f4007936
+1743074769: Received PINGREQ from mqttjs_5bd5e6be
+1743074769: Sending PINGRESP to mqttjs_5bd5e6be
+1743074788: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074788: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074813: Received PINGREQ from mqttjs_f4007936
+1743074813: Sending PINGRESP to mqttjs_f4007936
+1743074829: Received PINGREQ from mqttjs_5bd5e6be
+1743074829: Sending PINGRESP to mqttjs_5bd5e6be
+1743074849: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074849: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074873: Received PINGREQ from mqttjs_f4007936
+1743074873: Sending PINGRESP to mqttjs_f4007936
+1743074889: Received PINGREQ from mqttjs_5bd5e6be
+1743074889: Sending PINGRESP to mqttjs_5bd5e6be
+1743074909: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074909: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074934: Received PINGREQ from mqttjs_f4007936
+1743074934: Sending PINGRESP to mqttjs_f4007936
+1743074949: Received PINGREQ from mqttjs_5bd5e6be
+1743074949: Sending PINGRESP to mqttjs_5bd5e6be
+1743074969: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074969: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743074994: Received PINGREQ from mqttjs_f4007936
+1743074994: Sending PINGRESP to mqttjs_f4007936
+1743075009: Received PINGREQ from mqttjs_5bd5e6be
+1743075009: Sending PINGRESP to mqttjs_5bd5e6be
+1743075029: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075029: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075054: Received PINGREQ from mqttjs_f4007936
+1743075054: Sending PINGRESP to mqttjs_f4007936
+1743075069: Received PINGREQ from mqttjs_5bd5e6be
+1743075069: Sending PINGRESP to mqttjs_5bd5e6be
+1743075089: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075089: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075114: Received PINGREQ from mqttjs_f4007936
+1743075114: Sending PINGRESP to mqttjs_f4007936
+1743075114: New client connected from ::ffff:58.187.66.92:35028 as mqttjs_0214e865 (p2, c1, k60).
+1743075114: No will message specified.
+1743075114: Sending CONNACK to mqttjs_0214e865 (0, 0)
+1743075114: Received SUBSCRIBE from mqttjs_0214e865
+1743075114: 	greenhouse/1/sensor (QoS 0)
+1743075114: mqttjs_0214e865 0 greenhouse/1/sensor
+1743075114: Sending SUBACK to mqttjs_0214e865
+1743075117: New client connected from ::ffff:58.187.66.92:29452 as mqttjs_e156f503 (p2, c1, k60).
+1743075117: No will message specified.
+1743075117: Sending CONNACK to mqttjs_e156f503 (0, 0)
+1743075117: Received SUBSCRIBE from mqttjs_e156f503
+1743075117: 	greenhouse/1/sensor (QoS 0)
+1743075117: mqttjs_e156f503 0 greenhouse/1/sensor
+1743075117: Sending SUBACK to mqttjs_e156f503
+1743075129: Received PINGREQ from mqttjs_5bd5e6be
+1743075129: Sending PINGRESP to mqttjs_5bd5e6be
+1743075149: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075149: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075174: Received PINGREQ from mqttjs_f4007936
+1743075174: Sending PINGRESP to mqttjs_f4007936
+1743075174: Received PINGREQ from mqttjs_0214e865
+1743075174: Sending PINGRESP to mqttjs_0214e865
+1743075177: Received PINGREQ from mqttjs_e156f503
+1743075177: Sending PINGRESP to mqttjs_e156f503
+1743075189: Received PINGREQ from mqttjs_5bd5e6be
+1743075189: Sending PINGRESP to mqttjs_5bd5e6be
+1743075209: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075209: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075234: Received PINGREQ from mqttjs_0214e865
+1743075234: Sending PINGRESP to mqttjs_0214e865
+1743075234: Received PINGREQ from mqttjs_f4007936
+1743075234: Sending PINGRESP to mqttjs_f4007936
+1743075237: Received PINGREQ from mqttjs_e156f503
+1743075237: Sending PINGRESP to mqttjs_e156f503
+1743075249: Received PINGREQ from mqttjs_5bd5e6be
+1743075249: Sending PINGRESP to mqttjs_5bd5e6be
+1743075265: New client connected from ::ffff:58.187.66.92:58040 as mqttjs_64f71cb0 (p2, c1, k60).
+1743075265: No will message specified.
+1743075265: Sending CONNACK to mqttjs_64f71cb0 (0, 0)
+1743075265: Received SUBSCRIBE from mqttjs_64f71cb0
+1743075265: 	greenhouse/1/sensor (QoS 0)
+1743075265: mqttjs_64f71cb0 0 greenhouse/1/sensor
+1743075265: Sending SUBACK to mqttjs_64f71cb0
+1743075269: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075269: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075294: Received PINGREQ from mqttjs_f4007936
+1743075294: Sending PINGRESP to mqttjs_f4007936
+1743075294: Received PINGREQ from mqttjs_0214e865
+1743075294: Sending PINGRESP to mqttjs_0214e865
+1743075297: Received PINGREQ from mqttjs_e156f503
+1743075297: Sending PINGRESP to mqttjs_e156f503
+1743075309: Received PINGREQ from mqttjs_5bd5e6be
+1743075309: Sending PINGRESP to mqttjs_5bd5e6be
+1743075325: Received PINGREQ from mqttjs_64f71cb0
+1743075325: Sending PINGRESP to mqttjs_64f71cb0
+1743075329: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075329: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075354: Received PINGREQ from mqttjs_f4007936
+1743075354: Sending PINGRESP to mqttjs_f4007936
+1743075354: Received PINGREQ from mqttjs_0214e865
+1743075354: Sending PINGRESP to mqttjs_0214e865
+1743075357: Received PINGREQ from mqttjs_e156f503
+1743075357: Sending PINGRESP to mqttjs_e156f503
+1743075369: Received PINGREQ from mqttjs_5bd5e6be
+1743075369: Sending PINGRESP to mqttjs_5bd5e6be
+1743075385: Received PINGREQ from mqttjs_64f71cb0
+1743075385: Sending PINGRESP to mqttjs_64f71cb0
+1743075389: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075389: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075414: Received PINGREQ from mqttjs_0214e865
+1743075414: Sending PINGRESP to mqttjs_0214e865
+1743075414: Received PINGREQ from mqttjs_f4007936
+1743075414: Sending PINGRESP to mqttjs_f4007936
+1743075417: Received PINGREQ from mqttjs_e156f503
+1743075417: Sending PINGRESP to mqttjs_e156f503
+1743075429: Received PINGREQ from mqttjs_5bd5e6be
+1743075429: Sending PINGRESP to mqttjs_5bd5e6be
+1743075445: Received PINGREQ from mqttjs_64f71cb0
+1743075445: Sending PINGRESP to mqttjs_64f71cb0
+1743075449: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075449: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075474: Received PINGREQ from mqttjs_0214e865
+1743075474: Sending PINGRESP to mqttjs_0214e865
+1743075474: Received PINGREQ from mqttjs_f4007936
+1743075474: Sending PINGRESP to mqttjs_f4007936
+1743075477: Received PINGREQ from mqttjs_e156f503
+1743075477: Sending PINGRESP to mqttjs_e156f503
+1743075489: Received PINGREQ from mqttjs_5bd5e6be
+1743075489: Sending PINGRESP to mqttjs_5bd5e6be
+1743075505: Received PINGREQ from mqttjs_64f71cb0
+1743075505: Sending PINGRESP to mqttjs_64f71cb0
+1743075509: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075509: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075534: Received PINGREQ from mqttjs_0214e865
+1743075534: Sending PINGRESP to mqttjs_0214e865
+1743075534: Received PINGREQ from mqttjs_f4007936
+1743075534: Sending PINGRESP to mqttjs_f4007936
+1743075537: Received PINGREQ from mqttjs_e156f503
+1743075537: Sending PINGRESP to mqttjs_e156f503
+1743075549: Received PINGREQ from mqttjs_5bd5e6be
+1743075549: Sending PINGRESP to mqttjs_5bd5e6be
+1743075565: Received PINGREQ from mqttjs_64f71cb0
+1743075565: Sending PINGRESP to mqttjs_64f71cb0
+1743075569: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075569: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075594: Received PINGREQ from mqttjs_0214e865
+1743075594: Sending PINGRESP to mqttjs_0214e865
+1743075594: Received PINGREQ from mqttjs_f4007936
+1743075594: Sending PINGRESP to mqttjs_f4007936
+1743075597: Received PINGREQ from mqttjs_e156f503
+1743075597: Sending PINGRESP to mqttjs_e156f503
+1743075609: Received PINGREQ from mqttjs_5bd5e6be
+1743075609: Sending PINGRESP to mqttjs_5bd5e6be
+1743075625: Received PINGREQ from mqttjs_64f71cb0
+1743075625: Sending PINGRESP to mqttjs_64f71cb0
+1743075629: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075629: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075654: Received PINGREQ from mqttjs_f4007936
+1743075654: Sending PINGRESP to mqttjs_f4007936
+1743075654: Received PINGREQ from mqttjs_0214e865
+1743075654: Sending PINGRESP to mqttjs_0214e865
+1743075657: Received PINGREQ from mqttjs_e156f503
+1743075657: Sending PINGRESP to mqttjs_e156f503
+1743075669: Received PINGREQ from mqttjs_5bd5e6be
+1743075669: Sending PINGRESP to mqttjs_5bd5e6be
+1743075685: Received PINGREQ from mqttjs_64f71cb0
+1743075685: Sending PINGRESP to mqttjs_64f71cb0
+1743075690: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075690: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075714: Received PINGREQ from mqttjs_f4007936
+1743075714: Sending PINGRESP to mqttjs_f4007936
+1743075714: Received PINGREQ from mqttjs_0214e865
+1743075714: Sending PINGRESP to mqttjs_0214e865
+1743075717: Received PINGREQ from mqttjs_e156f503
+1743075717: Sending PINGRESP to mqttjs_e156f503
+1743075729: Received PINGREQ from mqttjs_5bd5e6be
+1743075729: Sending PINGRESP to mqttjs_5bd5e6be
+1743075745: Received PINGREQ from mqttjs_64f71cb0
+1743075745: Sending PINGRESP to mqttjs_64f71cb0
+1743075750: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075750: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075774: Received PINGREQ from mqttjs_0214e865
+1743075774: Sending PINGRESP to mqttjs_0214e865
+1743075774: Received PINGREQ from mqttjs_f4007936
+1743075774: Sending PINGRESP to mqttjs_f4007936
+1743075777: Received PINGREQ from mqttjs_e156f503
+1743075777: Sending PINGRESP to mqttjs_e156f503
+1743075789: Received PINGREQ from mqttjs_5bd5e6be
+1743075789: Sending PINGRESP to mqttjs_5bd5e6be
+1743075805: Received PINGREQ from mqttjs_64f71cb0
+1743075805: Sending PINGRESP to mqttjs_64f71cb0
+1743075810: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075810: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075834: Received PINGREQ from mqttjs_f4007936
+1743075834: Sending PINGRESP to mqttjs_f4007936
+1743075834: Received PINGREQ from mqttjs_0214e865
+1743075834: Sending PINGRESP to mqttjs_0214e865
+1743075838: Received PINGREQ from mqttjs_e156f503
+1743075838: Sending PINGRESP to mqttjs_e156f503
+1743075850: Received PINGREQ from mqttjs_5bd5e6be
+1743075850: Sending PINGRESP to mqttjs_5bd5e6be
+1743075865: Received PINGREQ from mqttjs_64f71cb0
+1743075865: Sending PINGRESP to mqttjs_64f71cb0
+1743075870: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075870: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075894: Received PINGREQ from mqttjs_0214e865
+1743075894: Sending PINGRESP to mqttjs_0214e865
+1743075894: Received PINGREQ from mqttjs_f4007936
+1743075894: Sending PINGRESP to mqttjs_f4007936
+1743075898: Received PINGREQ from mqttjs_e156f503
+1743075898: Sending PINGRESP to mqttjs_e156f503
+1743075910: Received PINGREQ from mqttjs_5bd5e6be
+1743075910: Sending PINGRESP to mqttjs_5bd5e6be
+1743075925: Received PINGREQ from mqttjs_64f71cb0
+1743075925: Sending PINGRESP to mqttjs_64f71cb0
+1743075930: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075930: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075954: Received PINGREQ from mqttjs_0214e865
+1743075954: Sending PINGRESP to mqttjs_0214e865
+1743075954: Received PINGREQ from mqttjs_f4007936
+1743075954: Sending PINGRESP to mqttjs_f4007936
+1743075958: Received PINGREQ from mqttjs_e156f503
+1743075958: Sending PINGRESP to mqttjs_e156f503
+1743075970: Received PINGREQ from mqttjs_5bd5e6be
+1743075970: Sending PINGRESP to mqttjs_5bd5e6be
+1743075985: Received PINGREQ from mqttjs_64f71cb0
+1743075985: Sending PINGRESP to mqttjs_64f71cb0
+1743075990: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743075990: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076014: Received PINGREQ from mqttjs_f4007936
+1743076014: Sending PINGRESP to mqttjs_f4007936
+1743076014: Received PINGREQ from mqttjs_0214e865
+1743076014: Sending PINGRESP to mqttjs_0214e865
+1743076018: Received PINGREQ from mqttjs_e156f503
+1743076018: Sending PINGRESP to mqttjs_e156f503
+1743076030: Received PINGREQ from mqttjs_5bd5e6be
+1743076030: Sending PINGRESP to mqttjs_5bd5e6be
+1743076045: Received PINGREQ from mqttjs_64f71cb0
+1743076045: Sending PINGRESP to mqttjs_64f71cb0
+1743076050: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076050: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076074: Received PINGREQ from mqttjs_f4007936
+1743076074: Sending PINGRESP to mqttjs_f4007936
+1743076074: Received PINGREQ from mqttjs_0214e865
+1743076074: Sending PINGRESP to mqttjs_0214e865
+1743076078: Received PINGREQ from mqttjs_e156f503
+1743076078: Sending PINGRESP to mqttjs_e156f503
+1743076090: Received PINGREQ from mqttjs_5bd5e6be
+1743076090: Sending PINGRESP to mqttjs_5bd5e6be
+1743076105: Received PINGREQ from mqttjs_64f71cb0
+1743076105: Sending PINGRESP to mqttjs_64f71cb0
+1743076110: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076110: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076134: Received PINGREQ from mqttjs_0214e865
+1743076134: Sending PINGRESP to mqttjs_0214e865
+1743076134: Received PINGREQ from mqttjs_f4007936
+1743076134: Sending PINGRESP to mqttjs_f4007936
+1743076138: Received PINGREQ from mqttjs_e156f503
+1743076138: Sending PINGRESP to mqttjs_e156f503
+1743076150: Received PINGREQ from mqttjs_5bd5e6be
+1743076150: Sending PINGRESP to mqttjs_5bd5e6be
+1743076165: Received PINGREQ from mqttjs_64f71cb0
+1743076165: Sending PINGRESP to mqttjs_64f71cb0
+1743076170: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076170: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076194: Received PINGREQ from mqttjs_f4007936
+1743076194: Sending PINGRESP to mqttjs_f4007936
+1743076194: Received PINGREQ from mqttjs_0214e865
+1743076194: Sending PINGRESP to mqttjs_0214e865
+1743076198: Received PINGREQ from mqttjs_e156f503
+1743076198: Sending PINGRESP to mqttjs_e156f503
+1743076210: Received PINGREQ from mqttjs_5bd5e6be
+1743076210: Sending PINGRESP to mqttjs_5bd5e6be
+1743076225: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743076225: Received PINGREQ from mqttjs_64f71cb0
+1743076225: Sending PINGRESP to mqttjs_64f71cb0
+1743076230: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076230: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076254: Received PINGREQ from mqttjs_f4007936
+1743076254: Sending PINGRESP to mqttjs_f4007936
+1743076254: Received PINGREQ from mqttjs_0214e865
+1743076254: Sending PINGRESP to mqttjs_0214e865
+1743076258: Received PINGREQ from mqttjs_e156f503
+1743076258: Sending PINGRESP to mqttjs_e156f503
+1743076270: Received PINGREQ from mqttjs_5bd5e6be
+1743076270: Sending PINGRESP to mqttjs_5bd5e6be
+1743076285: Received PINGREQ from mqttjs_64f71cb0
+1743076285: Sending PINGRESP to mqttjs_64f71cb0
+1743076290: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076290: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076314: Received PINGREQ from mqttjs_0214e865
+1743076314: Sending PINGRESP to mqttjs_0214e865
+1743076314: Received PINGREQ from mqttjs_f4007936
+1743076314: Sending PINGRESP to mqttjs_f4007936
+1743076318: Received PINGREQ from mqttjs_e156f503
+1743076318: Sending PINGRESP to mqttjs_e156f503
+1743076330: Received PINGREQ from mqttjs_5bd5e6be
+1743076330: Sending PINGRESP to mqttjs_5bd5e6be
+1743076345: Received PINGREQ from mqttjs_64f71cb0
+1743076345: Sending PINGRESP to mqttjs_64f71cb0
+1743076350: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076350: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076374: Received PINGREQ from mqttjs_0214e865
+1743076374: Sending PINGRESP to mqttjs_0214e865
+1743076374: Received PINGREQ from mqttjs_f4007936
+1743076374: Sending PINGRESP to mqttjs_f4007936
+1743076378: Received PINGREQ from mqttjs_e156f503
+1743076378: Sending PINGRESP to mqttjs_e156f503
+1743076390: Received PINGREQ from mqttjs_5bd5e6be
+1743076390: Sending PINGRESP to mqttjs_5bd5e6be
+1743076405: Received PINGREQ from mqttjs_64f71cb0
+1743076405: Sending PINGRESP to mqttjs_64f71cb0
+1743076410: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076410: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076434: Received PINGREQ from mqttjs_f4007936
+1743076434: Sending PINGRESP to mqttjs_f4007936
+1743076434: Received PINGREQ from mqttjs_0214e865
+1743076434: Sending PINGRESP to mqttjs_0214e865
+1743076438: Received PINGREQ from mqttjs_e156f503
+1743076438: Sending PINGRESP to mqttjs_e156f503
+1743076450: Received PINGREQ from mqttjs_5bd5e6be
+1743076450: Sending PINGRESP to mqttjs_5bd5e6be
+1743076465: Received PINGREQ from mqttjs_64f71cb0
+1743076465: Sending PINGRESP to mqttjs_64f71cb0
+1743076470: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076470: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076494: Received PINGREQ from mqttjs_f4007936
+1743076494: Sending PINGRESP to mqttjs_f4007936
+1743076494: Received PINGREQ from mqttjs_0214e865
+1743076494: Sending PINGRESP to mqttjs_0214e865
+1743076498: Received PINGREQ from mqttjs_e156f503
+1743076498: Sending PINGRESP to mqttjs_e156f503
+1743076510: Received PINGREQ from mqttjs_5bd5e6be
+1743076510: Sending PINGRESP to mqttjs_5bd5e6be
+1743076525: Received PINGREQ from mqttjs_64f71cb0
+1743076525: Sending PINGRESP to mqttjs_64f71cb0
+1743076531: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076531: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076554: Received PINGREQ from mqttjs_0214e865
+1743076554: Sending PINGRESP to mqttjs_0214e865
+1743076554: Received PINGREQ from mqttjs_f4007936
+1743076554: Sending PINGRESP to mqttjs_f4007936
+1743076558: Received PINGREQ from mqttjs_e156f503
+1743076558: Sending PINGRESP to mqttjs_e156f503
+1743076570: Received PINGREQ from mqttjs_5bd5e6be
+1743076570: Sending PINGRESP to mqttjs_5bd5e6be
+1743076585: Received PINGREQ from mqttjs_64f71cb0
+1743076585: Sending PINGRESP to mqttjs_64f71cb0
+1743076591: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076591: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076614: Received PINGREQ from mqttjs_0214e865
+1743076614: Sending PINGRESP to mqttjs_0214e865
+1743076614: Received PINGREQ from mqttjs_f4007936
+1743076614: Sending PINGRESP to mqttjs_f4007936
+1743076618: Received PINGREQ from mqttjs_e156f503
+1743076618: Sending PINGRESP to mqttjs_e156f503
+1743076630: Received PINGREQ from mqttjs_5bd5e6be
+1743076630: Sending PINGRESP to mqttjs_5bd5e6be
+1743076645: Received PINGREQ from mqttjs_64f71cb0
+1743076645: Sending PINGRESP to mqttjs_64f71cb0
+1743076651: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076651: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076674: Received PINGREQ from mqttjs_0214e865
+1743076674: Sending PINGRESP to mqttjs_0214e865
+1743076674: Received PINGREQ from mqttjs_f4007936
+1743076674: Sending PINGRESP to mqttjs_f4007936
+1743076678: Received PINGREQ from mqttjs_e156f503
+1743076678: Sending PINGRESP to mqttjs_e156f503
+1743076690: Received PINGREQ from mqttjs_5bd5e6be
+1743076690: Sending PINGRESP to mqttjs_5bd5e6be
+1743076705: Received PINGREQ from mqttjs_64f71cb0
+1743076705: Sending PINGRESP to mqttjs_64f71cb0
+1743076711: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076711: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076734: Received PINGREQ from mqttjs_f4007936
+1743076734: Sending PINGRESP to mqttjs_f4007936
+1743076734: Received PINGREQ from mqttjs_0214e865
+1743076734: Sending PINGRESP to mqttjs_0214e865
+1743076738: Received PINGREQ from mqttjs_e156f503
+1743076738: Sending PINGRESP to mqttjs_e156f503
+1743076750: Received PINGREQ from mqttjs_5bd5e6be
+1743076750: Sending PINGRESP to mqttjs_5bd5e6be
+1743076765: Received PINGREQ from mqttjs_64f71cb0
+1743076765: Sending PINGRESP to mqttjs_64f71cb0
+1743076771: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076771: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076794: Received PINGREQ from mqttjs_f4007936
+1743076794: Sending PINGRESP to mqttjs_f4007936
+1743076794: Received PINGREQ from mqttjs_0214e865
+1743076794: Sending PINGRESP to mqttjs_0214e865
+1743076798: Received PINGREQ from mqttjs_e156f503
+1743076798: Sending PINGRESP to mqttjs_e156f503
+1743076810: Received PINGREQ from mqttjs_5bd5e6be
+1743076810: Sending PINGRESP to mqttjs_5bd5e6be
+1743076825: Received PINGREQ from mqttjs_64f71cb0
+1743076825: Sending PINGRESP to mqttjs_64f71cb0
+1743076831: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076831: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076854: Received PINGREQ from mqttjs_f4007936
+1743076854: Sending PINGRESP to mqttjs_f4007936
+1743076854: Received PINGREQ from mqttjs_0214e865
+1743076854: Sending PINGRESP to mqttjs_0214e865
+1743076858: Received PINGREQ from mqttjs_e156f503
+1743076858: Sending PINGRESP to mqttjs_e156f503
+1743076870: Received PINGREQ from mqttjs_5bd5e6be
+1743076870: Sending PINGRESP to mqttjs_5bd5e6be
+1743076885: Received PINGREQ from mqttjs_64f71cb0
+1743076885: Sending PINGRESP to mqttjs_64f71cb0
+1743076891: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076891: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076914: Received PINGREQ from mqttjs_0214e865
+1743076914: Sending PINGRESP to mqttjs_0214e865
+1743076914: Received PINGREQ from mqttjs_f4007936
+1743076914: Sending PINGRESP to mqttjs_f4007936
+1743076918: Received PINGREQ from mqttjs_e156f503
+1743076918: Sending PINGRESP to mqttjs_e156f503
+1743076930: Received PINGREQ from mqttjs_5bd5e6be
+1743076930: Sending PINGRESP to mqttjs_5bd5e6be
+1743076945: Received PINGREQ from mqttjs_64f71cb0
+1743076945: Sending PINGRESP to mqttjs_64f71cb0
+1743076951: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076951: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743076974: Received PINGREQ from mqttjs_f4007936
+1743076974: Sending PINGRESP to mqttjs_f4007936
+1743076974: Received PINGREQ from mqttjs_0214e865
+1743076974: Sending PINGRESP to mqttjs_0214e865
+1743076978: Received PINGREQ from mqttjs_e156f503
+1743076978: Sending PINGRESP to mqttjs_e156f503
+1743076990: Received PINGREQ from mqttjs_5bd5e6be
+1743076990: Sending PINGRESP to mqttjs_5bd5e6be
+1743077005: Received PINGREQ from mqttjs_64f71cb0
+1743077005: Sending PINGRESP to mqttjs_64f71cb0
+1743077011: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077011: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077034: Received PINGREQ from mqttjs_0214e865
+1743077034: Sending PINGRESP to mqttjs_0214e865
+1743077034: Received PINGREQ from mqttjs_f4007936
+1743077034: Sending PINGRESP to mqttjs_f4007936
+1743077038: Received PINGREQ from mqttjs_e156f503
+1743077038: Sending PINGRESP to mqttjs_e156f503
+1743077050: Received PINGREQ from mqttjs_5bd5e6be
+1743077050: Sending PINGRESP to mqttjs_5bd5e6be
+1743077065: Received PINGREQ from mqttjs_64f71cb0
+1743077065: Sending PINGRESP to mqttjs_64f71cb0
+1743077071: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077071: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077095: Received PINGREQ from mqttjs_0214e865
+1743077095: Sending PINGRESP to mqttjs_0214e865
+1743077095: Received PINGREQ from mqttjs_f4007936
+1743077095: Sending PINGRESP to mqttjs_f4007936
+1743077098: Received PINGREQ from mqttjs_e156f503
+1743077098: Sending PINGRESP to mqttjs_e156f503
+1743077110: Received PINGREQ from mqttjs_5bd5e6be
+1743077110: Sending PINGRESP to mqttjs_5bd5e6be
+1743077125: Received PINGREQ from mqttjs_64f71cb0
+1743077125: Sending PINGRESP to mqttjs_64f71cb0
+1743077131: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077131: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077155: Received PINGREQ from mqttjs_0214e865
+1743077155: Sending PINGRESP to mqttjs_0214e865
+1743077155: Received PINGREQ from mqttjs_f4007936
+1743077155: Sending PINGRESP to mqttjs_f4007936
+1743077158: Received PINGREQ from mqttjs_e156f503
+1743077158: Sending PINGRESP to mqttjs_e156f503
+1743077170: Received PINGREQ from mqttjs_5bd5e6be
+1743077170: Sending PINGRESP to mqttjs_5bd5e6be
+1743077185: Received PINGREQ from mqttjs_64f71cb0
+1743077185: Sending PINGRESP to mqttjs_64f71cb0
+1743077191: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077191: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077215: Received PINGREQ from mqttjs_0214e865
+1743077215: Sending PINGRESP to mqttjs_0214e865
+1743077215: Received PINGREQ from mqttjs_f4007936
+1743077215: Sending PINGRESP to mqttjs_f4007936
+1743077218: Received PINGREQ from mqttjs_e156f503
+1743077218: Sending PINGRESP to mqttjs_e156f503
+1743077230: Received PINGREQ from mqttjs_5bd5e6be
+1743077230: Sending PINGRESP to mqttjs_5bd5e6be
+1743077245: Received PINGREQ from mqttjs_64f71cb0
+1743077245: Sending PINGRESP to mqttjs_64f71cb0
+1743077251: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077251: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077275: Received PINGREQ from mqttjs_0214e865
+1743077275: Sending PINGRESP to mqttjs_0214e865
+1743077275: Received PINGREQ from mqttjs_f4007936
+1743077275: Sending PINGRESP to mqttjs_f4007936
+1743077278: Received PINGREQ from mqttjs_e156f503
+1743077278: Sending PINGRESP to mqttjs_e156f503
+1743077290: Received PINGREQ from mqttjs_5bd5e6be
+1743077290: Sending PINGRESP to mqttjs_5bd5e6be
+1743077305: Received PINGREQ from mqttjs_64f71cb0
+1743077305: Sending PINGRESP to mqttjs_64f71cb0
+1743077311: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077311: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077335: Received PINGREQ from mqttjs_f4007936
+1743077335: Sending PINGRESP to mqttjs_f4007936
+1743077335: Received PINGREQ from mqttjs_0214e865
+1743077335: Sending PINGRESP to mqttjs_0214e865
+1743077338: Received PINGREQ from mqttjs_e156f503
+1743077338: Sending PINGRESP to mqttjs_e156f503
+1743077350: Received PINGREQ from mqttjs_5bd5e6be
+1743077350: Sending PINGRESP to mqttjs_5bd5e6be
+1743077365: Received PINGREQ from mqttjs_64f71cb0
+1743077365: Sending PINGRESP to mqttjs_64f71cb0
+1743077372: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077372: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077395: Received PINGREQ from mqttjs_0214e865
+1743077395: Sending PINGRESP to mqttjs_0214e865
+1743077395: Received PINGREQ from mqttjs_f4007936
+1743077395: Sending PINGRESP to mqttjs_f4007936
+1743077398: Received PINGREQ from mqttjs_e156f503
+1743077398: Sending PINGRESP to mqttjs_e156f503
+1743077410: Received PINGREQ from mqttjs_5bd5e6be
+1743077410: Sending PINGRESP to mqttjs_5bd5e6be
+1743077425: Received PINGREQ from mqttjs_64f71cb0
+1743077425: Sending PINGRESP to mqttjs_64f71cb0
+1743077432: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077432: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077455: Received PINGREQ from mqttjs_0214e865
+1743077455: Sending PINGRESP to mqttjs_0214e865
+1743077455: Received PINGREQ from mqttjs_f4007936
+1743077455: Sending PINGRESP to mqttjs_f4007936
+1743077458: Received PINGREQ from mqttjs_e156f503
+1743077458: Sending PINGRESP to mqttjs_e156f503
+1743077470: Received PINGREQ from mqttjs_5bd5e6be
+1743077470: Sending PINGRESP to mqttjs_5bd5e6be
+1743077485: Received PINGREQ from mqttjs_64f71cb0
+1743077485: Sending PINGRESP to mqttjs_64f71cb0
+1743077492: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077492: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077515: Received PINGREQ from mqttjs_f4007936
+1743077515: Sending PINGRESP to mqttjs_f4007936
+1743077515: Received PINGREQ from mqttjs_0214e865
+1743077515: Sending PINGRESP to mqttjs_0214e865
+1743077518: Received PINGREQ from mqttjs_e156f503
+1743077518: Sending PINGRESP to mqttjs_e156f503
+1743077530: Received PINGREQ from mqttjs_5bd5e6be
+1743077530: Sending PINGRESP to mqttjs_5bd5e6be
+1743077545: Received PINGREQ from mqttjs_64f71cb0
+1743077545: Sending PINGRESP to mqttjs_64f71cb0
+1743077552: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077552: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077575: Received PINGREQ from mqttjs_f4007936
+1743077575: Sending PINGRESP to mqttjs_f4007936
+1743077575: Received PINGREQ from mqttjs_0214e865
+1743077575: Sending PINGRESP to mqttjs_0214e865
+1743077578: Received PINGREQ from mqttjs_e156f503
+1743077578: Sending PINGRESP to mqttjs_e156f503
+1743077590: Received PINGREQ from mqttjs_5bd5e6be
+1743077590: Sending PINGRESP to mqttjs_5bd5e6be
+1743077606: Received PINGREQ from mqttjs_64f71cb0
+1743077606: Sending PINGRESP to mqttjs_64f71cb0
+1743077612: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077612: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077635: Received PINGREQ from mqttjs_f4007936
+1743077635: Sending PINGRESP to mqttjs_f4007936
+1743077635: Received PINGREQ from mqttjs_0214e865
+1743077635: Sending PINGRESP to mqttjs_0214e865
+1743077638: Received PINGREQ from mqttjs_e156f503
+1743077638: Sending PINGRESP to mqttjs_e156f503
+1743077650: Received PINGREQ from mqttjs_5bd5e6be
+1743077650: Sending PINGRESP to mqttjs_5bd5e6be
+1743077666: Received PINGREQ from mqttjs_64f71cb0
+1743077666: Sending PINGRESP to mqttjs_64f71cb0
+1743077672: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077672: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077695: Received PINGREQ from mqttjs_f4007936
+1743077695: Sending PINGRESP to mqttjs_f4007936
+1743077695: Received PINGREQ from mqttjs_0214e865
+1743077695: Sending PINGRESP to mqttjs_0214e865
+1743077698: Received PINGREQ from mqttjs_e156f503
+1743077698: Sending PINGRESP to mqttjs_e156f503
+1743077710: Received PINGREQ from mqttjs_5bd5e6be
+1743077710: Sending PINGRESP to mqttjs_5bd5e6be
+1743077726: Received PINGREQ from mqttjs_64f71cb0
+1743077726: Sending PINGRESP to mqttjs_64f71cb0
+1743077732: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077732: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077755: Received PINGREQ from mqttjs_0214e865
+1743077755: Sending PINGRESP to mqttjs_0214e865
+1743077755: Received PINGREQ from mqttjs_f4007936
+1743077755: Sending PINGRESP to mqttjs_f4007936
+1743077758: Received PINGREQ from mqttjs_e156f503
+1743077758: Sending PINGRESP to mqttjs_e156f503
+1743077770: Received PINGREQ from mqttjs_5bd5e6be
+1743077770: Sending PINGRESP to mqttjs_5bd5e6be
+1743077786: Received PINGREQ from mqttjs_64f71cb0
+1743077786: Sending PINGRESP to mqttjs_64f71cb0
+1743077792: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077792: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077815: Received PINGREQ from mqttjs_f4007936
+1743077815: Sending PINGRESP to mqttjs_f4007936
+1743077815: Received PINGREQ from mqttjs_0214e865
+1743077815: Sending PINGRESP to mqttjs_0214e865
+1743077818: Received PINGREQ from mqttjs_e156f503
+1743077818: Sending PINGRESP to mqttjs_e156f503
+1743077830: Received PINGREQ from mqttjs_5bd5e6be
+1743077830: Sending PINGRESP to mqttjs_5bd5e6be
+1743077846: Received PINGREQ from mqttjs_64f71cb0
+1743077846: Sending PINGRESP to mqttjs_64f71cb0
+1743077852: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077852: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077875: Received PINGREQ from mqttjs_f4007936
+1743077875: Sending PINGRESP to mqttjs_f4007936
+1743077875: Received PINGREQ from mqttjs_0214e865
+1743077875: Sending PINGRESP to mqttjs_0214e865
+1743077878: Received PINGREQ from mqttjs_e156f503
+1743077878: Sending PINGRESP to mqttjs_e156f503
+1743077890: Received PINGREQ from mqttjs_5bd5e6be
+1743077890: Sending PINGRESP to mqttjs_5bd5e6be
+1743077906: Received PINGREQ from mqttjs_64f71cb0
+1743077906: Sending PINGRESP to mqttjs_64f71cb0
+1743077912: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077912: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077935: Received PINGREQ from mqttjs_0214e865
+1743077935: Sending PINGRESP to mqttjs_0214e865
+1743077935: Received PINGREQ from mqttjs_f4007936
+1743077935: Sending PINGRESP to mqttjs_f4007936
+1743077938: Received PINGREQ from mqttjs_e156f503
+1743077938: Sending PINGRESP to mqttjs_e156f503
+1743077950: Received PINGREQ from mqttjs_5bd5e6be
+1743077950: Sending PINGRESP to mqttjs_5bd5e6be
+1743077966: Received PINGREQ from mqttjs_64f71cb0
+1743077966: Sending PINGRESP to mqttjs_64f71cb0
+1743077972: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077972: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743077995: Received PINGREQ from mqttjs_f4007936
+1743077995: Sending PINGRESP to mqttjs_f4007936
+1743077995: Received PINGREQ from mqttjs_0214e865
+1743077995: Sending PINGRESP to mqttjs_0214e865
+1743077998: Received PINGREQ from mqttjs_e156f503
+1743077998: Sending PINGRESP to mqttjs_e156f503
+1743078010: Received PINGREQ from mqttjs_5bd5e6be
+1743078010: Sending PINGRESP to mqttjs_5bd5e6be
+1743078026: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1743078026: Received PINGREQ from mqttjs_64f71cb0
+1743078026: Sending PINGRESP to mqttjs_64f71cb0
+1743078032: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078032: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078055: Received PINGREQ from mqttjs_0214e865
+1743078055: Sending PINGRESP to mqttjs_0214e865
+1743078055: Received PINGREQ from mqttjs_f4007936
+1743078055: Sending PINGRESP to mqttjs_f4007936
+1743078058: Received PINGREQ from mqttjs_e156f503
+1743078058: Sending PINGRESP to mqttjs_e156f503
+1743078071: Received PINGREQ from mqttjs_5bd5e6be
+1743078071: Sending PINGRESP to mqttjs_5bd5e6be
+1743078086: Received PINGREQ from mqttjs_64f71cb0
+1743078086: Sending PINGRESP to mqttjs_64f71cb0
+1743078092: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078092: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078115: Received PINGREQ from mqttjs_0214e865
+1743078115: Sending PINGRESP to mqttjs_0214e865
+1743078115: Received PINGREQ from mqttjs_f4007936
+1743078115: Sending PINGRESP to mqttjs_f4007936
+1743078118: Received PINGREQ from mqttjs_e156f503
+1743078118: Sending PINGRESP to mqttjs_e156f503
+1743078131: Received PINGREQ from mqttjs_5bd5e6be
+1743078131: Sending PINGRESP to mqttjs_5bd5e6be
+1743078146: Received PINGREQ from mqttjs_64f71cb0
+1743078146: Sending PINGRESP to mqttjs_64f71cb0
+1743078152: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078152: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078175: Received PINGREQ from mqttjs_f4007936
+1743078175: Sending PINGRESP to mqttjs_f4007936
+1743078175: Received PINGREQ from mqttjs_0214e865
+1743078175: Sending PINGRESP to mqttjs_0214e865
+1743078178: Received PINGREQ from mqttjs_e156f503
+1743078178: Sending PINGRESP to mqttjs_e156f503
+1743078191: Received PINGREQ from mqttjs_5bd5e6be
+1743078191: Sending PINGRESP to mqttjs_5bd5e6be
+1743078206: Received PINGREQ from mqttjs_64f71cb0
+1743078206: Sending PINGRESP to mqttjs_64f71cb0
+1743078213: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078213: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078235: Received PINGREQ from mqttjs_0214e865
+1743078235: Sending PINGRESP to mqttjs_0214e865
+1743078235: Received PINGREQ from mqttjs_f4007936
+1743078235: Sending PINGRESP to mqttjs_f4007936
+1743078239: Received PINGREQ from mqttjs_e156f503
+1743078239: Sending PINGRESP to mqttjs_e156f503
+1743078251: Received PINGREQ from mqttjs_5bd5e6be
+1743078251: Sending PINGRESP to mqttjs_5bd5e6be
+1743078266: Received PINGREQ from mqttjs_64f71cb0
+1743078266: Sending PINGRESP to mqttjs_64f71cb0
+1743078273: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078273: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078295: Received PINGREQ from mqttjs_f4007936
+1743078295: Sending PINGRESP to mqttjs_f4007936
+1743078295: Received PINGREQ from mqttjs_0214e865
+1743078295: Sending PINGRESP to mqttjs_0214e865
+1743078299: Received PINGREQ from mqttjs_e156f503
+1743078299: Sending PINGRESP to mqttjs_e156f503
+1743078311: Received PINGREQ from mqttjs_5bd5e6be
+1743078311: Sending PINGRESP to mqttjs_5bd5e6be
+1743078326: Received PINGREQ from mqttjs_64f71cb0
+1743078326: Sending PINGRESP to mqttjs_64f71cb0
+1743078333: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078333: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078355: Received PINGREQ from mqttjs_0214e865
+1743078355: Sending PINGRESP to mqttjs_0214e865
+1743078355: Received PINGREQ from mqttjs_f4007936
+1743078355: Sending PINGRESP to mqttjs_f4007936
+1743078359: Received PINGREQ from mqttjs_e156f503
+1743078359: Sending PINGRESP to mqttjs_e156f503
+1743078371: Received PINGREQ from mqttjs_5bd5e6be
+1743078371: Sending PINGRESP to mqttjs_5bd5e6be
+1743078386: Received PINGREQ from mqttjs_64f71cb0
+1743078386: Sending PINGRESP to mqttjs_64f71cb0
+1743078393: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078393: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078415: Received PINGREQ from mqttjs_0214e865
+1743078415: Sending PINGRESP to mqttjs_0214e865
+1743078415: Received PINGREQ from mqttjs_f4007936
+1743078415: Sending PINGRESP to mqttjs_f4007936
+1743078419: Received PINGREQ from mqttjs_e156f503
+1743078419: Sending PINGRESP to mqttjs_e156f503
+1743078431: Received PINGREQ from mqttjs_5bd5e6be
+1743078431: Sending PINGRESP to mqttjs_5bd5e6be
+1743078446: Received PINGREQ from mqttjs_64f71cb0
+1743078446: Sending PINGRESP to mqttjs_64f71cb0
+1743078453: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078453: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078475: Received PINGREQ from mqttjs_0214e865
+1743078475: Sending PINGRESP to mqttjs_0214e865
+1743078475: Received PINGREQ from mqttjs_f4007936
+1743078475: Sending PINGRESP to mqttjs_f4007936
+1743078479: Received PINGREQ from mqttjs_e156f503
+1743078479: Sending PINGRESP to mqttjs_e156f503
+1743078491: Received PINGREQ from mqttjs_5bd5e6be
+1743078491: Sending PINGRESP to mqttjs_5bd5e6be
+1743078506: Received PINGREQ from mqttjs_64f71cb0
+1743078506: Sending PINGRESP to mqttjs_64f71cb0
+1743078513: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078513: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078535: Received PINGREQ from mqttjs_f4007936
+1743078535: Sending PINGRESP to mqttjs_f4007936
+1743078535: Received PINGREQ from mqttjs_0214e865
+1743078535: Sending PINGRESP to mqttjs_0214e865
+1743078539: Received PINGREQ from mqttjs_e156f503
+1743078539: Sending PINGRESP to mqttjs_e156f503
+1743078551: Received PINGREQ from mqttjs_5bd5e6be
+1743078551: Sending PINGRESP to mqttjs_5bd5e6be
+1743078566: Received PINGREQ from mqttjs_64f71cb0
+1743078566: Sending PINGRESP to mqttjs_64f71cb0
+1743078573: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078573: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078595: Received PINGREQ from mqttjs_f4007936
+1743078595: Sending PINGRESP to mqttjs_f4007936
+1743078595: Received PINGREQ from mqttjs_0214e865
+1743078595: Sending PINGRESP to mqttjs_0214e865
+1743078599: Received PINGREQ from mqttjs_e156f503
+1743078599: Sending PINGRESP to mqttjs_e156f503
+1743078611: Received PINGREQ from mqttjs_5bd5e6be
+1743078611: Sending PINGRESP to mqttjs_5bd5e6be
+1743078626: Received PINGREQ from mqttjs_64f71cb0
+1743078626: Sending PINGRESP to mqttjs_64f71cb0
+1743078633: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078633: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078655: Received PINGREQ from mqttjs_f4007936
+1743078655: Sending PINGRESP to mqttjs_f4007936
+1743078655: Received PINGREQ from mqttjs_0214e865
+1743078655: Sending PINGRESP to mqttjs_0214e865
+1743078659: Received PINGREQ from mqttjs_e156f503
+1743078659: Sending PINGRESP to mqttjs_e156f503
+1743078671: Received PINGREQ from mqttjs_5bd5e6be
+1743078671: Sending PINGRESP to mqttjs_5bd5e6be
+1743078686: Received PINGREQ from mqttjs_64f71cb0
+1743078686: Sending PINGRESP to mqttjs_64f71cb0
+1743078693: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078693: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078715: Received PINGREQ from mqttjs_f4007936
+1743078715: Sending PINGRESP to mqttjs_f4007936
+1743078715: Received PINGREQ from mqttjs_0214e865
+1743078715: Sending PINGRESP to mqttjs_0214e865
+1743078719: Received PINGREQ from mqttjs_e156f503
+1743078719: Sending PINGRESP to mqttjs_e156f503
+1743078731: Received PINGREQ from mqttjs_5bd5e6be
+1743078731: Sending PINGRESP to mqttjs_5bd5e6be
+1743078746: Received PINGREQ from mqttjs_64f71cb0
+1743078746: Sending PINGRESP to mqttjs_64f71cb0
+1743078753: Received PINGREQ from auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7
+1743078753: Sending PINGRESP to auto-ABE131B9-65D2-6A3E-3B32-6A1DFE021FE7

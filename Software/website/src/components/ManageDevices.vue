@@ -75,7 +75,7 @@ export default {
     async fetchDevices() {
       try {
         const response = await fetch(
-          "http://14.225.205.88:8000/get_device_status/1"
+          "http://sol1.swin.edu.vn:8016/get_device_status/1"
         );
 
         if (!response.ok) {
@@ -110,7 +110,7 @@ export default {
 
         console.log("Sending payload:", JSON.stringify(payload));
 
-        const response = await fetch("http://14.225.205.88:8000/update_device_status", {
+        const response = await fetch("http://sol1.swin.edu.vn:8016/update_device_status", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),

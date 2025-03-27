@@ -501,7 +501,7 @@ export default {
 
     if (greenhouseID) {
       try {
-        const predictedResponse = await fetch(`http://14.225.205.88:8000/predicted_data?greenhouseID=${greenhouseID}`);
+        const predictedResponse = await fetch(`http://sol1.swin.edu.vn:8016/predicted_data?greenhouseID=${greenhouseID}`);
         const predictedData = await predictedResponse.json();
         this.predicted_data = predictedData;
 
@@ -551,7 +551,7 @@ export default {
     },
 
     connectMQTT() {
-      this.client = mqtt.connect('ws://14.225.205.88:9001');
+      this.client = mqtt.connect('ws://sol1.swin.edu.vn:8018');
 
       this.client.on('connect', () => {
         console.log('Connected to MQTT broker');
@@ -586,7 +586,7 @@ export default {
         }
 
         const response = await fetch(
-          `http://14.225.205.88:8000/getthreshold?greenhouseID=${greenhouseID}`
+          `http://sol1.swin.edu.vn:8016/getthreshold?greenhouseID=${greenhouseID}`
         );
 
         if (!response.ok) {
@@ -643,7 +643,7 @@ export default {
 
     async fetchAlertData(greenhouseID) {
       try {
-        const response = await fetch(`http://14.225.205.88:8000/alert_details?greenhouseID=${greenhouseID}`);
+        const response = await fetch(`http://sol1.swin.edu.vn:8016/alert_details?greenhouseID=${greenhouseID}`);
         const data = await response.json();
 
         if (data && Array.isArray(data)) {
@@ -688,7 +688,7 @@ export default {
       const greenhouseID = localStorage.getItem('selectedGreenhouseID');
       if (greenhouseID) {
         try {
-          const predictedResponse = await fetch(`http://14.225.205.88:8000/predicted_data?greenhouseID=${greenhouseID}`);
+          const predictedResponse = await fetch(`http://sol1.swin.edu.vn:8016/predicted_data?greenhouseID=${greenhouseID}`);
           const predictedData = await predictedResponse.json();
           this.predicted_data = predictedData || [];
         } catch (error) {

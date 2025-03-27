@@ -11,9 +11,9 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: Binhlol707
     ports:
-      - "3306:3306"
+      - "8017:3306"
     volumes:
-      - /root/Binh/mysql:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     networks:
       - greenhouse-net
 
@@ -23,7 +23,7 @@ services:
     restart: always
     ports:
       - "1884:1883"   # Host port 1884 ? Container port 1883
-      - "9002:9001"   # WebSocket
+      - "8018:9001"   # WebSocket
     volumes:
       - ./mosquitto/config:/mosquitto/config
       - ./mosquitto/data:/mosquitto/data
@@ -65,7 +65,7 @@ services:
       DB_PASSWORD: Binhlol707
       DB_NAME: Greenhouse
     ports:
-      - "8000:8000"
+      - "8016:8000"
     networks:
       - greenhouse-net
 
@@ -93,7 +93,7 @@ services:
     container_name: projectb-container
     restart: always
     ports:
-      - "8080:80"
+      - "8012:80"
     networks:
       - greenhouse-net
 

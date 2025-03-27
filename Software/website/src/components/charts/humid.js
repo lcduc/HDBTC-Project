@@ -47,8 +47,8 @@ export function renderHumidChart() {
         function loadData(filterOption) {
             // Define the API URL based on the filter option
             const apiUrl = filterOption === "monthly-humid"
-                ? "http://14.225.205.88:8000/calculate_monthly_averages/1"
-                : "http://14.225.205.88:8000/calculate_weekly_averages/1";
+                ? "http://sol1.swin.edu.vn:8016/calculate_monthly_averages/1"
+                : "http://sol1.swin.edu.vn:8016/calculate_weekly_averages/1";
 
             // Fetch data from the API
             fetch(apiUrl)

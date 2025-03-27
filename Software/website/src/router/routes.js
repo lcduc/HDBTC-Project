@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import LogIn from "../components/LogIn.vue";
 import HomePage from "../components/HomePage.vue";
-import DashBoard from "../components/Dashboard.vue";
+import DashBoard from "../components/DashBoard.vue";
 import Thresholds from "../components/Thresholds.vue";
 import ManageDevices from "../components/ManageDevices.vue";
 
