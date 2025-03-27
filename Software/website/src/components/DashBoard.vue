@@ -491,6 +491,12 @@ export default {
       return;
     }
 
+    // Load saved sensor data if available
+    const savedSensorData = localStorage.getItem('sensorData');
+    if (savedSensorData) {
+      this.sensorData = JSON.parse(savedSensorData);
+    }
+
     renderTempChart();
     renderHumidChart();
     renderLightChart();
@@ -504,9 +510,7 @@ export default {
         const predictedData = await predictedResponse.json();
         this.predicted_data = predictedData;
 
-      console.log("Parsed Data:", this.current_data);
         await this.fetchThresholdData(greenhouseID);
-
         await this.fetchAlertData(greenhouseID);
       } catch (error) {
         this.msg = 'Failed to load data. Please try again later.';
@@ -550,12 +554,11 @@ export default {
     },
 
     connectMQTT() {
-
       const greenhouseID = localStorage.getItem('selectedGreenhouseID');
-        if (!greenhouseID) {
-          console.error("No greenhouse ID found in localStorage.");
-          return;
-        }
+      if (!greenhouseID) {
+        console.error("No greenhouse ID found in localStorage.");
+        return;
+      }
 
       this.client = mqtt.connect('ws://sol1.swin.edu.vn:8018');
 
@@ -563,7 +566,7 @@ export default {
         console.log('Connected to MQTT broker');
         this.client.subscribe(`greenhouse/${greenhouseID}/sensor`);
       });
-      
+
       this.client.on('message', (topic, message) => {
         console.log(`Received MQTT message on topic ${topic}:`, message.toString());
 
@@ -575,6 +578,9 @@ export default {
             lightIntensity: parsedData.sensors.light.Tot_PAR,
             co2: parsedData.sensors.co2.co2air,
           };
+
+          // Save updated sensor data to localStorage
+          localStorage.setItem('sensorData', JSON.stringify(this.sensorData));
         } catch (error) {
           console.error('Error parsing MQTT message:', error);
           console.error('Raw MQTT message:', message.toString());
