@@ -22,6 +22,14 @@ MODEL_DIR = "/app/Model"
 # Define target prediction columns
 TARGET_COLUMNS = ["Tair_t+30min", "Rhair_t+30min", "Tot_PAR_t+30min", "CO2air_t+30min"]
 
+# Mapping between model prediction keys and threshold API keys
+PREDICTION_TO_THRESHOLD_KEY = {
+    "Tair_t+30min": "temperature",
+    "Rhair_t+30min": "humidity",
+    "Tot_PAR_t+30min": "lightIntensity",
+    "CO2air_t+30min": "co2"
+}
+
 def fetch_latest_sensor_data(greenhouse_id):
     """
     Fetch the latest sensor data from the API.
@@ -79,9 +87,6 @@ def load_models():
     return models
 
 def insert_predictions_into_db(greenhouse_id, predictions):
-    """
-    Insert predictions into the predicted_data table.
-    """
     try:
         connection = pymysql.connect(
             host=DB_HOST,
@@ -92,105 +97,75 @@ def insert_predictions_into_db(greenhouse_id, predictions):
         )
         cursor = connection.cursor()
 
-        # Get current timestamp
         current_date = datetime.now().strftime('%Y-%m-%d')
         current_time = datetime.now().strftime('%H:%M:%S')
 
-        # Prepare the SQL insert statement
         sql = """
         INSERT INTO predicted_data 
         (greenhouseID, date, time, temperature, humidity, lightIntensity, co2) 
         VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
-
-        # Extract relevant predictions
         cursor.execute(sql, (
-            greenhouse_id,
-            current_date,
-            current_time,
-            predictions.get("Tair_t+30min", None),
-            predictions.get("Rhair_t+30min", None),
-            predictions.get("Tot_PAR_t+30min", None),
-            predictions.get("CO2air_t+30min", None)
+            greenhouse_id, current_date, current_time,
+            predictions.get("Tair_t+30min"),
+            predictions.get("Rhair_t+30min"),
+            predictions.get("Tot_PAR_t+30min"),
+            predictions.get("CO2air_t+30min")
         ))
-
-        # Commit changes
         connection.commit()
-        print(f"? Predictions successfully inserted for Greenhouse {greenhouse_id}")
+        prediction_id = cursor.lastrowid  # ✅ Get inserted ID
+        print(f"? Predictions successfully inserted for Greenhouse {greenhouse_id} [ID: {prediction_id}]")
+        return prediction_id
 
     except pymysql.MySQLError as e:
-        print(f"? Error inserting predictions into database: {e}")
-    finally:
-        cursor.close()
-        connection.close()
-
-def fetch_threshold_for_greenhouse(greenhouse_id):
-    """
-    Fetch the latest threshold data for the given greenhouse from the database.
-    """
-    try:
-        connection = pymysql.connect(
-            host=DB_HOST,
-            port=DB_PORT,
-            user=DB_USER,
-            password=DB_PASSWORD,
-            database=DB_NAME
-        )
-        cursor = connection.cursor()
-
-        # Get the latest threshold values for the greenhouse
-        sql = """
-        SELECT parameter, threshold, uncertainty
-        FROM threshold
-        WHERE greenhouseID = %s
-        ORDER BY date DESC LIMIT 1;
-        """
-        cursor.execute(sql, (greenhouse_id,))
-        threshold_data = cursor.fetchone()
-
-        if threshold_data:
-            threshold = {
-                'parameter': threshold_data[0],
-                'threshold': threshold_data[1],
-                'uncertainty': threshold_data[2]
-            }
-            return threshold
-        else:
-            print(f"? No threshold data found for Greenhouse {greenhouse_id}")
-            return None
-    except pymysql.MySQLError as e:
-        print(f"? Error fetching threshold data: {e}")
+        print(f"? Error inserting predictions: {e}")
         return None
     finally:
         cursor.close()
         connection.close()
 
-def compare_with_threshold_and_create_alert(greenhouse_id, predictions):
-    """
-    Compare the predictions with the threshold and insert an alert if necessary.
-    """
-    # Get the threshold for the greenhouse
-    threshold = fetch_threshold_for_greenhouse(greenhouse_id)
 
-    if threshold:
-        # Loop through each predicted parameter
-        for param in predictions:
-            if param == threshold['parameter']:
-                prediction_value = predictions[param]
-                threshold_value = threshold['threshold']
-                uncertainty = threshold['uncertainty']
-
-                # Compare the prediction with the threshold considering the uncertainty
-                if prediction_value > threshold_value + uncertainty or prediction_value < threshold_value - uncertainty:
-                    # Create an alert entry
-                    create_alert(greenhouse_id, param, prediction_value, threshold_value, uncertainty)
-                else:
-                    print(f"? {param} is within the threshold")
-
-def create_alert(greenhouse_id, parameter, prediction_value, threshold_value, uncertainty):
+def fetch_thresholds_from_api(greenhouse_id):
     """
-    Insert an alert entry into the `alert` table.
+    Fetch threshold values for all parameters from the FastAPI container.
     """
+    try:
+        url = f"http://fastapi-server:8000/getthreshold?greenhouseID={greenhouse_id}"
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
+        return response.json()
+    except Exception as e:
+        print(f"? Error fetching thresholds from API: {e}")
+        return {}
+
+
+def compare_with_threshold_and_create_alert(greenhouse_id, predictions, prediction_id):
+    try:
+        response = requests.get(f"http://fastapi-server:8000/getthreshold?greenhouseID={greenhouse_id}", timeout=5)
+        response.raise_for_status()
+        thresholds = response.json()
+    except requests.RequestException as e:
+        print(f"? Error fetching thresholds from API: {e}")
+        return
+
+    for pred_key, pred_value in predictions.items():
+        threshold_key = PREDICTION_TO_THRESHOLD_KEY.get(pred_key)
+        if not threshold_key or threshold_key not in thresholds:
+            print(f"? No threshold found for {pred_key}")
+            continue
+
+        threshold_info = thresholds[threshold_key]
+        threshold_value = threshold_info["threshold"]
+        uncertainty = threshold_info["uncertainty"]
+        threshold_id = threshold_info["thresholdID"]
+
+        if pred_value > threshold_value + uncertainty or pred_value < threshold_value - uncertainty:
+            create_alert(greenhouse_id, pred_key, pred_value, threshold_value, uncertainty, threshold_id, prediction_id)
+        else:
+            print(f"? {pred_key} is within threshold.")
+
+
+def create_alert(greenhouse_id, parameter, prediction_value, threshold_value, uncertainty, threshold_id, prediction_id):
     try:
         connection = pymysql.connect(
             host=DB_HOST,
@@ -201,65 +176,47 @@ def create_alert(greenhouse_id, parameter, prediction_value, threshold_value, un
         )
         cursor = connection.cursor()
 
-        # Get current timestamp
         current_date = datetime.now().strftime('%Y-%m-%d')
         current_time = datetime.now().strftime('%H:%M:%S')
-
-        # Determine the change type and severity
-        change_type = "above" if prediction_value > threshold_value else "below"
+        change_type = "exceed" if prediction_value > threshold_value else "drop under"
         difference = abs(prediction_value - threshold_value)
-        severity = "high" if difference > (uncertainty * 2) else "medium"  # Example: if the difference is more than twice the uncertainty, set to "high"
+        severity = "high" if difference > (uncertainty * 2) else "medium"
 
-        # Prepare SQL statement to insert an alert
         sql = """
         INSERT INTO alert (predictionID, thresholdID, date, time, changeType, difference, severity)
-        VALUES (NULL, NULL, %s, %s, %s, %s, %s);
+        VALUES (%s, %s, %s, %s, %s, %s, %s);
         """
-        cursor.execute(sql, (current_date, current_time, change_type, difference, severity))
-
-        # Commit changes
+        cursor.execute(sql, (
+            prediction_id, threshold_id,
+            current_date, current_time,
+            change_type, difference, severity
+        ))
         connection.commit()
         print(f"? Alert created for {parameter} in Greenhouse {greenhouse_id}")
     except pymysql.MySQLError as e:
-        print(f"? Error inserting alert into database: {e}")
+        print(f"? Error inserting alert: {e}")
     finally:
         cursor.close()
         connection.close()
 
 def run_inference(greenhouse_id):
-    """
-    Fetch real-time data from API and perform inference using trained models, then save to database.
-    """
-    # Fetch latest data from API
     sensor_data = fetch_latest_sensor_data(greenhouse_id)
-
-    # Convert the data into a Pandas DataFrame
     input_data = pd.DataFrame([sensor_data])
-
-    # Load models
     models = load_models()
-
-    # Store predictions
     predictions = {}
 
     for target_col, model_info in models.items():
-        # Ensure all required feature columns are present
         missing_features = [col for col in model_info['feature_columns'] if col not in input_data.columns]
         if missing_features:
             print(f"?? Warning: Missing features for {target_col}: {missing_features}")
             continue
-
-        # Extract the necessary features
         test_inputs = input_data[model_info['feature_columns']]
-
-        # Run inference and store results
         predictions[target_col] = model_info['model'].predict(test_inputs)[0]
 
-    # Insert predictions into database
-    insert_predictions_into_db(greenhouse_id, predictions)
+    prediction_id = insert_predictions_into_db(greenhouse_id, predictions)
+    if prediction_id:
+        compare_with_threshold_and_create_alert(greenhouse_id, predictions, prediction_id)
 
-    # Compare predictions with thresholds and insert alerts if necessary
-    compare_with_threshold_and_create_alert(greenhouse_id, predictions)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
