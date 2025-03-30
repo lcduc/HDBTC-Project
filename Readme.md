@@ -42,5 +42,5 @@ docker pull lickmya707/projectb:latest
 ```bash
 docker exec -it deploy-containers tail -f /var/log/deploy_containers.log
 ```
-the log for mosquitto is simply in /docker-compose-setup/mosquitto/log/mosquitto.log
-the config for mosquitto is in /docker-compose-setup/mosquitto/config/mosquitto.conf
+- the log for mosquitto is simply in /docker-compose-setup/mosquitto/log/mosquitto.log
+- the config for mosquitto is in /docker-compose-setup/mosquitto/config/mosquitto.conf
