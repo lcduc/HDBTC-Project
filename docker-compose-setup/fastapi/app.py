@@ -114,6 +114,7 @@ def calculate_weekly_averages(greenhouseID: int):
     - Historical sensor data
     - Predicted data (missing days filled with 0)
     """
+
     try:
         connection = pymysql.connect(
             host=MYSQL_HOST, port=MYSQL_PORT, user=MYSQL_USER,
@@ -121,64 +122,47 @@ def calculate_weekly_averages(greenhouseID: int):
         )
 
         with connection.cursor(pymysql.cursors.DictCursor) as cursor:
-            # Step 1: Get the last 7 days
-            days_list = [(datetime.now() - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(7)]
+            # Get the last 7 days (formatted as YYYY-MM-DD)
+            days_list = []
+            for i in range(7):
+                day = datetime.now() - timedelta(days=i)
+                days_list.append(day.strftime("%Y-%m-%d"))
 
-            # Step 2: Create temp table
+            # Create a temporary table with full dates
             cursor.execute("CREATE TEMPORARY TABLE last_7_days (date_str DATE);")
-            insert_values = ", ".join(["(%s)"] * len(days_list))
-            cursor.execute(f"INSERT INTO last_7_days (date_str) VALUES {insert_values}", days_list)
+            insert_values = ", ".join([f"('{d}')" for d in days_list])
+            cursor.execute(f"INSERT INTO last_7_days (date_str) VALUES {insert_values};")
 
-            # Step 3: Get device IDs
-            def get_device_id(sensor_type):
-                cursor.execute(
-                    "SELECT device_id FROM device_list WHERE greenhouse_id = %s AND device_type = %s",
-                    (greenhouseID, sensor_type)
-                )
-                row = cursor.fetchone()
-                return row["device_id"] if row else None
-
-            device_ids = {
-                "temperature_humidity": get_device_id("temperature_humidity"),
-                "light": get_device_id("light"),
-                "co2": get_device_id("co2"),
-            }
-
-            if not all(device_ids.values()):
-                return {"error": "Missing required device mappings for greenhouse."}
-
-            # Step 4: Historical query
+            # Query for historical data (ensuring all days are included)
             historical_sql = """
                 SELECT 
-                    DATE_FORMAT(d.date_str, '%%d/%%m') AS date,
-                    COALESCE(AVG(CAST(JSON_UNQUOTE(JSON_EXTRACT(th.value, '$.Tair')) AS DECIMAL(10,2))), 0) AS avg_temperature,
-                    COALESCE(AVG(CAST(JSON_UNQUOTE(JSON_EXTRACT(th.value, '$.Rhair')) AS DECIMAL(10,2))), 0) AS avg_humidity,
-                    COALESCE(AVG(CAST(JSON_UNQUOTE(JSON_EXTRACT(l.value, '$.Tot_PAR')) AS DECIMAL(10,2))), 0) AS avg_light,
-                    COALESCE(AVG(CAST(JSON_UNQUOTE(JSON_EXTRACT(c.value, '$.co2air')) AS DECIMAL(10,2))), 0) AS avg_co2
-                FROM last_7_days d
-                LEFT JOIN sensor_data th ON th.recorded_date = d.date_str AND th.device_id = %s
-                LEFT JOIN sensor_data l  ON l.recorded_date  = d.date_str AND l.device_id  = %s
-                LEFT JOIN sensor_data c  ON c.recorded_date  = d.date_str AND c.device_id  = %s
-                GROUP BY d.date_str
-                ORDER BY d.date_str DESC;
+                    DATE_FORMAT(l.date_str, '%%d/%%m') AS date, 
+                    COALESCE(AVG(JSON_UNQUOTE(JSON_EXTRACT(value, '$.Tair'))), 0) AS avg_temperature,
+                    COALESCE(AVG(JSON_UNQUOTE(JSON_EXTRACT(value, '$.Rhair'))), 0) AS avg_humidity,
+                    COALESCE(AVG(JSON_UNQUOTE(JSON_EXTRACT(value, '$.Tot_PAR'))), 0) AS avg_light,
+                    COALESCE(AVG(JSON_UNQUOTE(JSON_EXTRACT(value, '$.co2air'))), 0) AS avg_co2
+                FROM last_7_days l
+                LEFT JOIN sensor_data s 
+                    ON s.recorded_date = l.date_str
+                    AND s.device_id IN (SELECT device_id FROM device_list WHERE greenhouse_id = %s)
+                GROUP BY l.date_str
+                ORDER BY l.date_str DESC;
             """
-            cursor.execute(historical_sql, (
-                device_ids["temperature_humidity"],
-                device_ids["light"],
-                device_ids["co2"]
-            ))
+            cursor.execute(historical_sql, (greenhouseID,))
             historical_results = cursor.fetchall()
 
-            # Step 5: Predicted query
+            # Query for predicted data (ensuring missing days return 0)
             predicted_sql = """
                 SELECT 
-                    DATE_FORMAT(l.date_str, '%%d/%%m') AS date,
+                    DATE_FORMAT(l.date_str, '%%d/%%m') AS date, 
                     COALESCE(AVG(p.temperature), 0) AS avg_temperature,
                     COALESCE(AVG(p.humidity), 0) AS avg_humidity,
                     COALESCE(AVG(p.lightIntensity), 0) AS avg_light,
                     COALESCE(AVG(p.co2), 0) AS avg_co2
                 FROM last_7_days l
-                LEFT JOIN predicted_data p ON p.date = l.date_str AND p.greenhouseID = %s
+                LEFT JOIN predicted_data p 
+                    ON p.date = l.date_str
+                    AND p.greenhouseID = %s
                 GROUP BY l.date_str
                 ORDER BY l.date_str DESC;
             """
@@ -194,7 +178,6 @@ def calculate_weekly_averages(greenhouseID: int):
         return {"error": str(e)}
     finally:
         connection.close()
-
 
 @app.get("/get_device_status/{greenhouseID}")
 def get_device_status(greenhouseID: int):
@@ -473,11 +456,11 @@ def get_predicted_data(greenhouseID: int):
 
         with connection.cursor() as cursor:
             sql = """
-                SELECT predictionID, date, time, CEIL(temperature) AS temperature, CEIL(humidity) AS humidity, CEIL(lightIntensity) AS lightIntensity, CEIL(co2) AS co2
+                SELECT predictionID, date, time, temperature, humidity, lightIntensity, co2
                 FROM predicted_data
                 WHERE greenhouseID = %s
                 ORDER BY date DESC, time DESC
-                LIMIT 1;
+                LIMIT 1
             """
             cursor.execute(sql, (greenhouseID,))
             result = cursor.fetchone()
@@ -529,15 +512,14 @@ def get_threshold(greenhouseID: int):
             sql = """
                 SELECT t.thresholdID, t.parameter, t.date, t.threshold, t.uncertainty
                 FROM threshold t
-                JOIN (
-                    SELECT parameter, MAX(CONCAT(date, ' ', COALESCE(time, '00:00:00'))) AS latest_datetime
+                WHERE t.greenhouseID = %s 
+                AND t.parameter IN ('temperature', 'humidity', 'lightIntensity', 'co2')
+                AND (t.parameter, t.date) IN (
+                    SELECT parameter, MAX(date)
                     FROM threshold
                     WHERE greenhouseID = %s
                     GROUP BY parameter
-                ) latest
-                ON t.parameter = latest.parameter
-                AND CONCAT(t.date, ' ', COALESCE(t.time, '00:00:00')) = latest.latest_datetime
-                WHERE t.greenhouseID = %s
+                )
                 ORDER BY FIELD(t.parameter, 'temperature', 'humidity', 'lightIntensity', 'co2');
             """
             cursor.execute(sql, (greenhouseID, greenhouseID))
@@ -566,8 +548,6 @@ def get_threshold(greenhouseID: int):
 from pydantic import BaseModel
 from typing import List
 from datetime import datetime
-import pymysql
-import json
 
 class ThresholdRecord(BaseModel):
     greenhouseID: int
@@ -577,6 +557,7 @@ class ThresholdRecord(BaseModel):
 
 @app.post("/POSTthresholds")
 def post_threshold(new_records: List[ThresholdRecord]):
+    # Inserts new threshold records into the database for the given greenhouseID.
     try:
         new_records = new_records
     except Exception as e:
@@ -604,12 +585,11 @@ def post_threshold(new_records: List[ThresholdRecord]):
     try:
         with connection.cursor() as cursor:
             sql = """
-                INSERT INTO threshold (greenhouseID, parameter, threshold, uncertainty, date, time)
-                VALUES (%s, %s, %s, %s, %s, %s)
+                INSERT INTO threshold (greenhouseID, parameter, threshold, uncertainty, date)
+                VALUES (%s, %s, %s, %s, %s)
             """
 
             current_date = datetime.now().date()
-            current_time = datetime.now().time().strftime("%H:%M:%S")  # ✅ Add this line
 
             for record in new_records:
                 cursor.execute(sql, (
@@ -617,8 +597,7 @@ def post_threshold(new_records: List[ThresholdRecord]):
                     record.parameter,
                     record.threshold,
                     record.uncertainty,
-                    current_date,
-                    current_time  # ✅ Pass time to the INSERT
+                    current_date
                 ))
 
             connection.commit()
@@ -629,7 +608,6 @@ def post_threshold(new_records: List[ThresholdRecord]):
         return {"statusCode": 500, "body": json.dumps({"message": f"Error processing request: {str(e)}"})}
     finally:
         connection.close()
-
 
 # --- CurrentData Endpoint ---
 @app.get("/currentData")
