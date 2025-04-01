@@ -1,44 +1,48 @@
 <template>
-  <div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="row rounded-5 shadow box-area flex-column flex-md-row">
-      <div class="col-md-6 left-box order-2 order-md-1">
-        <div class="row align-items-center">
-          <div class="header-text mb-4">
-            <img src="../assets/img/leaf-icon.png" alt="logo_image" class="logo_image">
-            <h1 class="text-center">WELCOME!</h1>
-            <p class="text-center">Please login with the account provided.</p>
-          </div>
-          <div class="login_form">
-            <form @submit.prevent="login" class="login-form" id="loginForm">
-              <div class="form-group">
-                <div class="input-icon-wrapper">
-                  <i class="fas fa-envelope icon"></i>
-                  <input type="text" class="form-control" v-model="email" id="email" placeholder="Email Address">
+  <div class="login-content">
+    <div class="container d-flex justify-content-center align-items-center min-vh-95">
+      <div class="row rounded-5 shadow box-area flex-column flex-md-row">
+        <div class="col-md-6 left-box order-2 order-md-1">
+          <div class="row align-items-center">
+            <div class="header-text mb-4">
+              <img src="../assets/img/leaf-icon.png" alt="logo_image" class="logo_image">
+              <h1 class="text-center">WELCOME!</h1>
+              <p class="text-center">Please login with the account provided.</p>
+            </div>
+            <div class="login_form">
+              <form @submit.prevent="login" class="login-form" id="loginForm">
+                <div class="form-group">
+                  <div class="input-icon-wrapper">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="text" class="form-control" v-model="email" id="email" placeholder="Email Address"
+                      @keydown.enter="login" />
+                  </div>
+                  <div v-if="emailError" class="text-danger">{{ emailError }}</div>
                 </div>
-                <div v-if="emailError" class="text-danger">{{ emailError }}</div>
-              </div>
-              <div class="form-group mt-2">
-                <div class="input-icon-wrapper">
-                  <i class="fas fa-lock icon"></i>
-                  <input type="password" class="form-control" v-model="password" id="password" placeholder="Password">
+                <div class="form-group mt-2">
+                  <div class="input-icon-wrapper">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" class="form-control" v-model="password" id="password" placeholder="Password"
+                      @keydown.enter="login" />
+                  </div>
+                  <div v-if="passwordError" class="text-danger">{{ passwordError }}</div>
                 </div>
-                <div v-if="passwordError" class="text-danger">{{ passwordError }}</div>
-              </div>
-              <button type="submit" class="btn login-button mt-4 mb-3">
-                LOG IN
-                <i class="fas fa-arrow-right arrow-icon"></i>
-              </button>
-              <div v-if="loginError" class="text-danger mt-2">{{ loginError }}</div>
-            </form>
+                <button type="submit" class="btn login-button mt-4 mb-3">
+                  LOG IN
+                  <i class="fas fa-arrow-right arrow-icon"></i>
+                </button>
+                <div v-if="loginError" class="text-danger mt-2">{{ loginError }}</div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
 
 
-      <div
-        class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column right-box order-1 order-md-2">
-        <div class="featured-image">
-          <img src="../assets/img/login_image.png" class="img-fluid">
+        <div
+          class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column right-box order-1 order-md-2">
+          <div class="featured-image">
+            <img src="../assets/img/login_image.png" class="img-fluid">
+          </div>
         </div>
       </div>
     </div>
@@ -87,7 +91,7 @@ export default {
     async login() {
       if (this.validateForm()) {
         try {
-          const response = await fetch('https://2pptumq4rh.execute-api.us-east-1.amazonaws.com/login', {
+          const response = await fetch('http://sol1.swin.edu.vn:8016/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -124,12 +128,44 @@ export default {
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.login-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../assets/img/login_background.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .row {
   border-radius: 25px;
 }
 
 .box-area {
-  width: 930px;
+  width: 1000px;
+}
+
+.left-box {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 0 2rem;
 }
 
 .left-box h1 {

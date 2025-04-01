@@ -19,34 +19,40 @@
 
     <div v-if="msg" class="alert alert-danger">{{ msg }}</div>
 
-    <div class="row table mt-5 pl-5" v-if="greenhouses.length">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>NO.</th>
-            <th>NAME</th>
-            <th>LOCATION</th>
-            <th>MONITOR PAGE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(gh, index) in greenhouses" :key="gh.greenhouseID">
-            <td>{{ index + 1 }}</td>
-            <td>{{ gh.name }}</td>
-            <td>{{ gh.location }}</td>
-            <td>
-              <button @click="goToDashboard(gh.greenhouseID)" class="btn"
-                style="background-color: #88C47A; color: white;">
-                GO TO PAGE
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="mt-3 mb-3 ml-2 mr-2">
+      <div class="row justify-content-center">
+        <div class="col-12 px-2">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>NO.</th>
+                <th>NAME</th>
+                <th>LOCATION</th>
+                <th>MONITOR PAGE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(gh, index) in greenhouses" :key="gh.greenhouseID">
+                <td>{{ index + 1 }}</td>
+                <td>{{ gh.name }}</td>
+                <td>{{ gh.location }}</td>
+                <td>
+                  <button @click="goToDashboard(gh.greenhouseID)" class="btn"
+                    style="background-color: #88C47A; color: white;">
+                    GO TO PAGE
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-12 px-2 text-center mt-3">
+          <img class="img-fluid" src="../assets/img/greenhouse-home-page.jpg" alt="greenhouse-home-page" />
+        </div>
+      </div>
     </div>
-    <div class="pl-2 pr-3">
-      <img class="img-fluid" src="../assets/img/greenhouse-home-page.jpg" alt="greenhouse-home-page" />
-    </div>
+
   </div>
 </template>
 
@@ -64,13 +70,13 @@ export default {
     const accountID = user ? user.accountID : null;
 
     if (!user) {
-      this.$router.push('/'); // Redirect to login
+      this.$router.push('/'); 
       return;
     }
 
     if (accountID) {
       try {
-        const response = await fetch(`https://7hv7iqdxcf.execute-api.us-east-1.amazonaws.com/greenhousedetails?accountID=${accountID}`);
+        const response = await fetch(`http://sol1.swin.edu.vn:8016/greenhouse_details?accountID=${accountID}`);
         const data = await response.json();
         this.greenhouses = data;
       } catch (error) {

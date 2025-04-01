@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pymysql
+paho-mqtt
+python-multipart
+cryptography
