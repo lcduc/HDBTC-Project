@@ -9,7 +9,6 @@
 - Docker
 - Docker Compose
 - MQTT: Ensure MQTT is installed to handle real-time messaging between the sensors and the backend. MQTT Installation Guide
-- Access to the model files: `https://www.kaggle.com/models/luongchiduc/hdbtc_model`
 
 ## 🚀 Deployment Instruction
 
@@ -25,9 +24,9 @@ Go into the Software folder of the git project that you pulled down earlier and 
 
 #### 2. Machine Learning Model Deployment
 
-- The Model folder you downloaded from Kaggle must be placed in 
+- The Model folder you downloaded from `https://www.kaggle.com/models/luongchiduc/hdbtc_model` must be placed in the following folder
 ```bash 
-docker-compose-setup/inference folder
+docker-compose-setup/inference/
 ```
 
 - Build the inference image using 
