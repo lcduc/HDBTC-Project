@@ -1,7 +1,7 @@
 
 
 ## 📦 Prerequisites
-- Network Requirements
+- Port Requirements
     - 1 for API
     - 1 for Frontend
     - 1 for Database (external DBMS tool)
