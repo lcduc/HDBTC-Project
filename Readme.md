@@ -13,7 +13,7 @@
 
 ## 🚀 Deployment Instruction
 
-#### 0. After having having the full code go into docker-compose-setup/docker-compose.yml and change all the connected port to those on your server/machine
+#### 0. After having having the full code go into ```docker-compose-setup/docker-compose.yml``` and change all the connected port to those on your server/machine
 
 #### 1. Front-end 
 
