@@ -2,8 +2,8 @@ import torch
 import pandas as pd
 import numpy as np
 from torch.utils.data import DataLoader
-from Model import Model
-from Dataloader import TimeSeriesDataset
+from src.Model import Model
+from src.Dataloader import TimeSeriesDataset
 
 # Load the data
 csv_file_path = "./data/processed/cleaned_merged_data.csv"
