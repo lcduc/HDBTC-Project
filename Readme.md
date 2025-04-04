@@ -12,9 +12,9 @@
 
 ## 🚀 Deployment Instruction
 
-#### 0. After having having the full code go into ```docker-compose-setup/docker-compose.yml``` and change all the connected port to those on your server/machine
+### 0. After having having the full code go into ```docker-compose-setup/docker-compose.yml``` and change all the connected port to those on your server/machine
 
-#### 1. Front-end 
+### 1. Front-end 
 
 Go into the Software folder of the git project that you pulled down earlier and do as follow:
 - the web front end needs to change all its api links to the one your server/machine provided.
@@ -22,7 +22,7 @@ Go into the Software folder of the git project that you pulled down earlier and 
 - Rebuild the image: ```docker build -t *give it a tag* .```
 - Go into docker-compose-setup/docker-compose.yml: find “projectb-container” under services and change it image from ```image: lickmya707/projectb:latest” to “image: *whatever tag you gave it*```
 
-#### 2. Machine Learning Model Deployment
+### 2. Machine Learning Model Deployment
 
 - The Model folder you downloaded from `https://www.kaggle.com/models/luongchiduc/hdbtc_model` must be placed in the following folder
 ```bash 
@@ -33,13 +33,13 @@ docker-compose-setup/inference/
 ```bash 
 docker build --no-cache -t greenhouse-predictor:latest "your directory/docker-compose-setup/inference"
 ```
-#### 3. Database Configuration
+### 3. Database Configuration
 
 - Change your database login info and do the same for all other services in the ```docker-compose-setup/docker-conpose.yml```
 
 - Do the same for all other files that get the database info in the docker-compose-setup folder and its subfolders
 
-#### 4. Message Queue & Real-Time Data Handling
+### 4. Message Queue & Real-Time Data Handling
 - if your server already has mqtt then you are ready and download it if your server does not have a native mqtt service running.
 
 - When all the docker services are up and running after initializing docker compose, paste this message in your terminal outside of docker network and check the database in the sensor-data table to ensure MQTT is up and running correctly. Here is the message template:
@@ -73,7 +73,7 @@ docker stop greenhouse-predictor-then a number starting from 0
 docker compose down --rmi all -v
 ```
 
-#### 7. System Maintenance
+### 7. System Maintenance
 
 - Logging: most logging is done by docker logs *container name* but there are 2 special one:
     - deploy-containers: ```docker exec -it deploy-containers tail -f /var/log/deploy_containers.log```
@@ -85,7 +85,7 @@ docker compose down --rmi all -v
 
 - After shutting down and running the compose a number of times, Docker can eat up a lot of memory with it image caching, shut the web down using this command :```docker-compose down --rmi all -v``` to start on a clean slate the next time you launch the web again
 
-#### 8. Troubleshooting & Common Issues
+### 8. Troubleshooting & Common Issues
 
 - If you can't run ```docker compose up -d –build``` then you are most likely not in the docker-compose-setup folder where docker-compose.yml exist or you don't have docker compose installed yet
 
